@@ -55,3 +55,35 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
+.margin-top {
+    margin-top: 2rem;
+}
+
+.margin-bottom {
+    margin-bottom: 4rem;
+}
+
+
+/* Box Shadow*/
+
+.box-sd-violet {
+    box-shadow: 0 5px 20px rgba(0, 0, 255, 0.4);
+}
+
+.box-sd-orange {
+    box-shadow: 0 5px 20px rgba(255, 165, 0, 0.4);
+}
+
+
+/* hover service */
+
+.violet:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 255, 0.4);
+}
+
+.orange:hover {
+    color: #fff;
+    background-color: rgba(255, 165, 0, 0.7)
+}

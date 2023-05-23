@@ -46,6 +46,9 @@
 
 /*main*/
 
+
+/* Hero section */
+
 .hero--content {
     display: flex;
 }
@@ -75,4 +78,55 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+
+/* Service */
+
+.service--section__list {
+    display: flex;
+}
+
+.service--list__item {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    cursor: pointer;
+    transition: all var(--animated-fast);
+}
+
+.service--list {
+    flex: 0 0 25%;
+    max-width: 25%;
+    border-radius: 2rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.service--list+.service--list {
+    margin-left: 2rem;
+}
+
+.service--list__item--img {
+    width: 30%;
+    padding-top: 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 255, 0.4);
+    border-radius: 50%;
+    transition: all var(--animated-slow);
+}
+
+.service--list__item h3 {
+    margin-top: 2rem;
+}
+
+.service--list__item:hover .service--list__item--img {
+    transform: translateY(-1rem);
 }
