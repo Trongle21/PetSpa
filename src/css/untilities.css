@@ -1,0 +1,57 @@
+/* Container */
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 1.6rem;
+}
+
+.container-padding {
+    padding-top: var(--section-gap);
+    padding-bottom: var(--section-gap);
+}
+
+
+/* TYPOGRAPHY */
+
+.text-center {
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-grey {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.heading-lg {
+    font-size: 4rem;
+}
+
+.heading-sm {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

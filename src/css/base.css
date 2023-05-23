@@ -1,0 +1,38 @@
+:root {
+    --color-primary: #fa9645;
+    --color-secondary: #f98324;
+    --color-background: #fff7ef;
+    --color-text-primary: #7b767a;
+    --animated-fast: 0.2s;
+    --animated-slow: 0.3s;
+    --section-gap: 8.6rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Nunito", sans-serif;
+    background-color: var(--color-background);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a button {
+    cursor: pointer;
+}

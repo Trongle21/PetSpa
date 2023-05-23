@@ -1,0 +1,71 @@
+/* TYPOGRAPHY */
+
+
+/* TYPOGRAPHY */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+h1,
+.h1 {
+    font-size: 6.4rem;
+}
+
+h2,
+.h2 {
+    font-size: 3.6rem;
+}
+
+h5,
+.h5 {
+    font-size: 2.4rem;
+}
+
+h6,
+.h6 {
+    font-size: 1.8rem;
+}
+
+p {
+    margin-bottom: 4rem;
+}
+
+
+/*Button */
+
+.btn {
+    padding: 1.2rem 4rem;
+    border-radius: 10rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all var(--animated-slow);
+}
+
+.btn.btn--primary {
+    color: #fff;
+    border: none;
+    background-color: var(--color-primary);
+}
+
+.btn.btn--primary:hover {
+    background-color: var(--color-secondary);
+}
+
+.btn.btn--secondary {
+    color: #000;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.btn.btn--secondary:hover {
+    background-color: var(--color-secondary);
+    color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 20px var(--color-primary);
+}
