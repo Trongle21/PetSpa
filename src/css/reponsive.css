@@ -388,6 +388,9 @@
         flex-direction: column-reverse;
     }
     .hero--content__img {}
+    .product--item {
+        gap: 1%;
+    }
 }
 
 
@@ -409,5 +412,4 @@
         flex-direction: column-reverse;
         text-align: center;
     }
-    .hero--content__img {}
 }
