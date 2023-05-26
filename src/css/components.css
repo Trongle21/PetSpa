@@ -76,39 +76,3 @@ h6,
     color: #fff;
     border: 1px solid transparent;
 }
-
-
-/* Gift section */
-
-.gift--section__wrapper {
-    background-color: #fff;
-    position: relative;
-    height: 30rem;
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 14px 15px 0px rgba(0, 0, 0, 0.1);
-}
-
-.gift--section__wrapper--image {
-    width: 30%;
-    padding-top: 30%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    right: 0rem;
-    bottom: -3rem;
-}
-
-.gift--section__wrapper--info {
-    padding-left: 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-.gift--section__wrapper--info h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    color: var(--color-primary);
-}

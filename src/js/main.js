@@ -1,16 +1,17 @@
-/** Header and Footer */
+import headerPage from "./components/page_header.js";
+import pageFooter from "./components/page_footer.js";
 
-$(function() {
-    // Tải phần header và chèn vào vị trí cần thiết trong trang web
-    $.get("header.html", function(data) {
-        $("#headerContainer").html(data);
-    });
+const root = document.querySelector('root')
 
-    // Tải phần footer và chèn vào vị trí cần thiết trong trang web
-    $.get("footer.html", function(data) {
-        $("#footerContainer").html(data);
-    });
-});
+const headerContainer = document.createElement('div');
+const main = document.querySelector('main');
+
+headerContainer.appendChild(headerPage());
+
+main.parentNode.insertBefore(headerContainer, main);
+
+const footer = pageFooter();
+main.insertAdjacentElement('afterend', footer);
 
 
 /**Show menu navbar */
@@ -25,15 +26,16 @@ document.querySelector('.nav--mb_close').addEventListener('click', (e) => {
     document.querySelector('.overlay').classList.remove('show--overLay');
 });
 
-/**Show Cart */
+// /**Show Cart */
 const productCart = document.querySelector('.product--cart')
-console.log(productCart)
 document.querySelectorAll('.product--item__btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
         productCart.classList.add('show--cart')
     })
 })
-
-document.querySelector('.product--cart__info--close').addEventListener('click', (e) => {
-    productCart.classList.remove('show--cart');
-});
+const closeCart = document.querySelector('.product--cart__info--close')
+if (closeCart) {
+    closeCart.addEventListener('click', (e) => {
+        productCart.classList.remove('show--cart');
+    });
+}

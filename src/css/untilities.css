@@ -4,11 +4,15 @@
     max-width: 120rem;
     margin: 0 auto;
     padding: 0 1.6rem;
+    overflow: hidden;
 }
 
 .container-padding {
     padding-top: var(--section-gap);
-    padding-bottom: var(--section-gap);
+}
+
+.service--padding {
+    margin-bottom: 14rem;
 }
 
 

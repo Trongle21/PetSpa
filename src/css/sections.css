@@ -7,7 +7,7 @@
     position: fixed;
     width: 100%;
     background-color: var(--color-background);
-    z-index: 99999999999;
+    z-index: 99999;
 }
 
 .header--bar {
@@ -158,7 +158,8 @@
     z-index: 1;
 }
 
-.service--section__img {
+
+/* .service--section__img {
     position: absolute;
     top: -5rem;
     left: -17rem;
@@ -166,7 +167,7 @@
     padding-top: 30%;
     background-size: cover;
     background-repeat: no-repeat;
-}
+} */
 
 .service--list {
     background-color: #fff;
@@ -214,7 +215,8 @@
     position: relative;
 }
 
-.service-prices--section__img {
+
+/* .service-prices--section__img {
     position: absolute;
     top: -11rem;
     right: 0;
@@ -222,7 +224,7 @@
     padding-top: 20%;
     background-size: cover;
     background-repeat: no-repeat;
-}
+} */
 
 .service-prices--section__img:hover {
     transform: scaleX(-1);
@@ -360,13 +362,53 @@
 }
 
 
+/* Gift section */
+
+.gift--section__wrapper {
+    background-color: #fff;
+    position: relative;
+    height: 30rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 14px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.gift--section__wrapper--info {
+    padding-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.gift--section__wrapper--info h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+.gift--section__wrapper--info a button {
+    margin-top: 6rem;
+}
+
+.gift--section__wrapper--image {
+    width: 20%;
+    padding-top: 20%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: -8rem;
+    bottom: 2rem;
+}
+
+
 /* Footer */
 
 .page-footer--section {
+    margin-top: 8.6rem;
     background-color: #fff;
 }
-
-.page-footer--section .container {}
 
 .page--footer {
     padding-top: 4rem;
@@ -395,6 +437,11 @@
     gap: 2rem
 }
 
+.page--footer__link--list .footerInfoSp,
+.page--footer__link--list .footerInfoAbout {
+    cursor: pointer;
+}
+
 .page--footer__link--list h6 {
     font-size: 2.4rem;
 }
@@ -413,8 +460,6 @@
 .page--footer__link--list ul li:hover {
     color: var(--color-primary);
 }
-
-.page--footer__contact {}
 
 .page--footer__contact h6 {
     font-size: 2.4rem;
@@ -544,6 +589,10 @@
 
 /* Cart */
 
+.product--section {
+    overflow: hidden;
+}
+
 .product--cart {
     margin-top: 16rem;
     padding: 2rem 2rem;
@@ -603,8 +652,6 @@
     background-position: center;
 }
 
-.product--cart__pay {}
-
 .product--cart__pay--wrapper {
     display: flex;
     align-items: center;
@@ -658,4 +705,87 @@
 .product--cart__btn {
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+
+/* Service */
+
+.service--section__page-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    position: fixed;
+    z-index: 55;
+}
+
+.service--section__page-list ul li {
+    font-size: 2rem;
+    transition: all var(--animated-fast);
+}
+
+.service--section__page-list ul li:hover {
+    color: var(--color-primary);
+}
+
+.service--image img {
+    width: 16rem;
+}
+
+.service--title {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.service--title h6 {
+    font-size: 2.8rem;
+    margin-right: 2rem;
+}
+
+.service--des {
+    padding-left: 4rem;
+    padding-right: 2rem;
+}
+
+.service--des h5 {
+    color: #cacaca;
+    font-size: 1.6rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.service--des p {
+    padding-bottom: 2rem;
+}
+
+.service--content__price {
+    border-bottom: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    display: flex;
+    width: 30rem;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+.service--content__info {
+    margin-left: 1rem;
+}
+
+.service--content__info ul li {
+    display: flex;
+    padding-top: 2rem;
+    width: 30rem;
+    justify-content: space-between;
+}
+
+.service--content__info ul li:not(:last-child) {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.service--content__info.space ul li {
+    width: 60rem;
+}
+
+.service--content__price.space {
+    width: 60rem;
 }
