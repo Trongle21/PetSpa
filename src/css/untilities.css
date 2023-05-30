@@ -3,12 +3,16 @@
 .container {
     max-width: 120rem;
     margin: 0 auto;
-    padding: 0 1.6rem;
+    padding: 0 4rem;
     overflow: hidden;
 }
 
 .container-padding {
     padding-top: var(--section-gap);
+}
+
+.padding-bottom {
+    padding-bottom: var(--section-gap);
 }
 
 .service--padding {

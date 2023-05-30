@@ -25,31 +25,68 @@ export default function headerPage() {
     header.classList.add('header')
     header.innerHTML = `
     <div class="page--header container">
-            <div class="header--bar">
-                <i class="fa-sharp fa-solid fa-bars"></i>
+        <div class="header--bar">
+            <i class="fa-sharp fa-solid fa-bars"></i>
+        </div>
+        <div class="header--logo">
+            <img src="./src/image/logo.png" alt="">
+            <h2>Pet<span>Spa</span></h2>
+        </div>
+        <div class="main--account">
+            <div  class="main--account__icon">
+                <i class="fa-solid fa-user"></i>
             </div>
-            <div class="header--logo">
-                <img src="./src/image/logo.png" alt="">
-                <h2>Pet<span>Spa</span></h2>
+            <div class="main--account__signin">
+                <div class="main--account_sigin--warapper l-4 m-6 c-8">
+                    <div class="main--account__form-group">
+                        <lable for="email" class="form-lable">Email</lable>
+                        <input name="email" type="text" placeholder="Enter your email">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="main--account__form-group">
+                        <lable for="password" class="form-lable">Password</lable>
+                        <input name="password" type="password" placeholder="Enter your password">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="main--account__check">
+                        <div class="main--account__check--input">
+                            <input id="checkRemember" type="checkbox">
+                            <label for="checkRemember">Remember me</label>
+                        </div>
+                        <a href="">
+                        Forgot password
+                        </a>
+                    </div>
+                    <div class="main--account__submit">
+                        <a href="">
+                            <button class="btn btn--signin">Sign In</button>
+                        </a>
+                    </div>
+                    <div class="main--account_signup">
+                        <h5>Don't have a account?</h5>
+                        <a href="signup.html">
+                            Sign up
+                        </a>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <div class="overlay"></div>
         <!-- PC -->
         <nav class="header--nav">
             <ul class="header--nav__link pc">
             </ul>
         </nav>
         <div class="header--sign-in">
-            <a href="">
-                <button class="btn btn--primary">Sign in</button>
-            </a>
+            <button class="btn btn--primary">Sign in</button>
         </div>
-        <div class="overlay"></div>
-        <!-- Moblie -->
+        <!-- Moblie $ Tablet-->
         <nav class="header--nav-mb">
             <div class="nav--mb_close">
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <ul class="header--nav-mb__link moblie">
-                
             </ul>
         </nav>
     </div>

@@ -1,0 +1,96 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA PETS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&amp;family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/css/base.css">
+    <link rel="stylesheet" href="./src/css/components.css">
+    <link rel="stylesheet" href="./src/css/sections.css">
+    <link rel="stylesheet" href="./src/css/reponsive.css">
+    <link rel="stylesheet" href="./src/css/untilities.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <section class="section--signup ">
+        <div class="container">
+            <div class="section--signup__wrapper row">
+                <div class="signup--form l-6 m-6">
+                    <div class="signup--form__wrapper">
+                        <div class="header--logo">
+                            <a href="index.html">
+                                <img src="./src/image/logo.png" alt="">
+                            </a>
+                        </div>
+                        <h2>Get Started</h2>
+                        <h3>Create your account now</h3>
+
+                        <div class="sign--up__form">
+                            <lable for="email" class="form-lable">Email</lable>
+                            <input name="email" type="text" placeholder="Enter your email">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="sign--up__form">
+                            <lable for="password" class="form-lable">Password</lable>
+                            <input name="password" type="password" placeholder="Enter your password">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="sign--up__form">
+                            <lable for="password" class="form-lable">Confirm Password</lable>
+                            <input name="password" type="password" placeholder="Enter your password">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="sign--up__form--button">
+                            <button class="btn btn--signup">SignUp</button>
+                        </div>
+                        <div class="sign--up__form--login">
+                            <h5>Have an account</h5>
+                            <p>Login</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="signup--decorate l-6 m-6">
+                    <div class="signup--image" style="background-image:url('./src/image/signup_1.jpeg')"></div>
+                </div>
+            </div>
+            <div class="main--account">
+                <div class="main--account__signin">
+                    <div class="main--account_sigin--warapper l-4 m-6 c-8">
+                        <div class="main--account__form-group">
+                            <lable for="email" class="form-lable">Email</lable>
+                            <input name="email" type="text" placeholder="Enter your email">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="main--account__form-group">
+                            <lable for="password" class="form-lable">Password</lable>
+                            <input name="password" type="password" placeholder="Enter your password">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="main--account__check">
+                            <div class="main--account__check--input">
+                                <input id="checkRemember" type="checkbox">
+                                <label for="checkRemember">Remember me</label>
+                            </div>
+                            <a href="">
+                            Forgot password
+                            </a>
+                        </div>
+                        <div class="main--account__submit">
+                            <a href="">
+                                <button class="btn btn--signin">Sign In</button>
+                            </a>
+                        </div>
+                        <div class="main--account_signup">
+                            <h5>Don't have a account?</h5>
+                            <a href="signup.html">
+                                Sign up
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    </section>
+</body>

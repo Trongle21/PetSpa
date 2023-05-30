@@ -15,6 +15,12 @@
     font-size: 3rem;
     cursor: pointer;
     display: none;
+    opacity: 1;
+    transition: all var(--animated-slow);
+}
+
+.header--bar.opacity {
+    opacity: 0;
 }
 
 .page--header {
@@ -29,6 +35,13 @@
     cursor: pointer;
 }
 
+.main--account__icon {
+    display: none;
+    font-size: 2.4rem;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
 .header--logo img {
     width: 3rem;
     margin-right: 5px;
@@ -36,6 +49,124 @@
 
 .header--logo h2 span {
     color: var(--color-primary);
+}
+
+.main--account__signin {
+    display: none;
+}
+
+.main--account__signin.show {
+    display: block;
+}
+
+.main--account.show {
+    display: block;
+}
+
+.main--account_sigin--warapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    z-index: 1;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.main--account__form-group {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+.main--account__form-group+.main--account__form-group {
+    margin-top: 2rem;
+}
+
+.main--account__form-group input {
+    padding: 1rem;
+    background-color: transparent;
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.main--account__form-group input:focus {
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid var(--color-primary);
+}
+
+.main--account__form-group input:hover {
+    padding: 1rem;
+    border-radius: 2px;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid var(--color-primary);
+}
+
+.main--account__check {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.main--account__check--input {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.main--account__check--input input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 2px solid gray;
+    outline: none;
+}
+
+.main--account__check--input input[type="checkbox"]:checked {
+    background-color: var(--color-primary);
+}
+
+.main--account__check a {
+    color: var(--color-secondary);
+}
+
+.main--account__check a:hover {
+    color: #fff;
+}
+
+.main--account__submit {
+    margin-top: 4rem;
+}
+
+.main--account_signup {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.6rem;
+}
+
+.main--account_signup h5 {
+    font-size: 1.6rem;
+}
+
+.main--account_signup a {
+    color: var(--color-primary);
+}
+
+.main--account_signup a:hover {
+    color: #fff;
 }
 
 
@@ -67,8 +198,8 @@
 
 .nav--mb_close {
     position: absolute;
-    top: 1rem;
-    left: 2rem;
+    top: 0.2rem;
+    left: 4rem;
     color: var(--color-primary);
     font-size: 3.2rem;
     cursor: pointer;
@@ -78,7 +209,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #fff;
     transition: all 0.5s ease-in-out;
     transform: translateX(-100%);
     opacity: 0;
@@ -87,6 +217,7 @@
 .show--nav__bar {
     transform: translateX(0);
     opacity: 1;
+    backdrop-filter: blur(20px);
 }
 
 .overlay {
@@ -99,7 +230,7 @@
     display: none;
 }
 
-.show--overLay {
+.show--overley {
     display: block;
 }
 
@@ -112,10 +243,19 @@
     height: 100vh;
     font-size: 2rem;
     padding-top: 7rem;
+    color: #fff;
+}
+
+.header--nav-mb__link--item+.header--nav-mb__link--item {
+    margin-top: 4rem;
 }
 
 .header--nav-mb__link--item {
-    padding-bottom: 4rem;
+    transition: all var(--animated-fast);
+}
+
+.header--nav-mb__link--item:hover {
+    color: var(--color-primary);
 }
 
 
@@ -139,7 +279,6 @@
 }
 
 .hero--content__button a .btn--primary {
-    box-shadow: 0 2px 20px var(--color-primary);
     margin-right: 1rem;
 }
 
@@ -158,6 +297,8 @@
     z-index: 1;
 }
 
+.service--section__list {}
+
 
 /* .service--section__img {
     position: absolute;
@@ -171,9 +312,9 @@
 
 .service--list {
     background-color: #fff;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     z-index: 11;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .service--list__item {
@@ -232,10 +373,10 @@
 
 .plan--price {
     text-align: center;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    padding-top: 2rem;
     transition: all var(--animated-fast);
     overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin-top: 2rem;
 }
 
 .plan--price:hover {
@@ -257,14 +398,15 @@
     overflow: hidden;
 }
 
-.overlay--price {
+
+/* .overlay--price {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
-}
+} */
 
 .plane--price__image-info {
     position: absolute;
@@ -313,18 +455,18 @@
     background-position: center;
 }
 
-.team-member--list__staff {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    margin-bottom: 2rem;
-}
-
 .team--member__info-wrapper {
-    height: 8.65rem;
+    height: 8.6rem;
     overflow: hidden;
 }
 
 .staf--info {
     transition: all 0.3s;
+}
+
+.team-member--list__staff {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin-top: 2rem;
 }
 
 .team-member--list__staff:hover .staf--info {
@@ -365,12 +507,15 @@
 /* Gift section */
 
 .gift--section__wrapper {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.gift--section__wrapper {
     background-color: #fff;
     position: relative;
     height: 30rem;
     display: flex;
     align-items: center;
-    box-shadow: 0px 14px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
 .gift--section__wrapper--info {
@@ -421,8 +566,6 @@
     justify-content: space-between;
     gap: 10rem
 }
-
-.page--footer__link {}
 
 .page--footer__link--wrapper {
     max-width: 30rem;
@@ -498,6 +641,17 @@
 
 
 /**********PRODUCT**************/
+
+.product--section__hero {
+    overflow: hidden;
+}
+
+.product--slick__image {
+    width: 100%;
+    padding-top: 46%;
+    background-size: cover;
+    background-position: center;
+}
 
 .product--section {
     position: relative;
@@ -708,7 +862,12 @@
 }
 
 
-/* Service */
+/**********SERVICE**************/
+
+
+/* PC */
+
+.service--section__page-list {}
 
 .service--section__page-list ul {
     display: flex;
@@ -716,11 +875,14 @@
     gap: 4rem;
     position: fixed;
     z-index: 55;
+    backdrop-filter: blur(10px);
+    padding: 2rem;
 }
 
 .service--section__page-list ul li {
     font-size: 2rem;
     transition: all var(--animated-fast);
+    cursor: pointer;
 }
 
 .service--section__page-list ul li:hover {
@@ -762,7 +924,6 @@
     border-bottom: 1px solid var(--color-primary);
     color: var(--color-primary);
     display: flex;
-    width: 30rem;
     justify-content: space-between;
     padding-bottom: 2rem;
 }
@@ -774,7 +935,6 @@
 .service--content__info ul li {
     display: flex;
     padding-top: 2rem;
-    width: 30rem;
     justify-content: space-between;
 }
 
@@ -788,4 +948,111 @@
 
 .service--content__price.space {
     width: 60rem;
+}
+
+
+/* Moblie */
+
+.service--section__page--warpper_mb {
+    display: none;
+}
+
+
+/**********SignUp**************/
+
+.section--signup {}
+
+.section--signup .container {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+}
+
+.section--signup__wrapper {
+    border-radius: 20px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.signup--form {
+    padding-left: 3.2rem;
+}
+
+.signup--form__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup--form__wrapper h2 {
+    font-weight: 700;
+}
+
+.signup--form__wrapper h3 {
+    color: #e3e3e3;
+}
+
+.sign--up__form+.sign--up__form {
+    margin-top: 2rem;
+}
+
+.signup--form .main--account__form-group {
+    width: 40rem;
+}
+
+.header--logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.sign--up__form {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    width: 80%;
+}
+
+.sign--up__form input {
+    padding: 0.8rem;
+    border-radius: 8px;
+    border-color: #e3e3e3;
+    border: 1px solid #e3e3e3;
+}
+
+.sign--up__form input:focus {
+    border: 1px solid #e3e3e3;
+    border-color: #e3e3e3;
+}
+
+.sign--up__form--login {
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem
+}
+
+.sign--up__form--login h5 {
+    font-size: 1.6rem;
+}
+
+.sign--up__form--login p {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.sign--up__form--button {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    width: 80%;
+}
+
+.signup--image {
+    width: 110%;
+    padding-top: 110%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0px 20px 20px 0px;
 }

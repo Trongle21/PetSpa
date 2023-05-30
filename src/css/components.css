@@ -69,10 +69,40 @@ h6,
     background-image: linear-gradient(110deg, transparent 50%, var(--color-primary) 50%);
     background-size: 220%;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 0.92rem 4rem;
 }
 
 .btn.btn--secondary:hover {
     background-color: var(--color-secondary);
     color: #fff;
     border: 1px solid transparent;
+}
+
+
+/* btn account */
+
+.btn.btn--signin {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+}
+
+.btn.btn--signin:hover {
+    background-color: var(--color-primary);
+    color: #000;
+}
+
+.btn.btn--signup {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn.btn--signup:hover {
+    background-color: #000;
+    color: #fff;
 }
