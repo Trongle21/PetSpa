@@ -20,7 +20,7 @@ let headerList = [{
     },
 ];
 
-export default function headerPage() {
+export default function page_header() {
     const header = document.createElement('header');
     header.classList.add('header')
     header.innerHTML = `

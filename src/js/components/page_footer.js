@@ -33,7 +33,7 @@ let footerInfoAbout = [{
     },
 ]
 
-export default function pageFooter() {
+export default function page_footer() {
     let footer = document.createElement('footer');
     footer.classList.add('page-footer--section')
     footer.innerHTML = `

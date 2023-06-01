@@ -1,0 +1,141 @@
+{
+    "products": [{
+            "id": 1,
+            "name": "Avoderm",
+            "price": 200000,
+            "description": "AvoDerm Grain Free Advanced Healthy Weight Turkey Meal Recipe Dry Dog Food",
+            "image": "../src/image/product_1_dog.png"
+        }, {
+            "id": 2,
+            "name": "Avoderm",
+            "price": 150000,
+            "description": "AvoDerm GRAIN FREE CHICKEN & VEGETABLE STEW RECIPE",
+            "image": "../src/image/product_2_dog.png"
+        },
+        {
+            "id": 3,
+            "name": "Avoderm",
+            "price": 150000,
+            "description": "AvoDerm GRAIN FREE BEEF & POTATO STEW RECIPE",
+            "image": "../src/image/product_3_dog.png"
+        },
+        {
+            "id": 4,
+            "name": "Avoderm",
+            "price": 150000,
+            "description": "AvoDerm Grain Free Beef & Vegetable Recipe Dry Dog Food",
+            "image": "../src/image/product_4_dog.png"
+        },
+        {
+            "id": 5,
+            "name": "Avoderm",
+            "price": 150000,
+            "description": "AvoDerm GRAIN FREE CHICKEN & VEGETABLE STEW RECIPE",
+            "image": "../src/image/product_5_dog.png"
+        },
+        {
+            "id": 6,
+            "name": "Avoderm",
+            "price": 150000,
+            "description": "AvoDerm Grain Free Salmon & Vegetable Recipe Dry Dog Food",
+            "image": "../src/image/product_6_dog.png"
+        },
+        {
+            "id": 7,
+            "name": "Avoderm",
+            "price": 150000,
+            "description": "AvoDerm GRAIN FREE TURKEY & VEGETABLE STEW RECIPE",
+            "image": "../src/image/product_7_dog.png"
+        },
+        {
+            "id": 8,
+            "name": "Avoderm",
+            "price": 150000,
+            "description": "Avoderm Joint Health Adult Grain Free Chicken Meal Formula Dry Dog Food",
+            "image": "../src/image/product_2_dog.png"
+        },
+        {
+            "id": 9,
+            "name": "Avoderm",
+            "price": 150000,
+            "description": "AvoDerm Natural Advanced Sensitive Support Salmon & Oatmeal Formula",
+            "image": "../src/image/product_9_dog.png"
+        },
+        {
+            "id": 10,
+            "name": "Avoderm",
+            "price": 150000,
+            "description": "Avoderm Natural Chicken Meal and Brown Rice Formula Adult Dry Dog Food",
+            "image": "../src/image/product_2_dog.png"
+        },
+        {
+            "id": 11,
+            "name": "Fussie Cat",
+            "price": 150000,
+            "description": "Fussie Cat Chicken Purée",
+            "image": "../src/image/product_cat_1.jpg"
+        },
+        {
+            "id": 12,
+            "name": "Fussie Cat",
+            "price": 150000,
+            "description": "Fussie Cat Chicken with Beef Purée",
+            "image": "../src/image/product_cat_2.jpg"
+        },
+        {
+            "id": 13,
+            "name": "Fussie Cat",
+            "price": 150000,
+            "description": "Fussie Cat Chicken with Duck Purée",
+            "image": "../src/image/product_cat_3.jpg"
+        },
+        {
+            "id": 14,
+            "name": "Fussie Cat",
+            "price": 150000,
+            "description": "Fussie Cat Chicken with Liver Purée",
+            "image": "../src/image/product_cat_4.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Fussie Cat",
+            "price": 150000,
+            "description": "Fussie Cat Chicken with Vegetables Purée",
+            "image": "../src/image/product_cat_5.jpg"
+        },
+        {
+            "id": 16,
+            "name": "Fussie Cat",
+            "price": 150000,
+            "description": "Fussie Cat Mackerel Purée",
+            "image": "../src/image/product_cat_6.jpg"
+        },
+        {
+            "id": 17,
+            "name": "Fussie Cat",
+            "price": 150000,
+            "description": "Fussie Cat Market Fresh Grain Free Chicken & Turkey Recipe Dry Cat Food",
+            "image": "../src/image/product_cat_7.jpg"
+        },
+        {
+            "id": 18,
+            "name": "Fussie Cat",
+            "price": 150000,
+            "description": "Fussie Cat Market Fresh Grain Free Guinea Fowl & Turkey Meal Recipe Dry Cat Food",
+            "image": "../src/image/product_cat_8.jpg"
+        },
+        {
+            "id": 19,
+            "name": "Fussie Cat",
+            "price": 150000,
+            "description": "Fussie Cat Market Fresh Grain Free Salmon Recipe Dry Cat Food",
+            "image": "../src/image/product_cat_1.jpg"
+        }, {
+            "id": 2,
+            "name": "Fussie Cat",
+            "price": 150000,
+            "description": "Fussie Cat Oceanfish Purée",
+            "image": "../src/image/product_cat_10.jpg"
+        }
+    ]
+}

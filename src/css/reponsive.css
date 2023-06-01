@@ -572,6 +572,28 @@
             opacity: 0;
         }
     }
+    /************Sign up************/
+    .section--signup__wrapper {
+        background-image: url('../image/signup_1.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .signup--form__wrapper {
+        margin-left: -2.6rem;
+    }
+    .signup--form {
+        filter: none;
+    }
+    .signup--form__wrapper {
+        margin-top: 2rem;
+    }
+    .sign--up__form--login {
+        padding-bottom: 4rem;
+    }
+    .sign--up__form--login h5 {
+        color: #fff;
+    }
 }
 
 
@@ -620,4 +642,7 @@
     .sign--up__form--login {
         padding-top: 1rem;
     }
+}
+
+
 }
