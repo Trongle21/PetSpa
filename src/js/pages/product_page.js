@@ -155,9 +155,8 @@ let products = [{
 
 let cart = {}
 
-async function handle_data(data) {
+export async function handle_data(data) {
     let main = document.createElement('main');
-
     main.innerHTML = `
                 <section class="product--section__hero padding-bottom">
                     <div class="product--slick">
@@ -215,7 +214,7 @@ async function handle_data(data) {
             div.classList.add('product--item');
             div.classList.add('l-3');
             div.classList.add('m-6');
-            div.classList.add('c-6');
+            div.classList.add('c-12');
             div.innerHTML = `
                     <div class="product--item__wrapper">
                         <div class="product--item__image" style="background-image: url(${image});">
@@ -236,7 +235,7 @@ async function handle_data(data) {
             })
         }
     }
-    render_product(products)
+    await render_product(products)
 
     return main;
 }
@@ -292,5 +291,3 @@ function render_cart(cart) {
         `;
     }
 }
-
-export { handle_data, cart, products }

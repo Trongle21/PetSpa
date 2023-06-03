@@ -594,6 +594,13 @@
     .sign--up__form--login h5 {
         color: #fff;
     }
+    /************ABOUT************/
+    .about--section__history--info h6 {
+        padding-bottom: 4rem;
+    }
+    .about--section__principles--info .about--title {
+        padding-top: 4rem;
+    }
 }
 
 
@@ -642,7 +649,11 @@
     .sign--up__form--login {
         padding-top: 1rem;
     }
-}
-
-
+    /************ABOUT************/
+    .about--section__history--info h6 {
+        padding-bottom: 4rem;
+    }
+    .about--section__principles--info .about--title {
+        padding-top: 4rem;
+    }
 }

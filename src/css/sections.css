@@ -1091,22 +1091,55 @@
 
 /**********ABOUT**************/
 
+.about--hero__image {
+    width: 100%;
+    padding-top: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .about--section {
     padding-top: 10rem;
 }
 
+.about--image {
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .about--title {
     font-size: 4.2rem;
+    padding-bottom: 3.2rem;
+    font-weight: 700;
 }
 
 .about--title~h6 {
     color: #8e8e8e;
 }
 
-.about--image {
-    width: 90%;
-    padding-top: 90%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.about--section__misstion {
+    padding-top: 26rem;
+    padding-bottom: 26rem;
+}
+
+.about--section__principles--info {
+    padding-bottom: 8.6rem;
+}
+
+.principles-list__name+.principles-list__name {
+    margin-top: 2rem;
+}
+
+.principles-list__name h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 0.4rem;
+}
+
+.principles-list__name h6 {
+    color: #8e8e8e;
 }
