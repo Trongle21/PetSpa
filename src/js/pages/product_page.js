@@ -1,17 +1,17 @@
-// var api_url = 'http://localhost:3000/'
+var api_url = 'http://localhost:3000/'
 
-// let api_course = {
-//     products: 'products',
-// }
+let api_course = {
+    products: 'products',
+}
 
-// async function fetch_data() {
-//     const response = await fetch(api_url + api_course.products, {
-//         method: 'GET'
-//     });
-//     const data = await response.json();
-//     await handle_data(data);
-// }
-// fetch_data()
+async function fetch_data() {
+    const response = await fetch(api_url + api_course.products, {
+        method: 'GET'
+    });
+    const data = await response.json();
+    await handle_data(data);
+}
+fetch_data()
 
 let products = [{
         "id": 1,
@@ -155,24 +155,14 @@ let products = [{
 
 let cart = {}
 
-var currentURL = window.location.href;
-
-function handle_data() {
+async function handle_data(data) {
     let main = document.createElement('main');
+
     main.innerHTML = `
                 <section class="product--section__hero padding-bottom">
                     <div class="product--slick">
                         <div class="div">
                             <div class="product--slick__image" style="background-image: url('./src/image/slick_3.jpg');"></div>
-                        </div>
-                        <div class="div">
-                            <div class="product--slick__image" style="background-image: url('./src/image/slick_2.jpg');"></div>
-                        </div>
-                        <div class="div">
-                            <div class="product--slick__image" style="background-image: url('./src/image/slick_1.jpg');"></div>
-                        </div>
-                        <div class="div">
-                            <div class="product--slick__image" style="background-image: url('./src/image/slick_4.jpg');"></div>
                         </div>
                     </div>
                 </section>
@@ -216,7 +206,7 @@ function handle_data() {
 
             `;
 
-    function render_product(params) {
+    async function render_product(params) {
         // if (!params) return false;
         for (let [k, v] of Object.entries(params)) {
             let { id, name, image, price, description } = v;

@@ -173,15 +173,20 @@ if (document.querySelector('.sign--up__form--login p')) {
 
 import home_page from "./pages/home_page.js"
 
-if (currentURL === 'http://127.0.0.1:5500/index.html') {
+if (location.pathname === '/index.html') {
     document.querySelector('.root').appendChild(home_page())
 }
 
-import { handle_data } from "./pages/product_page.js";
+// import { handle_data } from "./pages/product_page.js";
 
+let app = {
+    home: async function() {
+        let page = await
+        import ("./pages/product_page.js");
+        document.querySelector('.root').appendChild(await page.handle_data());
+    }
+}
 
-if (currentURL === 'http://127.0.0.1:5500/product.html') {
-    const rootElement = document.querySelector('.root');
-    const mainElement = handle_data();
-    rootElement.appendChild(mainElement);
+if (location.pathname === '/product.html') {
+    app.home();
 }

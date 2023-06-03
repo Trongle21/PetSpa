@@ -12,7 +12,7 @@ let headerList = [{
     },
     {
         name: 'Blog',
-        url: 'blog.html'
+        url: 'about.html'
     },
     {
         name: 'Contact',
@@ -28,10 +28,10 @@ export default function page_header() {
         <div class="header--bar">
             <i class="fa-sharp fa-solid fa-bars"></i>
         </div>
-        <div class="header--logo">
+        <a href="index.html" class="header--logo">
             <img src="./src/image/logo.png" alt="">
             <h2>Pet<span>Spa</span></h2>
-        </div>
+        </a>
         <div class="main--account">
             <div  class="main--account__icon">
                 <i class="fa-solid fa-user"></i>
