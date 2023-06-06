@@ -17,11 +17,11 @@ let footerInfoSp = [{
 ];
 let footerInfoAbout = [{
         name: 'About Us',
-        url: '#'
+        url: 'about.html'
     },
     {
         name: 'Blog',
-        url: '#'
+        url: 'https://pawpartner.com/throw-me-a-bone---525-w-52nd-st'
     },
     {
         name: 'Jobs',
@@ -32,6 +32,21 @@ let footerInfoAbout = [{
         url: '#'
     },
 ]
+
+
+let link_contact = [{
+    name: 'Facebook',
+    url: '#',
+    icon: '<i class="fa-brands fa-square-facebook"></i>'
+}, {
+    name: 'Instagram',
+    url: '#',
+    icon: '<i class="fa-brands fa-square-instagram"></i>'
+}, {
+    name: 'Twitter',
+    url: '#',
+    icon: '<i class="fa-brands fa-square-twitter"></i>'
+}, ]
 
 export default function page_footer() {
     let footer = document.createElement('footer');
@@ -72,15 +87,7 @@ export default function page_footer() {
                     <h6 class="fw-800">Get In Touch</h6>
                     <p>Have a question for us? We'll answer your problem here</p>
                     <div class="link--contact">
-                        <a href="">
-                            <i class="fa-brands fa-square-facebook"></i>
-                        </a>
-                        <a href="">
-                            <i class="fa-brands fa-square-instagram"></i>
-                        </a>
-                        <a href="">
-                            <i class="fa-brands fa-square-twitter"></i>
-                        </a>
+
                     </div>
                 </div>
             </div>
@@ -88,16 +95,23 @@ export default function page_footer() {
     </div>
     `;
     footerInfoSp.map((list) => {
-        let li = document.createElement('li');
-        li.innerHTML = list.name;
-        li.setAttribute('href', list.url)
-        footer.querySelector('.footerInfoSp').appendChild(li)
+        let a = document.createElement('a');
+        a.innerHTML = list.name;
+        a.setAttribute('href', list.url);
+        footer.querySelector('.footerInfoSp').appendChild(a);
     });
     footerInfoAbout.map((list) => {
-        let li = document.createElement('li');
-        li.innerHTML = list.name;
-        li.setAttribute('href', list.url)
-        footer.querySelector('.footerInfoAbout').appendChild(li)
+        let a = document.createElement('a');
+        a.innerHTML = list.name;
+        a.setAttribute('href', list.url);
+        footer.querySelector('.footerInfoAbout').appendChild(a);
+    });
+
+    link_contact.map((list) => {
+        let a = document.createElement('a');
+        a.innerHTML = list.icon
+        a.setAttribute('href', `${list.url}`)
+        footer.querySelector('.link--contact').appendChild(a);
     })
 
     return footer;

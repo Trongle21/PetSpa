@@ -491,10 +491,24 @@
         padding-bottom: 2rem;
     }
     .product--info__select {
-        margin-top: 2rem;
         width: 16rem;
     }
+    .product--info {
+        display: flex;
+    }
+    .product--section__search {
+        margin-top: -3rem;
+    }
+    .product--search {
+        position: static;
+    }
+    .search--product {
+        transform: translatey(6rem);
+    }
     /* List Product */
+    .product--list {
+        justify-content: center;
+    }
     .product--item__btn button {
         font-size: 1.4rem;
     }
@@ -510,6 +524,7 @@
         padding-bottom: 2rem;
     }
     .service--mb__title {
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -526,13 +541,21 @@
         font-size: 2.2rem;
     }
     .service--mb__content {
-        margin-top: 4rem;
+        margin-top: 2rem;
     }
     .service--content {
         margin-left: -1rem;
     }
     .service--content__info {
         margin-top: 2rem;
+    }
+    .service--mb__icon i {
+        display: inline-block;
+        font-size: 2.6rem;
+        transition: all var(--animated-slow);
+    }
+    .service--mb__icon i.rotate {
+        transform: rotate(45deg);
     }
     .service--content__detail--list {
         display: flex;
@@ -544,13 +567,14 @@
         border-top: 1px solid #e3e3e3;
     }
     .service--mb__content {
-        max-height: 0;
         overflow: hidden;
         animation: slide-down var(--animated-slow) ease-out forwards;
     }
     .service--mb__content.show--service {
-        max-height: 500px;
         animation: slide-up var(--animated-slow) ease-in forwards;
+    }
+    .service--padding {
+        margin-bottom: 4rem;
     }
     @keyframes slide-up {
         from {
@@ -558,7 +582,7 @@
             opacity: 0;
         }
         to {
-            max-height: 50rem;
+            max-height: 200rem;
             opacity: 1;
         }
     }
@@ -639,6 +663,9 @@
     .service--content__info {
         margin-top: 2rem;
     }
+    .service--padding {
+        margin-bottom: 12rem;
+    }
     /************Sign up************/
     .signup--form__wrapper h2 {
         font-size: 2.8rem;
@@ -655,5 +682,15 @@
     }
     .about--section__principles--info .about--title {
         padding-top: 4rem;
+    }
+}
+
+
+/* PC */
+
+@media (min-width: 1024px) {
+    /************Service************/
+    .service--padding {
+        margin-bottom: 14rem;
     }
 }

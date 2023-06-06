@@ -11,7 +11,7 @@ let headerList = [{
         url: 'product.html'
     },
     {
-        name: 'Blog',
+        name: 'About',
         url: 'about.html'
     },
     {
@@ -19,6 +19,7 @@ let headerList = [{
         url: 'contact.html'
     },
 ];
+
 
 export default function page_header() {
     const header = document.createElement('header');
@@ -90,6 +91,7 @@ export default function page_header() {
             </ul>
         </nav>
     </div>
+
     `;
     /** PC */
     headerList.map((list) => {
