@@ -26,7 +26,6 @@ if (document.querySelector('.header--sign-in button')) {
 
     /** PC **/
     document.querySelector('.header--sign-in button').addEventListener('click', () => {
-        console.log(document.querySelector('.main--account__signin'))
         document.querySelector('.main--account__signin').classList.add('show')
         document.querySelector('.overlay').classList.add('show--overley');
     })
@@ -72,9 +71,7 @@ if (document.querySelector('.header--bar')) {
     });
 }
 
-
-
-
+/** Pay check */
 
 /** API */
 let app = {
@@ -103,26 +100,12 @@ let app = {
         let page = await
         import ("./pages/product_page.js");
         document.querySelector('.root').appendChild(await page.handle_data());
+        await page.fetch_data();
 
         /** Search */
         document.querySelector('.product--section__search i').addEventListener('click', () => {
             document.querySelector('.product--search').classList.toggle('show');
         });
-
-        /** CART */
-
-        const productCart = document.querySelector('.product--cart');
-        document.querySelectorAll('.product--item__btn').forEach((btn) => {
-            btn.addEventListener('click', (e) => {
-                productCart.classList.add('show--cart');
-            })
-        })
-        const closeCart = document.querySelector('.product--cart__info--close');
-        if (closeCart) {
-            closeCart.addEventListener('click', (e) => {
-                productCart.classList.remove('show--cart');
-            });
-        }
     },
 
     /**********SERVICE**************/
@@ -173,10 +156,29 @@ let app = {
     },
 
     /**********ABOUT**************/
+
     about_page: async function() {
         let page = await
         import ("./pages/about_page.js");
         document.querySelector('.root').appendChild(await page.about_page());
+    },
+
+    /**********Payment**************/
+
+    payment_page: async function() {
+        let page = await
+        import ("./pages/payment_page.js")
+        document.querySelector('.root').appendChild(await page.payment_page());
+        page.fetch_product();
+    },
+
+    /**********Payment success**************/
+
+    payment_success_page: async function() {
+        let page = await
+        import ("./pages//payment_success_page.js")
+        document.querySelector('.root').appendChild(await page.payment_success_page());
+        page.fetch_product();
     },
 
     /**********SIGN UP**************/
@@ -214,6 +216,14 @@ if (location.pathname === '/service.html') {
 
 if (location.pathname === '/about.html') {
     app.about_page();
+}
+
+if (location.pathname === '/payment.html') {
+    app.payment_page();
+}
+
+if (location.pathname === '/payment_success.html') {
+    app.payment_success_page();
 }
 
 if (location.pathname === '/signup.html') {

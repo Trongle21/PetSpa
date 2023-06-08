@@ -625,6 +625,20 @@
     .about--section__principles--info .about--title {
         padding-top: 4rem;
     }
+    /************Payment************/
+    .section--pay__wrapper {
+        flex-direction: column-reverse;
+    }
+    .pay--image p {
+        top: 1rem;
+        right: 2rem;
+    }
+    .payment--methods h3 {
+        padding-top: 4rem;
+    }
+    .section--pay__bill--wrapper h3 {
+        padding-top: 4rem;
+    }
 }
 
 

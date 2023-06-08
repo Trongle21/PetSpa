@@ -22,7 +22,6 @@ let home_service = [{
 
 ]
 
-
 let home_package = [{
     name: 'Frendly Pack',
     price: 100,
@@ -122,8 +121,8 @@ async function home_page() {
                         <a href="">
                             <button class="btn btn--primary">Book a Schedule</button>
                         </a>
-                        <a href="">
-                            <button class="btn btn--secondary">Pricing Pack</button>
+                        <a href="about.html">
+                            <button class="btn btn--secondary">About Us</button>
                         </a>
                     </div>
                 </div>
@@ -137,6 +136,7 @@ async function home_page() {
                 <h4 class="heading-lg text-center fw-800">What Can We Do</h4>
                 <h2 class="heading-sm text-center margin-bottom">We lock after little your family, we ensure that we will give the best treat for your little family</h2>
                 <div class="service--section__list padding-bottom row">
+
                 </div>
             </div>
         </section>
@@ -149,7 +149,6 @@ async function home_page() {
                 <div class="pricing--plan_list padding-bottom row">
 
                 </div>
-
             </div>
         </section>
         <section class="team-member--section container-padding">
@@ -178,7 +177,6 @@ async function home_page() {
                     </div>
                     <div class="gift--section__wrapper--image l-6 m-6" style="background-image: url('./src/image/gift_1.png');">
                     </div>
-
                 </div>
             </div>
         </section>

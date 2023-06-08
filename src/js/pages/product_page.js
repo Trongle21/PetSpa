@@ -1,144 +1,17 @@
-let products = [{
-        "id": 1,
-        "name": "Avoderm 1",
-        "price": 140000,
-        "description": "AvoDerm Grain Free Advanced Healthy Weight Turkey Meal Recipe Dry Dog Food",
-        "image": "../src/image/product_1_dog.png"
-    }, {
-        "id": 2,
-        "name": "Avoderm 2",
-        "price": 150000,
-        "description": "AvoDerm GRAIN FREE CHICKEN & VEGETABLE STEW RECIPE",
-        "image": "../src/image/product_2_dog.png"
-    },
-    {
-        "id": 3,
-        "name": "Avoderm 3",
-        "price": 160000,
-        "description": "AvoDerm GRAIN FREE BEEF & POTATO STEW RECIPE",
-        "image": "../src/image/product_3_dog.png"
-    },
-    {
-        "id": 4,
-        "name": "Avoderm 4",
-        "price": 170000,
-        "description": "AvoDerm Grain Free Beef & Vegetable Recipe Dry Dog Food",
-        "image": "../src/image/product_4_dog.png"
-    },
-    {
-        "id": 5,
-        "name": "Avoderm 5",
-        "price": 180000,
-        "description": "AvoDerm GRAIN FREE CHICKEN & VEGETABLE STEW RECIPE",
-        "image": "../src/image/product_5_dog.png"
-    },
-    {
-        "id": 6,
-        "name": "Avoderm 6",
-        "price": 190000,
-        "description": "AvoDerm Grain Free Salmon & Vegetable Recipe Dry Dog Food",
-        "image": "../src/image/product_1_dog.png"
-    },
-    {
-        "id": 7,
-        "name": "Avoderm 7",
-        "price": 200000,
-        "description": "AvoDerm GRAIN FREE TURKEY & VEGETABLE STEW RECIPE",
-        "image": "../src/image/product_7_dog.png"
-    },
-    {
-        "id": 8,
-        "name": "Avoderm 8",
-        "price": 210000,
-        "description": "Avoderm Joint Health Adult Grain Free Chicken Meal Formula Dry Dog Food",
-        "image": "../src/image/product_2_dog.png"
-    },
-    {
-        "id": 9,
-        "name": "Avoderm 9",
-        "price": 220000,
-        "description": "AvoDerm Natural Advanced Sensitive Support Salmon & Oatmeal Formula",
-        "image": "../src/image/product_9_dog.png"
-    },
-    {
-        "id": 10,
-        "name": "Avoderm 10",
-        "price": 230000,
-        "description": "Avoderm Natural Chicken Meal and Brown Rice Formula Adult Dry Dog Food",
-        "image": "../src/image/product_2_dog.png"
-    },
-    {
-        "id": 11,
-        "name": "Fussie Cat 1",
-        "price": 240000,
-        "description": "Fussie Cat Chicken Purée",
-        "image": "../src/image/product_cat_1.jpg"
-    },
-    {
-        "id": 12,
-        "name": "Fussie Cat 2",
-        "price": 250000,
-        "description": "Fussie Cat Chicken with Beef Purée",
-        "image": "../src/image/product_cat_2.jpg"
-    },
-    {
-        "id": 13,
-        "name": "Fussie Cat 3",
-        "price": 260000,
-        "description": "Fussie Cat Chicken with Duck Purée",
-        "image": "../src/image/product_cat_3.jpg"
-    },
-    {
-        "id": 14,
-        "name": "Fussie Cat 4",
-        "price": 270000,
-        "description": "Fussie Cat Chicken with Liver Purée",
-        "image": "../src/image/product_cat_4.jpg"
-    },
-    {
-        "id": 15,
-        "name": "Fussie Cat 5",
-        "price": 280000,
-        "description": "Fussie Cat Chicken with Vegetables Purée",
-        "image": "../src/image/product_cat_5.jpg"
-    },
-    {
-        "id": 16,
-        "name": "Fussie Cat 6",
-        "price": 290000,
-        "description": "Fussie Cat Mackerel Purée",
-        "image": "../src/image/product_cat_6.jpg"
-    },
-    {
-        "id": 17,
-        "name": "Fussie Cat 7",
-        "price": 300000,
-        "description": "Fussie Cat Market Fresh Grain Free Chicken & Turkey Recipe Dry Cat Food",
-        "image": "../src/image/product_cat_7.jpg"
-    },
-    {
-        "id": 18,
-        "name": "Fussie Cat 8",
-        "price": 310000,
-        "description": "Fussie Cat Market Fresh Grain Free Guinea Fowl & Turkey Meal Recipe Dry Cat Food",
-        "image": "../src/image/product_cat_8.jpg"
-    },
-    {
-        "id": 19,
-        "name": "Fussie Cat 9",
-        "price": 320000,
-        "description": "Fussie Cat Market Fresh Grain Free Salmon Recipe Dry Cat Food",
-        "image": "../src/image/product_cat_1.jpg"
-    }, {
-        "id": 20,
-        "name": "Fussie Cat 10",
-        "price": 330000,
-        "description": "Fussie Cat Oceanfish Purée",
-        "image": "../src/image/product_cat_10.jpg"
-    }
-]
+var api_url = 'http://localhost:3000/'
 
-let cart = {}
+let api_course = {
+    products: 'products',
+}
+
+export async function fetch_data() {
+    const response = await fetch(api_url + api_course.products, {
+        method: 'GET'
+    });
+    const data = await response.json();
+    await render_product(data);
+    return data;
+}
 
 export async function handle_data() {
     let main = document.createElement('main');
@@ -152,7 +25,10 @@ export async function handle_data() {
             </section>
             <section class="product--section">
                 <div class="container">
-                    <div class="product--section__wrapper"> 
+                <div class="product--section__wrapper"> 
+                    <div class="cart--icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
                     <div class="product--info">
                         <h4>Cat and Dog</h4>
                         <div class="product--search">
@@ -168,120 +44,141 @@ export async function handle_data() {
                         </div>
                     </div>
                     <div class="product--list">
+       
                     </div>
                     <div class="product--cart">
-                            <div class="product--cart__info">
-                                <div class="product--cart__info--user">
-                                    <div class="user--image" style="background-image: url('./src/image/Kaio_In_the_world_of_fantasy\(1\).png');">
-                                    </div>
-                                    <h6>Kaiosuke</h6>
+                        <div class="product--cart__info">
+                            <div class="product--cart__info--user">
+                                <div class="user--image" style="background-image: url('./src/image/Kaio_In_the_world_of_fantasy\(1\).png');">
                                 </div>
-                                <div class="product--cart__info--close">
-                                    <i> <i class="fa-solid fa-xmark"></i></i>
-                                </div>
+                                <h6>Kaiosuke</h6>
                             </div>
-                            <div class="product--cart__pay">
+                            <div class="product--cart__info--close">
+                                <i> <i class="fa-solid fa-xmark"></i></i>
                             </div>
-                            <div class="product--cart__btn">
-                                <a href="#">
-                                    <button class="btn btn--secondary ">Palce An Order</button>
-                                </a>
-                            </div>
-                            <div class="product--cart__total">
-                                <h4>Total</h4>
-                                <span></span>
+                        </div>
+                        <div class="product--cart__pay">
+                        </div>
+                        <div class="product--cart__btn">
+                            <a href="#">
+                                <button class="btn btn--secondary ">Palce An Order</button>
+                            </a>
+                        </div>
+                        <div class="product--cart__total">
+                            <h4>Total</h4>
+                            <span></span>
                         </div>
                     </div>
-                    </div>
+                </div>
                 </div>
             </section>
 
         `;
 
-    /** Search */
-
-    let input = main.querySelector('.search--product');
-    input.addEventListener('keydown', (e) => {
-        if (e.keyCode === 13) {
-            let key = e.target.value;
-            let array = products.filter(item => {
-                return item.name.includes(key);
-            });
-            clearProductList();
-            render_product(array);
-        }
-    });
-
-    function clearProductList() {
-        let product_list = main.querySelector('.product--list');
-        product_list.innerHTML = '';
-    }
-
-    /** Select */
-    function filterProduct(category) {
-        const filter = products.filter(product => product.name.includes(category));
-        return filter;
-    }
-
-    const selectElement = main.querySelector('.product--info__select');
-    selectElement.addEventListener('change', () => {
-        const selected_category = selectElement.value;
-        if (selected_category === 'cat') {
-            const filter = filterProduct('Fussie Cat');
-            clearProductList();
-            render_product(filter);
-        } else if (selected_category === 'dog') {
-            const filter = filterProduct('Avoderm');
-            clearProductList();
-            render_product(filter);
-        } else if (selected_category === 'cat and dog') {
-            const filter = filterProduct('Avoderm').concat(filterProduct('Fussie Cat'))
-            clearProductList();
-            render_product(filter);
-        }
-    });
-
-    async function render_product(params) {
-        let product_list = main.querySelector('.product--list');
-        for (let [k, v] of Object.entries(params)) {
-            let { id, name, image, price, description } = v;
-            let div = document.createElement('div');
-            div.classList.add('product--item', 'l-3', 'm-6', 'c-9');
-            div.innerHTML = '';
-            div.innerHTML = `
-                <div class="product--item__wrapper">
-                    <div class="product--item__image" style="background-image: url(${image});">
-                    </div>
-                    <div class="product--item__info text-center">
-                        <h3>${name}</h3>
-                        <p>${description}</p>
-                        <h5>${price.toLocaleString()}<span>$</span></h5>
-                    </div>
-                    <div class="product--item__btn">
-                        <button class="btn btn--primary">Add To Cart</button>
-                    </div>
-                </div>
-            `;
-            product_list.appendChild(div);
-            div.querySelector('.product--item__btn').addEventListener('click', () => {
-                add_product(v);
+    main.querySelector('.cart--icon').addEventListener('click', (e) => {
+        const productCart = main.querySelector('.product--cart');
+        productCart.classList.add('show--cart');
+        main.querySelector('.cart--icon').classList.add('hidden');
+        const closeCart = main.querySelector('.product--cart__info--close');
+        if (closeCart) {
+            closeCart.addEventListener('click', (e) => {
+                productCart.classList.remove('show--cart');
+                main.querySelector('.cart--icon').classList.remove('hidden');
             });
         }
-    }
-    await render_product(products);
+    });
 
     return main;
 }
 
 
+async function render_product(params) {
+    let product_list = document.querySelector('.product--list');
+    product_list.innerHTML = '';
+    for (let [k, v] of Object.entries(params)) {
+        let { id, name, image, price, description } = v;
+        let div = document.createElement('div');
+        div.classList.add('product--item', 'l-3', 'm-6', 'c-9');
+        div.innerHTML = '';
+        div.innerHTML = `
+            <div class="product--item__wrapper">
+                <a href="detail_product.html" class="product--item__image" style="background-image: url(${image});">
+                </a href="detail_product.html">
+                <div class="product--item__info text-center">
+                    <h3>${name}</h3>
+                    <p>${description}</p>
+                    <h5>${price.toLocaleString()}<span> $</span></h5>
+                </div>
+                <div class="product--item__btn">
+                    <button class="btn btn--primary">Add To Cart</button>
+                </div>
+            </div>
+        `;
+        product_list.appendChild(div);
+        div.querySelector('.product--item__btn').addEventListener('click', () => {
+            add_product(v);
+        });
+
+        /** Detail Product */
+        div.querySelector('.product--item__image').addEventListener('click', () => {
+            detail_product(v)
+        });
+    }
+
+    /** Search */
+    let input = document.querySelector('.search--product');
+    input.addEventListener('keydown', (e) => {
+        if (e.keyCode === 13) {
+            product_list.innerHTML = '';
+            let key = e.target.value;
+            let array = params.filter(item => {
+                return item.name.includes(key);
+            });
+            // clearProductList();
+            render_product(array);
+        }
+    });
+
+    // function clearProductList() {
+    //     let product_list = document.querySelector('.product--list');
+    //     product_list.innerHTML = '';
+    // }
+
+    /** Select */
+    function filterProduct(category) {
+        const filter = params.filter(product => product.name.includes(category));
+        return filter;
+    }
+
+    const selectElement = document.querySelector('.product--info__select');
+    selectElement.addEventListener('change', () => {
+        const selected_category = selectElement.value;
+        if (selected_category === 'cat') {
+            const filter = filterProduct('Fussie Cat');
+            // clearProductList();
+            render_product(filter);
+        } else if (selected_category === 'dog') {
+            const filter = filterProduct('Avoderm');
+            // clearProductList();
+            render_product(filter);
+        } else if (selected_category === 'cat and dog') {
+            const filter = filterProduct('Avoderm').concat(filterProduct('Fussie Cat'))
+                // clearProductList();
+            render_product(filter);
+        }
+    });
+}
+
+
 function add_product(v) {
-    let { id, name, image, price } = v;
+    let { id, name, image, price, description } = v;
     let new_item = {};
     new_item.name = name;
     new_item.quantity = 1;
     new_item.price = price;
     new_item.total_price = price;
     new_item.image = image;
+    new_item.description = description;
 
     let key = `${id} - ${name} - ${price}`;
 
@@ -294,20 +191,35 @@ function add_product(v) {
     render_cart(cart);
 }
 
+let cart = {}
+
 function render_cart(cart) {
+    /** Show cart */
+
+    const productCart = document.querySelector('.product--cart');
+    productCart.classList.add('show--cart');
+    const closeCart = document.querySelector('.product--cart__info--close');
+    document.querySelector('.cart--icon').classList.add('hidden');
+    if (closeCart) {
+        closeCart.addEventListener('click', (e) => {
+            productCart.classList.remove('show--cart');
+            document.querySelector('.cart--icon').classList.remove('hidden');
+        });
+    }
     let total = 0;
     let product_cart = document.querySelector('.product--cart__pay');
     product_cart.innerHTML = '';
     for (let [k, v] of Object.entries(cart)) {
-        let { name, image, price, quantity, total_price } = v;
+        let { name, image, price, quantity, total_price, description } = v;
         let div = document.createElement('div');
+        div.innerHTML = '';
         div.classList.add('product--cart__pay--wrapper');
         div.innerHTML = `
         <div class="product--cart__pay--image" style="background-image: url(${image})">
         </div>
         <div class="product--cart__pay--info">
             <h3>${name}</h3>
-            <h5>${price.toLocaleString()}<span> Đ</span></h5>
+            <h5>${price.toLocaleString()}<span> $</span></h5>
             <div class="product--quantity">
                 <button class="quantity decrease">-</button>
                 <p>${quantity}</p>
@@ -322,7 +234,7 @@ function render_cart(cart) {
 
         total += total_price;
         document.querySelector('.product--cart__total span').innerHTML = `
-        ${total.toLocaleString()}
+        ${total.toLocaleString()} $
     `;
 
         // Change quantity product
@@ -331,8 +243,19 @@ function render_cart(cart) {
         // Delete product
         div.querySelector('.product--item__delete').addEventListener('click', () => {
             delete_product(k);
+        });
+
+        // pay 
+        document.querySelector('.product--cart__btn').addEventListener('click', () => {
+            handle_product_data(cart)
         })
     }
+}
+
+export async function handle_product_data(cart) {
+    localStorage.setItem('checkoutData', JSON.stringify(cart));
+
+    window.location.href = 'payment.html';
 }
 
 function delete_product(k) {
