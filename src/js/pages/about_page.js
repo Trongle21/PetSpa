@@ -16,11 +16,19 @@ async function about_page() {
     let main = document.createElement('main');
     main.innerHTML = `
     <section class="about--hero container--padding">
-        <div class="about--hero__image" style="background-image: url('./src/image/about_hero_1.jpg');">
+        <div class="about--slide">
+            <div class="about--hero__image" style="background-image: url('./src/image/about_hero_1.jpg');">
+            </div>
         </div>
     </section>
-    <section class="about--section container--padding">
+    <section class="about--section">
         <div class="container">
+            <div class="path--link padding--top">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <h6>Product</h6>
+        </div>
+        <div class="line"></div>
             <div class="about--section__wrapper">
                 <div class="about--section__history row">
                     <div class="about--section__history--info l-4 m-12 c-12">

@@ -373,9 +373,9 @@
 /* Mobile */
 
 @media (max-width:739px) {
-    /**/
-    .header {
-        padding-top: 0.4rem;
+    /*Header*/
+    .page--header {
+        padding: 1rem 1.8rem;
     }
     /*Nav Bar*/
     .header--bar {
@@ -393,39 +393,29 @@
     .header--logo h2 {
         font-size: 2.4rem;
     }
+    .main--account {
+        display: block;
+    }
     .main--account__icon {
         display: block;
     }
     /* Hero content*/
-    .hero--content {
-        flex-direction: column-reverse;
-        text-align: center;
+    .hero--content__detail {
+        top: 66%;
+        width: auto;
+        left: 4rem;
     }
-    .product--item {
-        gap: 1%;
+    .content--info {
+        font-size: 3.6rem;
     }
-    .hero--content__info {
-        background-color: transparent;
-    }
-    .hero--content__info h1 {
-        font-size: 3.4rem;
+    .content--info__des {
+        font-size: 2rem;
     }
     .hero--content__img {
-        width: 80%;
-        padding-top: 80%;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .hero--content__button {
-        flex-direction: column;
-    }
-    .hero--content__button a button {
-        margin-bottom: 2rem;
-    }
-    .hero--content__button a .btn--secondary {
-        width: 20rem;
-        margin-right: 1rem;
+        width: 18rem;
+        height: 20rem;
+        top: 28%;
+        left: 2rem;
     }
     /* Service */
     .service--section {
@@ -449,6 +439,13 @@
         flex-wrap: nowrap;
         overflow-x: auto;
     }
+    .pricing--plan_list::-webkit-scrollbar {
+        width: 0.5em;
+        height: 0.5em;
+    }
+    .pricing--plan_list::-webkit-scrollbar-thumb {
+        background-color: var(--color-background);
+    }
     .plan--price {
         width: 80%;
         margin-right: 1rem;
@@ -466,6 +463,13 @@
         flex-wrap: nowrap;
         overflow-x: auto;
     }
+    .team-member--list::-webkit-scrollbar {
+        width: 0.5em;
+        height: 0.5em;
+    }
+    .team-member--list::-webkit-scrollbar-thumb {
+        background-color: var(--color-background);
+    }
     .team-member--list__staff {
         width: 80%;
         margin-right: 1rem;
@@ -482,7 +486,14 @@
     .gift--section__wrapper--image {
         display: none;
     }
-    /************Product************/
+    /* Footer */
+    .page--footer__link--list {
+        padding-top: 2.6rem;
+    }
+    .page--footer__contact--wrapper {
+        padding-top: 2.6rem;
+    }
+    /************PRODUCT************/
     /* Title */
     .product--info {
         flex-direction: column;
@@ -512,14 +523,18 @@
     .product--item__btn button {
         font-size: 1.4rem;
     }
-    /* Service */
+    .product--item__info~.product--item__btn button {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+    /************SERVICE************/
     .service--section__page--warpper_pc {
         display: none;
     }
     .service--section__page--warpper_mb {
         display: block;
     }
-    .service--section__page-list {
+    .service--section__page--list {
         padding-top: 2rem;
         padding-bottom: 2rem;
     }
@@ -625,7 +640,11 @@
     .about--section__principles--info .about--title {
         padding-top: 4rem;
     }
-    /************Payment************/
+    /************CONTACT************/
+    .contact--form__checkbox h3 {
+        margin-left: 0rem;
+    }
+    /************PAYMENT************/
     .section--pay__wrapper {
         flex-direction: column-reverse;
     }
@@ -638,6 +657,11 @@
     }
     .section--pay__bill--wrapper h3 {
         padding-top: 4rem;
+    }
+    /************DETAIL PRODUCT************/
+    .detail--product__info {
+        padding-left: 0rem;
+        padding-top: 2rem;
     }
 }
 
@@ -655,23 +679,19 @@
     .header--sign-in {
         display: none;
     }
+    .main--account {
+        display: block;
+    }
     .main--account__icon {
         display: block;
     }
     /* Hero content*/
-    .hero--content {
-        flex-direction: column-reverse;
-        text-align: center;
+    .hero--content__detail {}
+    .content--info {
+        font-size: 4.6rem;
     }
-    .hero--content__info h1 {
-        font-size: 5rem;
-    }
-    .hero--content__img {
-        width: 60%;
-        padding-top: 60%;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
+    .content--info__des {
+        font-size: 1.8rem;
     }
     /************Service************/
     .service--content__info {
@@ -703,8 +723,28 @@
 /* PC */
 
 @media (min-width: 1024px) {
-    /************Service************/
+    /************SERVICE************/
     .service--padding {
         margin-bottom: 14rem;
+    }
+}
+
+
+/* mini moblie */
+
+@media (max-width: 390px) {
+    /************PRODUCT************/
+    .product--item__info p {
+        font-size: 1.4rem;
+    }
+    .product--item__info h5 {
+        padding-top: 2rem;
+    }
+    .product--item__btn {
+        margin-bottom: -1rem;
+    }
+    .product--item__info~.product--item__btn button {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }

@@ -1,8 +1,11 @@
 const checkoutData = localStorage.getItem('checkoutData');
 
+console.log(checkoutData)
+
 export async function fetch_product() {
     if (checkoutData) {
         const parsedData = JSON.parse(checkoutData);
+        // console.log(parsedData)
         render_pay_product(parsedData)
     }
 }
@@ -21,14 +24,14 @@ async function render_pay_product(params) {
                 <h4>${name}</h4>
             </div>
             <div class="pay--price">
-                ${price}
+                <span>$ </span>${price}
             </div>
         `;
         document.querySelector('.section--pay__list').appendChild(div)
 
         total += total_price;
         document.querySelector('.section--pay__info--toal p').innerHTML = `
-            $${total} 
+            ${total} 
         `;
     }
 }
@@ -38,7 +41,11 @@ export async function payment_page() {
     main.innerHTML = `
     <section class="section--pay">
         <div class="container">
-            <h2>product payment</h2>
+            <div class="path--link">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <h6>Payment</h6>
+            </div>
             <div class="line"></div>
             <div class="section--pay__wrapper row">
                 <div class="section--pay__bill l-4 m-4 c-12">
@@ -75,7 +82,7 @@ export async function payment_page() {
                             <input name="address" type="address" placeholder="Enter your Adress">
                             <span class="form-message"></span>
                         </div>
-                        <a class="payment--btn" href="payment_success.html">
+                        <a class="payment--btn">
                             <button class="btn btn--primary">Pay now</button>
                         </a>
                     </div>
@@ -93,6 +100,7 @@ export async function payment_page() {
                         </label>
                     </div>
                 </div>
+                <div class="line"></div>
                 <div class="section--pay__info l-4 m-4 c-12">
                     <div class="section--pay__info__wrapper">
                         <div class="section--pay__list">
@@ -101,7 +109,10 @@ export async function payment_page() {
                         <div class="line"></div>
                         <div class="section--pay__info--toal">
                             <h5>Total</h5>
-                            <p></p>
+                            <h4>
+                                <span>$</span>
+                                <p></p>
+                            </h4>
                         </div>
                     </div>
                 </div>
@@ -111,7 +122,7 @@ export async function payment_page() {
     `;
 
     main.querySelector('.payment--btn').addEventListener('click', () => {
-        hande_pay_option(main)
+        handle_pay_option(main);
     })
 
     /** Check option payment */
@@ -129,7 +140,7 @@ export async function payment_page() {
     return main;
 }
 
-function hande_pay_option(main) {
+function handle_pay_option(main) {
     let check_email = main.querySelector('input[name="email"]');
     let check_name = main.querySelector('input[name="name"]');
     let check_phone_number = main.querySelector('input[name="phone_number"]');
@@ -158,7 +169,6 @@ function hande_pay_option(main) {
         const address = main.querySelector('input[name="address"]').value;
         const country = main.querySelector('select[name="country"]').value;
         localStorage.setItem('userInfo', JSON.stringify({ name, email, phone_number, address, country }));
-        console.log(email, name, phone_number, address, country)
+        window.location.href = 'payment_success.html';
     }
-
 }

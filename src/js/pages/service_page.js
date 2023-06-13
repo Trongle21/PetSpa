@@ -121,11 +121,18 @@ async function service_page() {
     let main = document.createElement('main');
     main.innerHTML = `
     <section class="service--section__page pc container--padding">
-        <div class="container">
+        <div class="container--service">
+            <div class="path--link padding--top">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <h6>Service</h6>
+            </div>
+        <div class="line"></div>
             <!-- PC -->
-            <div class="service--section__page--warpper_pc row">
-                <div class="service--section__page-list l-2 m-2">
-                    <ul>
+            <div class="service--section__page--wrapper_pc row">        
+                <div class="service--section__page--list l-2">
+                    <ul class="service--section__page--list">
+
                     </ul>
                 </div>
                 <div class="service--section__page-info l-10 m-10">
@@ -282,8 +289,8 @@ async function service_page() {
             </div>
 
             <!-- Moblie -->
-            <div class="service--section__page--warpper_mb">
-                <div class="service--section__page-list">
+            <div class="service--section__page--wrapper_mb">
+                <div class="service--section__page--list">
                     <div class="service--mb__title">
                         <div class="service--mb__image">
                             <img src="./src/image/service_1.webp" alt="">
@@ -358,7 +365,7 @@ async function service_page() {
                         </div>
                     </div>
                 </div>
-                <div class="service--section__page-list">
+                <div class="service--section__page--list">
                     <div class="service--mb__title">
                         <div class="service--mb__image">
                             <img src="./src/image/service_2.webp" alt="">
@@ -443,7 +450,7 @@ async function service_page() {
                         </div>
                     </div>
                 </div>
-                <div class="service--section__page-list">
+                <div class="service--section__page--list">
                     <div class="service--mb__title">
                         <div class="service--mb__image">
                             <img src="./src/image/service_3.webp" alt="">
@@ -502,7 +509,7 @@ async function service_page() {
                         </div>
                     </div>
                 </div>
-                <div class="service--section__page-list">
+                <div class="service--section__page--list">
                     <div class="service--mb__title">
                         <div class="service--mb__image">
                             <img src="./src/image/service_4.webp" alt="">
@@ -558,7 +565,7 @@ async function service_page() {
     `;
 
     data_service.forEach((service) => {
-        let service_section = main.querySelector('.service--section__page-list ul');
+        let service_section = main.querySelector('.service--section__page--list ul');
         let li = document.createElement('li');
         li.innerHTML = `
            ${service.name}

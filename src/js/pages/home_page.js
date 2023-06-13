@@ -1,3 +1,41 @@
+let home_hero = [{
+        name: 'Your Pet is Part of Our Family',
+        description: 'Let us treat your pet like our own family with best service and special package',
+        image: './src/image/hero_bg_1.jpg',
+        button: "btn btn--primary"
+    },
+    {
+        name: 'Your Pet is Part of Our Family',
+        description: 'Let us treat your pet like our own family with best service and special package',
+        image: './src/image/hero_bg_2.jpg',
+        button: "btn btn--primary"
+    },
+    {
+        name: 'Your Pet is Part of Our Family',
+        description: 'Let us treat your pet like our own family with best service and special package',
+        image: './src/image/hero_bg_3.jpg',
+        button: "btn btn--primary"
+    },
+    {
+        name: 'Your Pet is Part of Our Family',
+        description: 'Let us treat your pet like our own family with best service and special package',
+        image: './src/image/hero_bg_4.jpg',
+        button: "btn btn--primary"
+    },
+    {
+        name: 'Your Pet is Part of Our Family',
+        description: 'Let us treat your pet like our own family with best service and special package',
+        image: './src/image/hero_bg_5.jpg',
+        button: "btn btn--primary"
+    },
+    {
+        name: 'Your Pet is Part of Our Family',
+        description: 'Let us treat your pet like our own family with best service and special package',
+        image: './src/image/hero_bg_6.jpg',
+        button: "btn btn--primary"
+    },
+]
+
 let home_service = [{
         name: 'Service',
         description: 'Vaccination are carried oit to keep pets in excellent condition',
@@ -112,21 +150,19 @@ let home_member = [{
 async function home_page() {
     let main = document.createElement('main')
     main.innerHTML = `
-        <section class="hero--section container-padding">
-            <div class="hero--content row container padding-bottom ">
-                <div class="hero--content__info l-6 m-12 c-12  ">
-                    <h1>Your Pet is Part of Our Family</h1>
-                    <p class="margin-bottom">Let us treat your pet like our own family with best service and special package</p>
-                    <div class="hero--content__button">
-                        <a href="">
-                            <button class="btn btn--primary">Book a Schedule</button>
-                        </a>
-                        <a href="about.html">
-                            <button class="btn btn--secondary">About Us</button>
-                        </a>
-                    </div>
+        <section class="hero--section">
+            <div class="hero--section__container">
+                <div class="hero--content">
+                
                 </div>
-                <div class="hero--content__img l-6 m-12 c-12" style="background-image: url('./src/image/backgroung.webp');"></div>
+            </div>
+            <div class="buttons">
+                <button id="prev">
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <button id="next">
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
             </div>
         </section>
 
@@ -182,7 +218,36 @@ async function home_page() {
         </section>
         `;
 
-    function handle_data_home(home_service, home_package, home_member) {
+    function handle_data_home(home_service, home_package, home_member, home_hero) {
+
+        /** Hero content */
+
+        home_hero.forEach((e) => {
+            let { name, description, image, button } = e;
+            let div = document.createElement('div');
+            div.classList.add('hero--content__img');
+            div.style.backgroundImage = `url('${image}')`;
+            div.innerHTML = `
+                <div class="hero--content__detail">
+                    <div class="content--info">${name}</div>
+                    <div class="content--info__des">${description}</div>
+                    <a><button class="${button}">Book a Schedule</button></a>
+                </div>
+            `;
+            main.querySelector('.hero--content').appendChild(div);
+        })
+
+        setTimeout(() => {
+            main.querySelector('#prev').addEventListener('click', () => {
+                let lists = main.querySelectorAll('.hero--content__img');
+                main.querySelector('.hero--content').prepend(lists[lists.length - 1]);
+            })
+
+            main.querySelector('#next').addEventListener('click', () => {
+                let lists = main.querySelectorAll('.hero--content__img');
+                main.querySelector('.hero--content').appendChild(lists[0]);
+            })
+        }, 300)
 
         /** Service */
         home_service.forEach((e) => {
@@ -277,7 +342,7 @@ async function home_page() {
         }
 
     }
-    handle_data_home(home_service, home_package, home_member);
+    handle_data_home(home_service, home_package, home_member, home_hero);
     return main;
 }
 

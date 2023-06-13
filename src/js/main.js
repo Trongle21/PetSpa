@@ -19,7 +19,6 @@ if (root && location.pathname !== '/signup.html') {
     root.insertAdjacentElement('afterend', footer);
 }
 
-
 /**** Show signin ****/
 
 if (document.querySelector('.header--sign-in button')) {
@@ -34,7 +33,7 @@ if (document.querySelector('.header--sign-in button')) {
         document.querySelector('.overlay').classList.remove('show--overley');
     });
     /** Moblie & Tablet */
-    document.querySelector('.main--account').addEventListener('click', () => {
+    document.querySelector('.main--account__icon').addEventListener('click', () => {
         document.querySelector('.main--account__signin').classList.add('show');
         document.querySelector('.overlay').classList.add('show--overley');
     })
@@ -81,7 +80,7 @@ let app = {
         import ("./pages/home_page.js");
         document.querySelector('.root').appendChild(await page.home_page());
 
-        /** service scale */
+        /** Service scale */
         let plan_price = document.querySelectorAll('.plan--price')
         plan_price.forEach((plan, index) => {
             plan.addEventListener('mouseenter', () => {
@@ -100,12 +99,29 @@ let app = {
         let page = await
         import ("./pages/product_page.js");
         document.querySelector('.root').appendChild(await page.handle_data());
-        await page.fetch_data();
 
         /** Search */
-        document.querySelector('.product--section__search i').addEventListener('click', () => {
-            document.querySelector('.product--search').classList.toggle('show');
+        let product_search = document.querySelector('.product--search');
+        let search_icon = document.querySelector('.product--section__search i');
+
+        search_icon.addEventListener('click', (event) => {
+            // event.stopPropagation(); //
+            product_search.classList.add('show');
         });
+
+        document.addEventListener('click', (event) => {
+            if (!product_search.contains(event.target) && !search_icon.contains(event.target)) {
+                product_search.classList.remove('show');
+            }
+        });
+    },
+    /**********DETAIL PRODUCT**************/
+    detail_product: async function() {
+        let page = await
+        import ("./pages/detail_product_page.js");
+        document.querySelector('.root').appendChild(await page.detail_product_page());
+        await page.fetch_data_detail();
+        await page.slide();
     },
 
     /**********SERVICE**************/
@@ -133,21 +149,21 @@ let app = {
             });
         });
         document.querySelector('#service-2').addEventListener('click', () => {
-            const offset = document.querySelector('.scroll--sv-2').offsetTop - 200;
+            const offset = document.querySelector('.scroll--sv-2').offsetTop + 60;
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
             });
         });
         document.querySelector('#service-3').addEventListener('click', () => {
-            const offset = document.querySelector('.scroll--sv-3').offsetTop - 200;
+            const offset = document.querySelector('.scroll--sv-3').offsetTop + 60;
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
             });
         });
         document.querySelector('#service-4').addEventListener('click', () => {
-            const offset = document.querySelector('.scroll--sv-4').offsetTop - 200;
+            const offset = document.querySelector('.scroll--sv-4').offsetTop + 60;
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
@@ -162,6 +178,24 @@ let app = {
         import ("./pages/about_page.js");
         document.querySelector('.root').appendChild(await page.about_page());
     },
+
+    /**********CONTACT**************/
+
+    contact_page: async function() {
+        let page = await
+        import ("./pages/contact_page.js");
+        document.querySelector('.root').appendChild(await page.contact_page());
+    },
+
+    /**********CONTACT SUCCESS**************/
+
+    contact_success_page: async function() {
+        let page = await
+        import ("./pages/contact_success_page.js");
+        document.querySelector('.root').appendChild(await page.contact_success_page());
+
+    },
+
 
     /**********Payment**************/
 
@@ -210,6 +244,10 @@ if (location.pathname === '/product.html') {
     app.product_page();
 }
 
+if (location.pathname === '/detail_product.html') {
+    app.detail_product();
+}
+
 if (location.pathname === '/service.html') {
     app.serice_page();
 }
@@ -217,6 +255,16 @@ if (location.pathname === '/service.html') {
 if (location.pathname === '/about.html') {
     app.about_page();
 }
+
+if (location.pathname === '/contact.html') {
+    app.contact_page();
+}
+
+
+if (location.pathname === '/contact_success.html') {
+    app.contact_success_page();
+}
+
 
 if (location.pathname === '/payment.html') {
     app.payment_page();

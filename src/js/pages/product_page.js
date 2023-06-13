@@ -4,27 +4,26 @@ let api_course = {
     products: 'products',
 }
 
-export async function fetch_data() {
-    const response = await fetch(api_url + api_course.products, {
-        method: 'GET'
-    });
-    const data = await response.json();
-    await render_product(data);
-    return data;
-}
+let cart = {}
 
-export async function handle_data() {
+import { fetch_data, change_product } from "../helper.js";
+
+async function handle_data() {
     let main = document.createElement('main');
     main.innerHTML = `
-            <section class="product--section__hero padding-bottom">
-                <div class="product--slick">
-                    <div class="div">
-                        <div class="product--slick__image" style="background-image: url('./src/image/slick_3.jpg');"></div>
-                    </div>
+            <section class="product--section__hero>
+                <div class="product--slide">
+                    <div class="product--slide__image" style="background-image: url('./src/image/slide_3.jpg');"></div>
                 </div>
             </section>
             <section class="product--section">
                 <div class="container">
+                    <div class="path--link padding--top">
+                        <a href="index.html">Home</a>
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <h6>Product</h6>
+                    </div>
+                    <div class="line"></div>
                 <div class="product--section__wrapper"> 
                     <div class="cart--icon">
                         <i class="fa-solid fa-cart-shopping"></i>
@@ -37,7 +36,7 @@ export async function handle_data() {
                         <div class="product--section__search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <select name="" id="" class="product--info__select">
-                                <option value="cat and dog">Cat and Dog</option>
+                            <option value="cat and dog">Cat and Dog</option>
                                 <option value="cat">Cat</option>
                                 <option value="dog">Dog</option>
                             </select>
@@ -46,6 +45,7 @@ export async function handle_data() {
                     <div class="product--list">
        
                     </div>
+
                     <div class="product--cart">
                         <div class="product--cart__info">
                             <div class="product--cart__info--user">
@@ -70,10 +70,298 @@ export async function handle_data() {
                         </div>
                     </div>
                 </div>
+                <div class="pagination--product">
+                    <div class="pagination--item btn--prev">
+                        <a class="pagination--item__link">
+                            <i class="fa-sharp fa-solid fa-left-long"></i>
+                        </a>
+                    </div>
+                    <div class="pagination--product">
+                        <ul>
+
+                        </ul>
+                        <div class="pagination--item btn--next">
+                            <a class="pagination--item__link">
+                                <i class="fa-sharp fa-solid fa-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </section>
 
         `;
+
+    /** Pagination */
+    let per_page = 8;
+    let current_page = 1;
+    let start = 0;
+    let end = per_page;
+
+    let isNextCheck = false;
+    let isPrevCheck = false;
+    let isChangeCheck = false
+
+    function handle_current_page() {
+        start = (current_page - 1) * per_page;
+        end = per_page * current_page;
+    }
+
+    let get_data = {
+        method: 'Get',
+        url: api_url + api_course.products,
+        body: {},
+        async callback(params) {
+            await render_product(params);
+            await render_pagination(params);
+        }
+    };
+
+    fetch_data(get_data);
+
+    async function render_pagination(params) {
+        let total_page = Math.ceil(params.length / per_page);
+        let html = '';
+        html += `
+        <li class="pagination--item active">
+            <a class="pagination--item__link">1</a>
+        </li>`;
+
+        for (let i = 2; i <= total_page; i++) {
+            html += `
+            <li class="pagination--item">
+                <a class="pagination--item__link">${i}</a>
+            </li>`;
+        }
+
+        main.querySelector('.pagination--product ul').innerHTML = html;
+    }
+
+    async function render_product(params) {
+        let total_page = Math.ceil(params.length / per_page);
+        let product_list = main.querySelector('.product--list');
+        product_list.innerHTML = '';
+
+        params.map((product, index) => {
+            let { id, name, image, price, description } = product;
+            let div = document.createElement('div');
+            div.classList.add('product--item', 'l-3', 'm-6', 'c-11');
+            if (name && index >= start && index < end) {
+                div.innerHTML = `
+                <div class="product--item__wrapper">
+                    <div class="product--item__wrapper">
+                    <a class="product--item__image" style="background-image: url(${image});"></a>
+                    <div class="product--item__info text-center">
+                        <h3>${name}</h3>
+                        <p>${description}</p>
+                        <h5><span>$</span> ${price.toLocaleString()}</h5>
+                    </div>
+                    </div>
+                    <div class="product--item__btn">
+                        <button class="btn btn--primary">Add To Cart</button>
+                    </div>
+                </div>
+                `;
+
+                product_list.appendChild(div);
+
+                div.querySelector('.product--item__btn').addEventListener('click', () => {
+                    add_product(product);
+                });
+
+                div.querySelector('.product--item__image').addEventListener('click', () => {
+                    detail_product(product);
+                });
+            }
+        });
+        async function detail_product(params) {
+            if (!params) return false;
+
+            let { id, name, price, description, detail, image, image_2 } = params;
+            let detail_product = {};
+            detail_product.name = name;
+            detail_product.quantity = 1;
+            detail_product.price = price;
+            detail_product.total_price = price;
+            detail_product.image = image;
+            detail_product.description = description;
+            detail_product.detail = detail;
+            detail_product.image_2 = image_2;
+
+            let key = ` ${id} - ${name} - ${price}`;
+
+            cart[key] = detail_product;
+
+            localStorage.setItem('checkOutDetailProduct', JSON.stringify(cart));
+            window.location.href = 'detail_product.html';
+        }
+
+        /** Select Product */
+        const selectElement = main.querySelector('.product--info__select');
+        let timeout = null;
+
+        selectElement.addEventListener('change', async() => {
+            clearTimeout(timeout);
+            timeout = setTimeout(async() => {
+                const selected_category = selectElement.value;
+
+                get_data.callback = async(params) => {
+                    let filtered_products = [];
+                    if (selected_category === 'cat and dog') {
+                        const filter1 = filterProduct('Fussie Cat', params);
+                        const filter2 = filterProduct('Avoderm', params);
+                        const filter3 = filterProduct('Smallbatch', params);
+                        const filter4 = filterProduct('Bark', params);
+                        filtered_products = filter1.concat(filter2).concat(filter3).concat(filter4)
+                    } else if (selected_category === 'dog') {
+                        const filterdog1 = filterProduct('Avoderm', params);
+                        const filterdog2 = filterProduct('Bark', params);
+                        filtered_products = filterdog1.concat(filterdog2)
+                    } else if (selected_category === 'cat') {
+                        const filtercat1 = filterProduct('Fussie Cat', params);
+                        const filtercat2 = filterProduct('Smallbatch', params);
+                        filtered_products = filtercat1.concat(filtercat2);
+                    } else {
+                        filtered_products = params;
+                    }
+
+
+                    total_page = Math.ceil(filtered_products.length / per_page);
+                    await render_product(filtered_products);
+                    await render_pagination(filtered_products)
+                };
+
+                await fetch_data(get_data);
+            }, 500);
+        });
+
+        /** Filter Product */
+        function filterProduct(category, products) {
+            const filter = products.filter(product => product.name.includes(category));
+            return filter;
+        }
+
+        /** Change page */
+
+        setTimeout(() => {
+            async function change_pagination() {
+                let pagination_items = main.querySelectorAll('.pagination--product ul li');
+                for (let i = 0; i < pagination_items.length; i++) {
+                    pagination_items[i].addEventListener('click', () => {
+                        let value = i + 1;
+                        current_page = value;
+                        for (let j = 0; j < pagination_items.length; j++) {
+                            pagination_items[j].classList.remove('active');
+                        }
+                        pagination_items[i].classList.add('active');
+
+                        if (current_page === 1) {
+                            main.querySelector('.btn--prev').classList.add('click');
+                        }
+                        if (current_page !== 1) {
+                            main.querySelector('.btn--prev').classList.remove('click');
+                        }
+                        if (current_page === total_page) {
+                            main.querySelector('.btn--next').classList.add('click');
+                        }
+                        if (current_page !== total_page) {
+                            main.querySelector('.btn--next').classList.remove('click');
+                        }
+                        handle_current_page(current_page);
+                        render_product(params);
+
+                        change_pagination()
+                    });
+                }
+            }
+
+            change_pagination()
+        }, 500)
+
+
+        /** Next page */
+
+        async function next_btn() {
+            const next_btn = main.querySelector('.btn--next');
+            if (!isNextCheck) {
+                next_btn.addEventListener('click', () => {
+                    current_page++;
+                    if (current_page > total_page) {
+                        current_page = total_page;
+                    }
+                    main.querySelector('.btn--prev').classList.remove('click');
+                    if (current_page === total_page) {
+                        main.querySelector('.btn--next').classList.add('click');
+                    }
+
+                    let pagination_items = main.querySelectorAll('.pagination--product ul li');
+                    pagination_items.forEach((e, index) => {
+                        e.classList.remove('active');
+                        if (index === current_page - 1) {
+                            e.classList.add('active')
+                        }
+                    })
+                    handle_current_page(current_page);
+                    render_product(params);
+                })
+                isNextCheck = true;
+            }
+        }
+        next_btn()
+
+
+        /** Back page */
+
+        async function prev_btn() {
+            const prev_btn = main.querySelector('.btn--prev');
+            if (!isPrevCheck) {
+                prev_btn.addEventListener('click', () => {
+                    current_page--;
+                    if (current_page <= 1) {
+                        current_page = 1;
+                    }
+                    main.querySelector('.btn--next').classList.remove('click');
+                    if (current_page === 1) {
+                        main.querySelector('.btn--prev').classList.add('click');
+                    }
+                    let pagination_items = main.querySelectorAll('.pagination--product ul li');
+                    pagination_items.forEach((e, index) => {
+                        e.classList.remove('active');
+                        if (index === current_page - 1) {
+                            e.classList.add('active')
+                        }
+                    })
+                    handle_current_page(current_page)
+                    render_product(params);
+
+                })
+                isPrevCheck = true;
+            }
+        }
+        prev_btn()
+    }
+
+    /** Search product */
+
+    let input = main.querySelector('.search--product');
+    let timeout = null;
+
+    input.addEventListener('input', async(e) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(async() => {
+            let key = e.target.value;
+
+            get_data.callback = async(params) => {
+                let filtered_products = params.filter(product => product.name.toLowerCase().includes(key));
+                await render_product(filtered_products);
+            };
+
+            await fetch_data(get_data);
+        }, 500);
+    });
+
+
+    /** Show cart */
 
     main.querySelector('.cart--icon').addEventListener('click', (e) => {
         const productCart = main.querySelector('.product--cart');
@@ -87,88 +375,10 @@ export async function handle_data() {
             });
         }
     });
-
     return main;
 }
 
-
-async function render_product(params) {
-    let product_list = document.querySelector('.product--list');
-    product_list.innerHTML = '';
-    for (let [k, v] of Object.entries(params)) {
-        let { id, name, image, price, description } = v;
-        let div = document.createElement('div');
-        div.classList.add('product--item', 'l-3', 'm-6', 'c-9');
-        div.innerHTML = '';
-        div.innerHTML = `
-            <div class="product--item__wrapper">
-                <a href="detail_product.html" class="product--item__image" style="background-image: url(${image});">
-                </a href="detail_product.html">
-                <div class="product--item__info text-center">
-                    <h3>${name}</h3>
-                    <p>${description}</p>
-                    <h5>${price.toLocaleString()}<span> $</span></h5>
-                </div>
-                <div class="product--item__btn">
-                    <button class="btn btn--primary">Add To Cart</button>
-                </div>
-            </div>
-        `;
-        product_list.appendChild(div);
-        div.querySelector('.product--item__btn').addEventListener('click', () => {
-            add_product(v);
-        });
-
-        /** Detail Product */
-        div.querySelector('.product--item__image').addEventListener('click', () => {
-            detail_product(v)
-        });
-    }
-
-    /** Search */
-    let input = document.querySelector('.search--product');
-    input.addEventListener('keydown', (e) => {
-        if (e.keyCode === 13) {
-            product_list.innerHTML = '';
-            let key = e.target.value;
-            let array = params.filter(item => {
-                return item.name.includes(key);
-            });
-            // clearProductList();
-            render_product(array);
-        }
-    });
-
-    // function clearProductList() {
-    //     let product_list = document.querySelector('.product--list');
-    //     product_list.innerHTML = '';
-    // }
-
-    /** Select */
-    function filterProduct(category) {
-        const filter = params.filter(product => product.name.includes(category));
-        return filter;
-    }
-
-    const selectElement = document.querySelector('.product--info__select');
-    selectElement.addEventListener('change', () => {
-        const selected_category = selectElement.value;
-        if (selected_category === 'cat') {
-            const filter = filterProduct('Fussie Cat');
-            // clearProductList();
-            render_product(filter);
-        } else if (selected_category === 'dog') {
-            const filter = filterProduct('Avoderm');
-            // clearProductList();
-            render_product(filter);
-        } else if (selected_category === 'cat and dog') {
-            const filter = filterProduct('Avoderm').concat(filterProduct('Fussie Cat'))
-                // clearProductList();
-            render_product(filter);
-        }
-    });
-}
-
+/** Detail Product */
 
 function add_product(v) {
     let { id, name, image, price, description } = v;
@@ -181,7 +391,6 @@ function add_product(v) {
     new_item.description = description;
 
     let key = `${id} - ${name} - ${price}`;
-
     if (cart[key]) {
         cart[key]['quantity'] += 1;
         cart[key]['total_price'] = cart[key]['quantity'] * cart[key]['price'];
@@ -191,7 +400,6 @@ function add_product(v) {
     render_cart(cart);
 }
 
-let cart = {}
 
 function render_cart(cart) {
     /** Show cart */
@@ -209,17 +417,19 @@ function render_cart(cart) {
     let total = 0;
     let product_cart = document.querySelector('.product--cart__pay');
     product_cart.innerHTML = '';
-    for (let [k, v] of Object.entries(cart)) {
-        let { name, image, price, quantity, total_price, description } = v;
-        let div = document.createElement('div');
-        div.innerHTML = '';
-        div.classList.add('product--cart__pay--wrapper');
-        div.innerHTML = `
+    if (cart !== undefined && cart !== null) {
+        for (let [k, v] of Object.entries(cart)) {
+            let { id, name, image, price, quantity, total_price, description } = v;
+            console.log(k)
+            let div = document.createElement('div');
+            div.innerHTML = '';
+            div.classList.add('product--cart__pay--wrapper');
+            div.innerHTML = `
         <div class="product--cart__pay--image" style="background-image: url(${image})">
         </div>
         <div class="product--cart__pay--info">
             <h3>${name}</h3>
-            <h5>${price.toLocaleString()}<span> $</span></h5>
+            <h5><span>$</span> ${price.toLocaleString()}</h5>
             <div class="product--quantity">
                 <button class="quantity decrease">-</button>
                 <p>${quantity}</p>
@@ -230,31 +440,33 @@ function render_cart(cart) {
             <button>Delete</button>
         </div>
     `;
-        product_cart.appendChild(div);
 
-        total += total_price;
-        document.querySelector('.product--cart__total span').innerHTML = `
-        ${total.toLocaleString()} $
-    `;
+            product_cart.appendChild(div);
 
-        // Change quantity product
-        change_product(div, k);
+            total += total_price;
+            document.querySelector('.product--cart__total span').innerHTML = `
+                ${total.toLocaleString()} $
+            `;
 
-        // Delete product
-        div.querySelector('.product--item__delete').addEventListener('click', () => {
-            delete_product(k);
-        });
+            // Change quantity product
+            change_product(div, k);
 
-        // pay 
-        document.querySelector('.product--cart__btn').addEventListener('click', () => {
-            handle_product_data(cart)
-        })
+            // Delete product
+            div.querySelector('.product--item__delete').addEventListener('click', () => {
+                delete_product(k);
+            });
+
+            // pay 
+            document.querySelector('.product--cart__btn').addEventListener('click', () => {
+                handle_product_data(cart)
+            })
+        }
     }
 }
 
-export async function handle_product_data(cart) {
+async function handle_product_data(cart) {
     localStorage.setItem('checkoutData', JSON.stringify(cart));
-
+    // console.log(cart)
     window.location.href = 'payment.html';
 }
 
@@ -269,24 +481,4 @@ function delete_product(k) {
     }
 }
 
-function change_product(div, k) {
-    div.querySelectorAll('.quantity').forEach((input) => {
-        input.addEventListener('click', (e) => {
-            if (e.target.classList.contains('decrease')) {
-                cart[k]['quantity'] -= 1;
-                if (cart[k]['quantity'] < 1) {
-                    alert('You can not decrease the quatiry of this product anymore')
-                    cart[k]['quantity'] = 1;
-                } else {
-                    cart[k]['total_price'] = cart[k]['quantity'] * cart[k]['price']
-                }
-                render_cart(cart);
-            }
-            if (e.target.classList.contains('increase')) {
-                cart[k]['quantity'] += 1;
-                cart[k]['total_price'] = cart[k]['quantity'] * cart[k]['price']
-                render_cart(cart);
-            }
-        })
-    })
-}
+export { handle_data, render_cart, cart }

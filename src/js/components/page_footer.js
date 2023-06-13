@@ -1,18 +1,18 @@
 let footerInfoSp = [{
         name: 'Contact Us',
-        url: '#'
+        url: 'contact.html'
     },
     {
-        name: 'Online Chat',
-        url: '#'
+        name: 'Service',
+        url: 'service.html'
     },
     {
-        name: 'Whatsapp',
-        url: '#'
+        name: 'Product',
+        url: 'product.html'
     },
     {
-        name: 'Facebook',
-        url: '#'
+        name: 'Signup',
+        url: 'signup.html'
     },
 ];
 let footerInfoAbout = [{
@@ -24,12 +24,12 @@ let footerInfoAbout = [{
         url: 'https://pawpartner.com/throw-me-a-bone---525-w-52nd-st'
     },
     {
-        name: 'Jobs',
-        url: '#'
+        name: 'Google',
+        url: 'google.com'
     },
     {
-        name: 'Careers',
-        url: '#'
+        name: 'Youtube',
+        url: 'youtube.com'
     },
 ]
 
@@ -54,7 +54,7 @@ export default function page_footer() {
     footer.innerHTML = `
     <div class="container">
         <div class="page--footer row">
-            <div class="page--footer__info l-4 m-6 c-6">
+            <div class="page--footer__info l-4 m-6 c-12">
                 <div class="page--footer__info--wrapper">
                     <div class="page--footer__info--logo">
                         <div class="header--logo">
@@ -67,7 +67,7 @@ export default function page_footer() {
                     </div>
                 </div>
             </div>
-            <div class="page--footer__link l-4 m-6 c-6">
+            <div class="page--footer__link l-4 m-6 c-12">
                 <div class="page--footer__link--wrapper row">
                     <nav class="page--footer__link--list l-4 m-4 c-4">
                         <h6 class=" fw-800">Support</h6>
@@ -82,7 +82,7 @@ export default function page_footer() {
                     </nav>
                 </div>
             </div>
-            <div class="page--footer__contact l-4 m-6 c-6">
+            <div class="page--footer__contact l-4 m-6 c-12">
                 <div class="page--footer__contact--wrapper">
                     <h6 class="fw-800">Get In Touch</h6>
                     <p>Have a question for us? We'll answer your problem here</p>

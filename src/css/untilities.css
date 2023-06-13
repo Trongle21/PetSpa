@@ -12,7 +12,11 @@
 }
 
 .padding-bottom {
-    padding-bottom: var(--section-gap);
+    padding-bottom: 4rem;
+}
+
+.padding--top {
+    padding-top: 4rem;
 }
 
 
