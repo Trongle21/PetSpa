@@ -1,6 +1,5 @@
 const checkoutData = localStorage.getItem('checkoutData');
 
-console.log(checkoutData)
 
 export async function fetch_product() {
     if (checkoutData) {
@@ -39,6 +38,14 @@ async function render_pay_product(params) {
 export async function payment_page() {
     let main = document.createElement('main');
     main.innerHTML = `
+    <section class="section--hero">
+        <div class="section--hero__image" style="background-image: url('./src/image/payment_bg_1.jpg');">
+            <div class="section--hero__wrapper">
+                <div class="content--hero__name">For your pet’s all natural life</div>
+                <div class="content--hero__des">You can’t buy happiness but you can buy Husky and that’s pretty much it</div>
+            </div>
+        </div>
+    </section>
     <section class="section--pay">
         <div class="container">
             <div class="path--link">

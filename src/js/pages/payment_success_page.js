@@ -37,6 +37,14 @@ export async function payment_success_page() {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     let main = document.createElement('main');
     main.innerHTML = `
+    <section class="section--hero">
+        <div class="section--hero__image" style="background-image: url('./src/image/payment_success_bg_1.jpg');">
+            <div class="section--hero__wrapper">
+                <div class="content--hero__name">Thanks for ordering</div>
+                <div class="content--hero__des">See you next time shopping!<div>
+            </div>
+        </div>
+    </section>
     <section class="section--pay">
         <div class="container">
             <div class="path--link">

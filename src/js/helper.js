@@ -42,13 +42,11 @@ function change_product(div, k) {
                     cart[k]['total_price'] = cart[k]['quantity'] * cart[k]['price']
                 }
                 render_cart(cart);
-                // render_detail_product(cart)
             }
             if (e.target.classList.contains('increase')) {
                 cart[k]['quantity'] += 1;
                 cart[k]['total_price'] = cart[k]['quantity'] * cart[k]['price']
                 render_cart(cart);
-                // render_detail_product(cart)
             }
         })
     })

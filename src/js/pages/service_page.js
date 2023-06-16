@@ -120,16 +120,24 @@ let pet_sitting = {
 async function service_page() {
     let main = document.createElement('main');
     main.innerHTML = `
+    <section class="section--hero">
+        <div class="section--hero__image" style="background-image: url('./src/image/service_bg_1.jpg');">
+            <div class="section--hero__wrapper">
+                <div class="content--hero__name">We love pets too</div>
+                <div class="content--hero__des">Your pet will have the environment of home, familiar smells, sights, and sounds, as well as food and treats<div>
+            </div>
+        </div>
+    </section>
     <section class="service--section__page pc container--padding">
         <div class="container--service">
-            <div class="path--link padding--top">
+            <div class="path--link" data-aos="fade-right">
                 <a href="index.html">Home</a>
                 <i class="fa-solid fa-chevron-right"></i>
                 <h6>Service</h6>
             </div>
         <div class="line"></div>
             <!-- PC -->
-            <div class="service--section__page--wrapper_pc row">        
+            <div class="service--section__page--warpper_pc row">        
                 <div class="service--section__page--list l-2">
                     <ul class="service--section__page--list">
 
@@ -138,36 +146,36 @@ async function service_page() {
                 <div class="service--section__page-info l-10 m-10">
                     <div class="service--blog scroll--sv-1 service--padding">
                         <div class="service--wrapper row">
-                            <div class="service--image l-2 m-2">
+                            <div class="service--image l-2 m-2" data-aos="fade-right">
                                 <img src="./src/image/service_1.webp" alt="">
                             </div>
                             <div class="service--des l-10 m-10">
                                 <div class="service--title">
-                                    <h6>Pet Walking</h6>
-                                    <a href="">
+                                    <h6 data-aos="fade-right">Pet Walking</h6>
+                                    <a data-aos="fade-left" href="">
                                         <button class="btn btn--secondary">Book Now</button>
                                     </a>
                                 </div>
-                                <h5>
+                                <h5 data-aos="fade-down">
                                     Monday - Friday / 9:00am - 7:00pm
                                 </h5>
-                                <p>
+                                <p data-aos="fade-down">
                                     Your Pet's well-being relies upon routine and consistency, which is why we assign them a designated Pet Care Specialist and regular pick-up window.
                                 </p>
                                 <div class="service--content row">
                                     <div class="service--content__info cheap l-6 m-6">
-                                        <div class="service--content__price">
-                                            <h6>30 Minus</h6>
-                                            <h6>$30</h6>
+                                        <div class="service--content__price" data-aos="fade-down">
+                                            <h6 data-aos="fade-right">30 Minus</h6>
+                                            <h6 data-aos="fade-right">$30</h6>
                                         </div>
                                         <ul>
 
                                         </ul>
                                     </div>
                                     <div class="service--content__info expensive l-6 m-6">
-                                        <div class="service--content__price">
-                                            <h6>60 Minus</h6>
-                                            <h6>$50</h6>
+                                        <div class="service--content__price" data-aos="fade-down">
+                                            <h6 data-aos="fade-left">60 Minus</h6>
+                                            <h6 data-aos="fade-left">$50</h6>
                                         </div>
                                         <ul>
        
@@ -179,37 +187,37 @@ async function service_page() {
                     </div>
                     <div class="service--blog scroll--sv-2 service--padding">
                         <div class="service--wrapper row">
-                            <div class="service--image l-2 m-2">
+                            <div class="service--image l-2 m-2" data-aos="fade-right">
                                 <img src="./src/image/service_2.webp" alt="">
                             </div>
                             <div class="service--des l-10 m-10">
                                 <div class="service--title">
-                                    <h6>Grooming</h6>
-                                    <a href="">
+                                    <h6 data-aos="fade-right">Grooming</h6>
+                                    <a data-aos="fade-left" href="">
                                         <button class="btn btn--secondary">Book Now</button>
                                     </a>
                                 </div>
-                                <h5>
+                                <h5 data-aos="fade-down">
                                     Monday - Sunday / 8:00am - 6:00pm
                                 </h5>
-                                <p>
+                                <p data-aos="fade-down">
                                     We offer a full range of spa and grooming services. All grooming options include a complete organic and hypoallergenic bath as well as detailed nose-to-tail attention. Pricing may vary due to size, the condition of the coat, matting, knots and the length
                                     of hair.
                                 </p>
                                 <div class="service--content row">
                                     <div class="service--content__info luxury--bath l-6 m-6">
-                                        <div class="service--content__price">
-                                            <h6>The Luxury Bath</h6>
-                                            <h6>$50</h6>
+                                        <div class="service--content__price" data-aos="fade-down">
+                                            <h6 data-aos="fade-right">The Luxury Bath</h6>
+                                            <h6 data-aos="fade-right">$50</h6>
                                         </div>
                                         <ul>
 
                                         </ul>
                                     </div>
                                     <div class="service--content__info full--groom l-6 m-6">
-                                        <div class="service--content__price">
-                                            <h6>The Full Groom</h6>
-                                            <h6>$120</h6>
+                                        <div class="service--content__price" data-aos="fade-down">
+                                            <h6 data-aos="fade-left">The Full Groom</h6>
+                                            <h6 data-aos="fade-left">$120</h6>
                                         </div>
                                         <ul>
 
@@ -221,30 +229,30 @@ async function service_page() {
                     </div>
                     <div class="service--blog scroll--sv-3 service--padding">
                         <div class="service--wrapper row">
-                            <div class="service--image l-2 m-2">
+                            <div class="service--image l-2 m-2" data-aos="fade-right">
                                 <img src="./src/image/service_3.webp" alt="">
                             </div>
                             <div class="service--des l-10 m-10">
                                 <div class="service--title">
-                                    <h6>Boarding</h6>
-                                    <a href="">
+                                    <h6 data-aos="fade-right">Boarding</h6>
+                                    <a data-aos="fade-right" href="">
                                         <button class="btn btn--secondary">Book Now</button>
                                     </a>
-                                    <a href="https://pawpartner.com/throw-me-a-bone---525-w-52nd-st">
+                                    <a data-aos="fade-left" href="https://pawpartner.com/throw-me-a-bone---525-w-52nd-st">
                                         <button class="btn btn--primary">Book LIC</button>
                                     </a>
                                 </div>
-                                <h5>
+                                <h5 data-aos="fade-down">
                                     Monday - Sunday / 24 hours
                                 </h5>
-                                <p>
+                                <p data-aos="fade-down">
                                     Our overnight boarding service offers a convenient solution for our more active dogs. Each 24 hour stay includes daycare, relief walks, all feedings and daily photos. Live play cam is also available during daycare hours to check in when you'd like and
                                     see how your Pet is doing.
                                 </p>
                                 <div class="service--content row">
                                     <div class="service--content__info boarding l-12 m-12">
-                                        <div class="service--content__price">
-                                            <h6>Boarding *</h6>
+                                        <div class="service--content__price" data-aos="fade-down">
+                                            <h6 data-aos="fade-down">Boarding *</h6>
                                         </div>
                                         <ul>
 
@@ -256,25 +264,25 @@ async function service_page() {
                     </div>
                     <div class="service--blog scroll--sv-4 service--padding">
                         <div class="service--wrapper row">
-                            <div class="service--image l-2 m-2">
+                            <div class="service--image l-2 m-2" data-aos="fade-right">
                                 <img src="./src/image/service_4.webp" alt="">
                             </div>
                             <div class="service--des l-10 m-10">
                                 <div class="service--title">
-                                    <h6>Pet Sitting</h6>
-                                    <a href="">
+                                    <h6 data-aos="fade-right">Pet Sitting</h6>
+                                    <a data-aos="fade-left" href="">
                                         <button class="btn btn--secondary">Book Now</button>
                                     </a>
                                 </div>
-                                <h5>
+                                <h5 data-aos="fade-down">
                                     Monday - Sunday / 8:00am - 6:00pm
                                 </h5>
-                                <p>
+                                <p data-aos="fade-down">
                                     For cats and puppies. Each 30-minute visit includes feeding/fresh water, litter/crate maintenance, and indoor playtime. Relief walks can be provided for puppies upon request.
                                 </p>
                                 <div class="service--content row">
                                     <div class="service--content__info pet--sitting l-12 m-12">
-                                        <div class="service--content__price">
+                                        <div class="service--content__price" data-aos="fade-down">
                                             <h6>Pet Sitting</h6>
                                         </div>
                                         <ul>
@@ -570,6 +578,7 @@ async function service_page() {
         li.innerHTML = `
            ${service.name}
         `;
+        li.setAttribute('data-aos', 'fade-down')
         li.setAttribute('id', service.id);
         service_section.appendChild(li);
     });
@@ -582,6 +591,7 @@ async function service_page() {
         <p>${item.name}</p>
         <p>$${item.price}</p>
         `;
+        li.setAttribute('data-aos', 'fade-down')
         service.appendChild(li)
     });
 
@@ -592,6 +602,7 @@ async function service_page() {
         <p>${item.name}</p>
         <p>$${item.price}</p>
         `;
+        li.setAttribute('data-aos', 'fade-down')
         service.appendChild(li)
     });
 
@@ -602,6 +613,7 @@ async function service_page() {
         li.innerHTML = `
         <p>${item.name}</p>
         `;
+        li.setAttribute('data-aos', 'fade-down')
         service.appendChild(li)
     });
     grooming['Full Groom'].forEach(item => {
@@ -610,6 +622,7 @@ async function service_page() {
         li.innerHTML = `
         <p>${item.name}</p>
         `;
+        li.setAttribute('data-aos', 'fade-down')
         service.appendChild(li)
     });
 
@@ -621,6 +634,7 @@ async function service_page() {
             <p>${item.name}</p>
             <p>$${item.price} / ${item.time}</p>
         `;
+        li.setAttribute('data-aos', 'fade-down')
         service.appendChild(li)
     });
 
@@ -632,6 +646,7 @@ async function service_page() {
             <p>${item.name}</p>
             <p>$${item.price}</p>
             `;
+        li.setAttribute('data-aos', 'fade-down')
         service.appendChild(li)
     });
 

@@ -31,7 +31,7 @@
 }
 
 .page--header.bg {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .header--logo {
@@ -42,6 +42,10 @@
 
 .header--logo h2 {
     color: #fff;
+}
+
+.header--logo.black h2 {
+    color: #000;
 }
 
 .main--account {
@@ -74,10 +78,6 @@
 }
 
 .main--account__signin.show {
-    display: block;
-}
-
-.main--account.show {
     display: block;
 }
 
@@ -299,7 +299,6 @@ input[type="checkbox"]:checked {
     padding-top: 16rem;
     position: relative;
     padding: 5rem;
-    width: 100%;
     height: 72rem;
 }
 
@@ -440,10 +439,6 @@ input[type="checkbox"]:checked {
 
 
 /* Service */
-
-.service--section__page {
-    padding-top: 15rem;
-}
 
 .service--section {
     position: relative;
@@ -641,6 +636,7 @@ input[type="checkbox"]:checked {
 
 .gift--section__wrapper {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    overflow: hidden;
 }
 
 .gift--section__wrapper {
@@ -776,7 +772,7 @@ input[type="checkbox"]:checked {
 /**********PRODUCT**************/
 
 .product--section__hero {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .product--slide__image {
@@ -798,10 +794,12 @@ input[type="checkbox"]:checked {
 
 .cart--icon {
     position: fixed;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
     bottom: 20%;
     right: 6%;
     border: 1px solid black;
-    padding: 1.4rem;
     font-size: 2rem;
     border-radius: 50%;
     background-color: var(--color-primary);
@@ -812,6 +810,10 @@ input[type="checkbox"]:checked {
     transition: all var(--animated-fast);
     animation: pulse 1.6s infinite;
     z-index: 55;
+}
+
+.cart--icon i {
+    line-height: 5rem;
 }
 
 .cart--icon.hidden {
@@ -991,6 +993,7 @@ input[type="checkbox"]:checked {
 
 .product--item:hover .product--item__info h5 {
     opacity: 0;
+    transform: translateY(-4rem);
 }
 
 .pagination--product {
@@ -1060,8 +1063,9 @@ input[type="checkbox"]:checked {
 /* Cart */
 
 .product--cart {
-    position: absolute;
-    top: 0rem;
+    position: fixed;
+    top: 10rem;
+    bottom: 10rem;
     right: 0rem;
     padding: 2rem 2rem;
     width: 35rem;
@@ -1075,6 +1079,8 @@ input[type="checkbox"]:checked {
     transform: translateX(100%);
     opacity: 0;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    max-height: 80rem;
+    overflow: auto;
 }
 
 .product--cart.show--cart {
@@ -1186,7 +1192,6 @@ input[type="checkbox"]:checked {
 
 .product--cart__btn {
     margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 .product--cart__total {
@@ -1195,6 +1200,7 @@ input[type="checkbox"]:checked {
     align-items: center;
     gap: 4rem;
     font-weight: 700;
+    margin-top: 2rem;
 }
 
 .product--cart__total h4 {
@@ -1204,6 +1210,47 @@ input[type="checkbox"]:checked {
 
 
 /**********SERVICE**************/
+
+.section--hero {
+    height: 72rem;
+    position: relative;
+}
+
+.section--hero__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.section--hero__image .section--hero__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 10rem;
+    transform: translatey(-50%);
+    width: 48rem;
+    padding: 0;
+}
+
+.content--hero__name {
+    color: transparent;
+    font-size: 5.2rem;
+    font-weight: 700;
+    animation: back 20s linear infinite;
+    -webkit-text-stroke: 1px #fff;
+    -webkit-background-clip: text;
+    background-image: url('../image/back.png');
+    background-position: 0 0;
+}
+
+.content--hero__des {
+    font-size: 2.4rem;
+    margin-top: 2rem;
+    color: #fff;
+}
 
 .container--service {
     max-width: 120rem;
@@ -1220,7 +1267,7 @@ input[type="checkbox"]:checked {
 
 .service--section__page--list {
     position: sticky;
-    top: 20rem;
+    top: 12rem;
     z-index: 55;
 }
 
@@ -1482,10 +1529,6 @@ input[type="checkbox"]:checked {
     padding-bottom: 2rem;
 }
 
-.section--pay {
-    padding-top: 16rem;
-}
-
 .line {
     margin-top: 4rem;
     margin-bottom: 4rem;
@@ -1548,10 +1591,23 @@ input[type="checkbox"]:checked {
     align-items: center;
 }
 
+.payment--methods__wrapper label:hover {
+    background-color: #fff;
+}
+
+.payment--methods__wrapper label input:hover {
+    background-color: var(--color-primary);
+}
+
 .payment--methods h3 {
     color: var(--color-primary);
     font-size: 2.6rem;
     padding-bottom: 1.6rem;
+}
+
+.section--pay__info {
+    max-height: 52rem;
+    overflow: auto;
 }
 
 .section--pay__info__wrapper .line {
@@ -1691,11 +1747,8 @@ input[type="checkbox"]:checked {
 
 /**********DETAIL PRODUCT**************/
 
-.container.section--detail__padding {
-    padding-top: 14rem;
-}
-
 .path--link {
+    margin-top: 4rem;
     font-size: 2rem;
     display: flex;
     align-items: center;

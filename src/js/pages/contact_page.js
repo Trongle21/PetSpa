@@ -1,9 +1,12 @@
 async function contact_page() {
     let main = document.createElement('main');
     main.innerHTML = `
-    <section class="section--contact__hero">
-        <div class="contact--image" style="background-image: url('./src/image/contact_bg.jpg');">
-
+    <section class="section--hero">
+        <div class="section--hero__image" style="background-image: url('./src/image/contact_bg_1.jpg');">
+            <div class="section--hero__wrapper">
+                <div class="content--hero__name">We enjoy our work</div>
+                <div class="content--hero__des">You can’t buy happiness but you can buy lil doggo and that’s pretty much it</div>
+            </div>
         </div>
     </section>
     <section class="section--contact__form">

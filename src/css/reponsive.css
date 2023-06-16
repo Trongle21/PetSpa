@@ -393,11 +393,12 @@
     .header--logo h2 {
         font-size: 2.4rem;
     }
-    .main--account {
-        display: block;
-    }
+    .main--account,
     .main--account__icon {
         display: block;
+    }
+    .service--des {
+        padding: 0;
     }
     /* Hero content*/
     .hero--content__detail {
@@ -439,20 +440,15 @@
         flex-wrap: nowrap;
         overflow-x: auto;
     }
-    .pricing--plan_list::-webkit-scrollbar {
-        width: 0.5em;
-        height: 0.5em;
-    }
-    .pricing--plan_list::-webkit-scrollbar-thumb {
-        background-color: var(--color-background);
-    }
     .plan--price {
         width: 80%;
         margin-right: 1rem;
     }
+    .plan--price.scale {
+        display: none;
+    }
     .service--list {
         overflow: hidden;
-        ;
     }
     /* TeamMember */
     .team-member--section {
@@ -462,13 +458,6 @@
         white-space: nowrap;
         flex-wrap: nowrap;
         overflow-x: auto;
-    }
-    .team-member--list::-webkit-scrollbar {
-        width: 0.5em;
-        height: 0.5em;
-    }
-    .team-member--list::-webkit-scrollbar-thumb {
-        background-color: var(--color-background);
     }
     .team-member--list__staff {
         width: 80%;
@@ -492,6 +481,9 @@
     }
     .page--footer__contact--wrapper {
         padding-top: 2.6rem;
+    }
+    .path--link {
+        gap: 2rem;
     }
     /************PRODUCT************/
     /* Title */
@@ -527,16 +519,51 @@
         padding-left: 8rem;
         padding-right: 8rem;
     }
+    /* Cart */
+    .product--cart {
+        width: 26rem;
+    }
+    .product--cart__pay--image {
+        width: 30%;
+        padding-top: 30%;
+    }
+    .product--cart__pay--info h3 {
+        font-size: 1.6rem;
+    }
+    .product--quantity button {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.6rem;
+    }
+    .product--quantity {
+        margin-top: 1rem
+    }
+    .cart--icon {
+        bottom: 8%;
+    }
     /************SERVICE************/
+    .section--hero__wrapper {
+        left: 2rem !important;
+        width: auto !important;
+        overflow: hidden;
+    }
+    .content--hero__name {
+        font-size: 3.6rem;
+    }
+    .content--hero__des {
+        font-size: 2rem;
+        padding-right: 2rem;
+    }
     .service--section__page--warpper_pc {
         display: none;
     }
-    .service--section__page--warpper_mb {
+    .service--section__page--wrapper_mb {
         display: block;
     }
     .service--section__page--list {
         padding-top: 2rem;
         padding-bottom: 2rem;
+        position: static;
     }
     .service--mb__title {
         cursor: pointer;
@@ -547,7 +574,7 @@
     .service--mb__image {
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 1rem;
     }
     .service--mb__image img {
         width: 6rem;
@@ -557,6 +584,10 @@
     }
     .service--mb__content {
         margin-top: 2rem;
+    }
+    .service--title {
+        flex-direction: column;
+        align-items: start;
     }
     .service--content {
         margin-left: -1rem;
@@ -612,6 +643,22 @@
         }
     }
     /************Sign up************/
+    .main--account__form-group input {
+        font-size: 1.4rem;
+    }
+    .main--account__check {
+        flex-direction: column;
+        align-items: start;
+    }
+    .main--account__check--input {
+        margin-bottom: 2rem;
+    }
+    .main--account_signup {
+        flex-direction: column;
+    }
+    .main--account_signup h5 {
+        font-size: 1.4rem;
+    }
     .section--signup__wrapper {
         background-image: url('../image/signup_1.jpeg');
         background-size: cover;
@@ -643,6 +690,9 @@
     /************CONTACT************/
     .contact--form__checkbox h3 {
         margin-left: 0rem;
+    }
+    .contact--form__message {
+        width: 120%;
     }
     /************PAYMENT************/
     .section--pay__wrapper {
@@ -676,6 +726,9 @@
     .header--nav {
         display: none;
     }
+    .page--header {
+        padding: 1rem 2rem;
+    }
     .header--sign-in {
         display: none;
     }
@@ -686,7 +739,6 @@
         display: block;
     }
     /* Hero content*/
-    .hero--content__detail {}
     .content--info {
         font-size: 4.6rem;
     }
@@ -694,12 +746,22 @@
         font-size: 1.8rem;
     }
     /************Service************/
+    .content--hero__name {
+        font-size: 4.6rem;
+    }
+    .content--hero__des {
+        font-size: 2.4rem;
+    }
     .service--content__info {
         margin-top: 2rem;
     }
     .service--padding {
         margin-bottom: 12rem;
     }
+    .plan--price.scale {
+        display: none;
+    }
+    /************Product************/
     /************Sign up************/
     .signup--form__wrapper h2 {
         font-size: 2.8rem;
@@ -746,5 +808,14 @@
     .product--item__info~.product--item__btn button {
         padding-left: 2rem;
         padding-right: 2rem;
+    }
+    .btn.btn--primary {
+        padding: 1rem 2rem;
+    }
+    .container--service {
+        padding: 0px 2rem
+    }
+    .service--mb__image h6 {
+        font-size: 2rem;
     }
 }

@@ -1,35 +1,35 @@
 let home_hero = [{
-        name: 'Your Pet is Part of Our Family',
+        name: 'Your pet is part of our family',
         description: 'Let us treat your pet like our own family with best service and special package',
         image: './src/image/hero_bg_1.jpg',
         button: "btn btn--primary"
     },
     {
-        name: 'Your Pet is Part of Our Family',
+        name: 'Your pet is part of our family',
         description: 'Let us treat your pet like our own family with best service and special package',
         image: './src/image/hero_bg_2.jpg',
         button: "btn btn--primary"
     },
     {
-        name: 'Your Pet is Part of Our Family',
+        name: 'Your pet is part of our family',
         description: 'Let us treat your pet like our own family with best service and special package',
         image: './src/image/hero_bg_3.jpg',
         button: "btn btn--primary"
     },
     {
-        name: 'Your Pet is Part of Our Family',
+        name: 'Your pet is part of our family',
         description: 'Let us treat your pet like our own family with best service and special package',
         image: './src/image/hero_bg_4.jpg',
         button: "btn btn--primary"
     },
     {
-        name: 'Your Pet is Part of Our Family',
+        name: 'Your pet is part of our family',
         description: 'Let us treat your pet like our own family with best service and special package',
         image: './src/image/hero_bg_5.jpg',
         button: "btn btn--primary"
     },
     {
-        name: 'Your Pet is Part of Our Family',
+        name: 'Your pet is part of our family',
         description: 'Let us treat your pet like our own family with best service and special package',
         image: './src/image/hero_bg_6.jpg',
         button: "btn btn--primary"
@@ -169,9 +169,9 @@ async function home_page() {
         <section class="service--section container-padding">
             <div class="service--section__img" style="background-image: url('./src/image/cat-bg.png')"></div>
             <div class="container">
-                <h4 class="heading-lg text-center fw-800">What Can We Do</h4>
-                <h2 class="heading-sm text-center margin-bottom">We lock after little your family, we ensure that we will give the best treat for your little family</h2>
-                <div class="service--section__list padding-bottom row">
+                <h4 data-aos="fade-down" class="heading-lg text-center fw-800">What Can We Do</h4>
+                <h2 data-aos="fade-down" class="heading-sm text-center margin-bottom">We lock after little your family, we ensure that we will give the best treat for your little family</h2>
+                <div class="service--section__list padding-bottom row" data-aos="fade-up">
 
                 </div>
             </div>
@@ -180,9 +180,9 @@ async function home_page() {
         <section class="service-prices--section container-padding">
             <div class="service-prices--section__img" style="background-image: url('./src/image/dog-bg_2.png')"></div>
             <div class="container">
-                <h4 class="heading-lg text-center fw-800">Spencial Package</h4>
-                <h2 class="heading-sm text-center margin-bottom">We offer spencial package just for you and your little family</h2>
-                <div class="pricing--plan_list padding-bottom row">
+                <h4 data-aos="fade-down" class="heading-lg text-center fw-800">Spencial Package</h4>
+                <h2 data-aos="fade-down" class="heading-sm text-center margin-bottom">We offer spencial package just for you and your little family</h2>
+                <div class="pricing--plan_list padding-bottom row" data-aos="zoom-in-up">
 
                 </div>
             </div>
@@ -190,9 +190,9 @@ async function home_page() {
         <section class="team-member--section container-padding">
             <div class="team-member--section__img" style="background-image: url('')"></div>
             <div class="container">
-                <h4 class="heading-lg text-center fw-800">Team Member</h4>
-                <h2 class="heading-sm text-center margin-bottom">Our store's hard-working employees</h2>
-                <div class="team-member--list padding-bottom row">
+                <h4 data-aos="fade-down" class="heading-lg text-center fw-800">Team Member</h4>
+                <h2 data-aos="fade-down" class="heading-sm text-center margin-bottom">Our store's hard-working employees</h2>
+                <div class="team-member--list padding-bottom row" data-aos="zoom-in-up">
 
                 </div>
             </div>
@@ -201,9 +201,9 @@ async function home_page() {
         <section class="gift--section container-padding">
             <div class="gift--section__img" style="background-image: url('')"></div>
             <div class="container padding-bottom">
-                <h4 class="heading-lg text-center fw-800">Spencial Gift</h4>
-                <h2 class="heading-sm text-center margin-bottom">Our store's hard-working employees</h2>
-                <div class="gift--section__wrapper row">
+                <h4 data-aos="fade-down" class="heading-lg text-center fw-800">Spencial Gift</h4>
+                <h2 data-aos="fade-down" class="heading-sm text-center margin-bottom">Our store's hard-working employees</h2>
+                <div class="gift--section__wrapper row" data-aos="zoom-in">
                     <div class="gift--section__wrapper--info l-6 m-6">
                         <h1>Get Spencial Gift!</h1>
                         <p>Contact our customer services and get your spencial gift for the first package purchase</p>

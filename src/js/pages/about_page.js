@@ -15,9 +15,11 @@ let principles = [{
 async function about_page() {
     let main = document.createElement('main');
     main.innerHTML = `
-    <section class="about--hero container--padding">
-        <div class="about--slide">
-            <div class="about--hero__image" style="background-image: url('./src/image/about_hero_1.jpg');">
+    <section class="section--hero">
+        <div class="section--hero__image" style="background-image: url('./src/image/about_bg_1.jpg');">
+            <div class="section--hero__wrapper">
+                <div class="content--hero__name">You can count on us</div>
+                <div class="content--hero__des">Pet sitting is a cost-effective way to comfort the least amount of stress on your animal by allowing your pet to maintain as much of its daily routine as possible</div>
             </div>
         </div>
     </section>

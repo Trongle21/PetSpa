@@ -25,16 +25,17 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
+    height: 4px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #fff;
+    background-color: #e3e3e3;
+    width: 1;
 }
 
 ::-webkit-scrollbar-thumb {
-    height: 2px;
-    background-color: #e3e3e3;
+    background-color: #000;
 }
 
 ul {

@@ -107,6 +107,11 @@ let app = {
         search_icon.addEventListener('click', (event) => {
             // event.stopPropagation(); //
             product_search.classList.add('show');
+            let cart_clear = document.querySelector('.cart--wrapper p');
+            console.log(Object.keys(cart).length)
+            if (Object.keys(cart).length === 0) {
+                cart_clear.innerHTML = `Đơn hàng đang trống`
+            }
         });
 
         document.addEventListener('click', (event) => {
@@ -142,28 +147,28 @@ let app = {
 
         /** Scroll */
         document.querySelector('#service-1').addEventListener('click', () => {
-            const offset = document.querySelector('.scroll--sv-1').offsetTop - 200;
+            const offset = document.querySelector('.scroll--sv-1').offsetTop - 120;
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
             });
         });
         document.querySelector('#service-2').addEventListener('click', () => {
-            const offset = document.querySelector('.scroll--sv-2').offsetTop + 60;
+            const offset = document.querySelector('.scroll--sv-2').offsetTop - 120;
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
             });
         });
         document.querySelector('#service-3').addEventListener('click', () => {
-            const offset = document.querySelector('.scroll--sv-3').offsetTop + 60;
+            const offset = document.querySelector('.scroll--sv-3').offsetTop - 120;
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
             });
         });
         document.querySelector('#service-4').addEventListener('click', () => {
-            const offset = document.querySelector('.scroll--sv-4').offsetTop + 60;
+            const offset = document.querySelector('.scroll--sv-4').offsetTop - 120;
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
@@ -222,7 +227,7 @@ let app = {
         document.querySelector('.root').appendChild(await page.signup_page());
 
         /** Sign up */
-        document.querySelector('.sign--up__form--login p').addEventListener('click', () => {
+        document.querySelector('.sign--up__form--login p').addEventListener('click', (e) => {
             document.querySelector('.main--account__signin').classList.add('show');
             document.querySelector('.overlay').classList.add('show--overley');
             document.querySelector('.section--signup__wrapper').classList.add('blur')
@@ -236,9 +241,9 @@ let app = {
     },
 }
 
-if (location.pathname === '/index.html') {
-    app.home_page();
-}
+
+app.home_page();
+
 
 if (location.pathname === '/product.html') {
     app.product_page();

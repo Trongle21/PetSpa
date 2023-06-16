@@ -57,7 +57,7 @@ export default function page_footer() {
             <div class="page--footer__info l-4 m-6 c-12">
                 <div class="page--footer__info--wrapper">
                     <div class="page--footer__info--logo">
-                        <div class="header--logo">
+                        <div class="header--logo black">
                             <img src="./src/image/logo.png" alt="">
                             <h2>Pet<span>Spa</span></h2>
                         </div>
