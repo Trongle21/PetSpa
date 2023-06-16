@@ -241,9 +241,9 @@ let app = {
     },
 }
 
-
-app.home_page();
-
+if (location.pathname === '/index.html') {
+    app.home_page();
+}
 
 if (location.pathname === '/product.html') {
     app.product_page();
