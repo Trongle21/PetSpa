@@ -241,32 +241,32 @@ let app = {
     },
 }
 
-if (location.pathname === 'https://pet-spa-woad.vercel.app/index.html') {
+if (location.pathname === '/index.html' || location.pathname === 'pet-spa-woad.vercel.app') {
     app.home_page();
 }
 
-if (location.pathname === 'https://pet-spa-woad.vercel.app/product.html') {
+if (location.pathname === '/product.html') {
     app.product_page();
 }
 
-if (location.pathname === 'https://pet-spa-woad.vercel.app/detail_product.html') {
+if (location.pathname === '/detail_product.html') {
     app.detail_product();
 }
 
-if (location.pathname === 'https://pet-spa-woad.vercel.app/service.html') {
+if (location.pathname === '/service.html') {
     app.serice_page();
 }
 
-if (location.pathname === 'https://pet-spa-woad.vercel.app/about.html') {
+if (location.pathname === '/about.html') {
     app.about_page();
 }
 
-if (location.pathname === 'https://pet-spa-woad.vercel.app/contact.html') {
+if (location.pathname === '/contact.html') {
     app.contact_page();
 }
 
 
-if (location.pathname === 'https://pet-spa-woad.vercel.app/contact_success.html') {
+if (location.pathname === '/contact_success.html') {
     app.contact_success_page();
 }
 
