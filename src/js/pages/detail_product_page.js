@@ -1,4 +1,4 @@
-var api_url = "http://localhost:3000/";
+var api_url = "https://api-data-eight.vercel.app/";
 
 let api_course = {
     products: "products",
