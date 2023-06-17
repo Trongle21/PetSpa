@@ -241,7 +241,7 @@ let app = {
     },
 }
 
-if (location.pathname === '/index.html' || location.pathname === 'pet-spa-woad.vercel.app') {
+if (location.pathname === '/index.html' || location.href === 'https://pet-spa-trongle21.vercel.app') {
     app.home_page();
 }
 
