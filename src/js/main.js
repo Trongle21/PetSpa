@@ -241,7 +241,7 @@ let app = {
     },
 }
 
-if (location.pathname === '/index.html' || location.href === 'https://pet-spa-two.vercel.app') {
+if (location.pathname === '' || location.pathname == '/index.html') {
     console.log(location)
     app.home_page();
 }
