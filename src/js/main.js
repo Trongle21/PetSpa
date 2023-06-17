@@ -241,7 +241,7 @@ let app = {
     },
 }
 
-if (location.pathname == '' || location.pathname == '/index.html') {
+if (location.pathname == '/' || location.pathname == '/index.html') {
     console.log(1)
     app.home_page();
 }
