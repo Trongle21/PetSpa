@@ -68,7 +68,7 @@ async function detail_product_page() {
                     </section>         
                 </div>
                 <section class="section--product__recommend">
-                    <h2>WE ALSO RECOMMEND</h2>
+                    <h2 data-aos="fade-down">WE ALSO RECOMMEND</h2>
                     <div class="line"></div>
                     <div class="section--product__slide">
                         <div class="owl-carousel owl-theme slide">
@@ -161,33 +161,33 @@ async function render_detail_product(cart) {
         div.classList.add("section--detail__product--wapper", "row");
         div.innerHTML = `
             <div class="detail--product__image l-5 m-5 c-12">
-                <div class="detail--product__image--large zoom">
+                <div class="detail--product__image--large zoom" data-aos="fade-down">
                     <div id="myimage" class="detail--product__image--main" style="background-image: url('${image}');">
                     </div>
                     <div id="imgZoom" class="img--main-2" style="background-image: url('${image}');">
                     </div>
                 </div>
                 <div class="detail--product__image--small">
-                    <div class="product--image__small--item" style="background-image: url('${image}');">
+                    <div class="product--image__small--item" style="background-image: url('${image}');" data-aos="fade-right">
 
                     </div>
-                    <div class="product--image__small--item secondary" style="background-image: url('${image_2}');">
+                    <div class="product--image__small--item secondary" style="background-image: url('${image_2}');" data-aos="fade-left">
 
                     </div>
                 </div>
             </div>
             <div class="detail--product__info l-7 m-7 c-12">
                 <div class="detail--product__info--wrapper">
-                    <h2>${description}</h2>
-                    <h3>${name}</h3>
-                    <h4><span>$ </span>${price}</h4>
-                    <div class="detail--product__btn">
+                    <h2 data-aos="fade-down">${description}</h2>
+                    <h3 data-aos="fade-left">${name}</h3>
+                    <h4 data-aos="fade-left"><span>$ </span>${price}</h4>
+                    <div class="detail--product__btn" data-aos="fade-down">
                         <button class="btn btn--primary">Add To Cart</button>
                     </div>
                     <div class="detail--product__info--content">
-                        <h2>Description</h2>
-                        <div class="line"></div>
-                        <p>${detail}</p>
+                        <h2 data-aos="fade-left">Description</h2>
+                        <div class="line" data-aos="fade-left"></div>
+                        <p data-aos="fade-down">${detail}</p>
                     </div>
                 </div>
             </div>   

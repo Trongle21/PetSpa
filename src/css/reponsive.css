@@ -541,6 +541,9 @@
     .cart--icon {
         bottom: 8%;
     }
+    .product--item__delete button {
+        font-size: 2rem;
+    }
     /************SERVICE************/
     .section--hero__wrapper {
         left: 2rem !important;

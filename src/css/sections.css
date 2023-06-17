@@ -1125,6 +1125,7 @@ input[type="checkbox"]:checked {
     display: flex;
     align-items: center;
     padding-top: 2rem;
+    justify-content: space-between;
 }
 
 
@@ -1171,23 +1172,19 @@ input[type="checkbox"]:checked {
     position: relative;
 }
 
-.product--item__delete {
-    position: absolute;
-    top: 3.8rem;
-    right: 0;
-}
+.product--item__delete {}
 
 .product--item__delete button {
-    padding: 0.5rem;
     background-color: transparent;
-    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
     cursor: pointer;
     transition: all 0.2s ease;
+    border: none;
+    font-size: 2.6rem;
 }
 
 .product--item__delete button:hover {
-    background-color: var(--color-primary);
-    color: #fff;
+    color: #000;
 }
 
 .product--cart__btn {
@@ -1256,6 +1253,7 @@ input[type="checkbox"]:checked {
     max-width: 120rem;
     margin: 0 auto;
     padding: 0 4rem;
+    overflow: hidden;
 }
 
 

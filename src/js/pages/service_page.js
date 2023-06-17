@@ -301,10 +301,10 @@ async function service_page() {
                 <div class="service--section__page--list">
                     <div class="service--mb__title">
                         <div class="service--mb__image">
-                            <img src="./src/image/service_1.webp" alt="">
-                            <h6>Pet Walking</h6>
+                            <img src="./src/image/service_1.webp" data-aos="fade-down" alt="">
+                            <h6 data-aos="fade-down">Pet Walking</h6>
                         </div>
-                        <div class="service--mb__icon">
+                        <div data-aos="fade-down" class="service--mb__icon">
                             <i class="fa-solid fa-plus"></i>
                         </div>
                     </div>
@@ -314,54 +314,54 @@ async function service_page() {
                                 <div class="service--wrapper">
                                     <div class="service--des">
                                         <div class="service--title">
-                                            <a href="">
+                                            <a data-aos="fade-down" href="">
                                                 <button class="btn btn--secondary">Book Now</button>
                                             </a>
                                         </div>
-                                        <h5>
+                                        <h5 data-aos="fade-down">
                                             Monday - Friday / 9:00am - 7:00pm
                                         </h5>
-                                        <p>
+                                        <p data-aos="fade-down">
                                             Your Pet's well-being relies upon routine and consistency, which is why we assign them a designated Pet Care Specialist and regular pick-up window.
                                         </p>
                                         <div class="service--content">
                                             <div class="service--content__info">
-                                                <div class="service--content__price">
-                                                    <h6>30 Minus</h6>
+                                                <div class="service--content__price" data-aos="fade-down">
+                                                    <h6 data-aos="fade-down">30 Minus</h6>
                                                     <h6>$30</h6>
                                                 </div>
-                                                <div class="service--content__detail">
+                                                <div class="service--content__detail" data-aos="fade-down">
                                                     <div class="service--content__detail--list">
-                                                        <h6>10 Walk Pack</h6>
-                                                        <h6>$285</h6>
+                                                        <h6 data-aos="fade-down">10 Walk Pack</h6>
+                                                        <h6 data-aos="fade-down">$285</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>20 Walk Pack</h6>
-                                                        <h6>$540</h6>
+                                                        <h6 data-aos="fade-down">20 Walk Pack</h6>
+                                                        <h6 data-aos="fade-down">$540</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>50 Walk Pack</h6>
-                                                        <h6>$1020</h6>
+                                                        <h6 data-aos="fade-down">50 Walk Pack</h6>
+                                                        <h6 data-aos="fade-down">$1020</h6>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="service--content__info">
-                                                <div class="service--content__price">
-                                                    <h6>60 Minus</h6>
-                                                    <h6>$50</h6>
+                                                <div class="service--content__price" data-aos="fade-down">
+                                                    <h6 data-aos="fade-down">60 Minus</h6>
+                                                    <h6 data-aos="fade-down">$50</h6>
                                                 </div>
                                                 <div class="service--content__detail">
                                                     <div class="service--content__detail--list">
-                                                        <h6>10 Walk Pack</h6>
-                                                        <h6>$475</h6>
+                                                        <h6 data-aos="fade-down">10 Walk Pack</h6>
+                                                        <h6 data-aos="fade-down">$475</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>20 Walk Pack</h6>
-                                                        <h6>$900</h6>
+                                                        <h6 data-aos="fade-down">20 Walk Pack</h6>
+                                                        <h6 data-aos="fade-down">$900</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>50 Walk Pack</h6>
-                                                        <h6>$1700</h6>
+                                                        <h6 data-aos="fade-down">50 Walk Pack</h6>
+                                                        <h6 data-aos="fade-down">$1700</h6>
                                                     </div>
                                                 </div>
                                             </div>
@@ -375,11 +375,11 @@ async function service_page() {
                 </div>
                 <div class="service--section__page--list">
                     <div class="service--mb__title">
-                        <div class="service--mb__image">
+                        <div class="service--mb__image" data-aos="fade-down">
                             <img src="./src/image/service_2.webp" alt="">
-                            <h6>Grooming</h6>
+                            <h6 data-aos="fade-down">Grooming</h6>
                         </div>
-                        <div class="service--mb__icon">
+                        <div class="service--mb__icon" data-aos="fade-down">
                             <i class="fa-solid fa-plus"></i>
                         </div>
                     </div>
@@ -389,64 +389,64 @@ async function service_page() {
                                 <div class="service--wrapper">
                                     <div class="service--des">
                                         <div class="service--title">
-                                            <a href="">
+                                            <a data-aos="fade-down" href="">
                                                 <button class="btn btn--secondary">Book Now</button>
                                             </a>
                                         </div>
-                                        <h5>
+                                        <h5 data-aos="fade-down">
                                             Monday - Sunday / 8:00am - 6:00pm
                                         </h5>
-                                        <p>
+                                        <p data-aos="fade-down">
                                             We offer a full range of spa and grooming services. All grooming options include a complete organic and hypoallergenic bath as well as detailed nose-to-tail attention. Pricing may vary due to size, the condition of the coat, matting, knots and the length
                                             of hair.
                                         </p>
                                         <div class="service--content">
                                             <div class="service--content__info">
-                                                <div class="service--content__price">
-                                                    <h6>The Luxury Bath</h6>
-                                                    <h6>$50</h6>
+                                                <div class="service--content__price" data-aos="fade-down">
+                                                    <h6 data-aos="fade-down">The Luxury Bath</h6>
+                                                    <h6 data-aos="fade-down">$50</h6>
                                                 </div>
                                                 <div class="service--content__detail">
                                                     <div class="service--content__detail--list">
-                                                        <h6>Bath & blow dry</h6>
+                                                        <h6 data-aos="fade-down">Bath & blow dry</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Ear cleaning</h6>
+                                                        <h6 data-aos="fade-down">Ear cleaning</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Nail trim</h6>
+                                                        <h6 data-aos="fade-down">Nail trim</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Paw pad trim</h6>
+                                                        <h6 data-aos="fade-down">Paw pad trim</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Blueberry facial</h6>
+                                                        <h6 data-aos="fade-down">Blueberry facial</h6>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="service--content__info">
-                                                <div class="service--content__price">
-                                                    <h6>The Luxury Bath</h6>
-                                                    <h6>$50</h6>
+                                                <div class="service--content__price" data-aos="fade-down">
+                                                    <h6 data-aos="fade-down">The Luxury Bath</h6>
+                                                    <h6 data-aos="fade-down">$50</h6>
                                                 </div>
                                                 <div class="service--content__detail">
                                                     <div class="service--content__detail--list">
-                                                        <h6>Hair cut & style</h6>
+                                                        <h6 data-aos="fade-down">Hair cut & style</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Bath & blow dry</h6>
+                                                        <h6 data-aos="fade-down">Bath & blow dry</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Ear cleaning</h6>
+                                                        <h6 data-aos="fade-down">Ear cleaning</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Nail trim</h6>
+                                                        <h6 data-aos="fade-down">Nail trim</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Paw pad trim</h6>
+                                                        <h6 data-aos="fade-down">Paw pad trim</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Sanitary trim</h6>
+                                                        <h6 data-aos="fade-down">Sanitary trim</h6>
                                                     </div>
                                                 </div>
                                             </div>
@@ -460,11 +460,11 @@ async function service_page() {
                 </div>
                 <div class="service--section__page--list">
                     <div class="service--mb__title">
-                        <div class="service--mb__image">
+                        <div class="service--mb__image" data-aos="fade-down">
                             <img src="./src/image/service_3.webp" alt="">
-                            <h6>Boarding</h6>
+                            <h6 data-aos="fade-down">Boarding</h6>
                         </div>
-                        <div class="service--mb__icon">
+                        <div class="service--mb__icon" data-aos="fade-down">
                             <i class="fa-solid fa-plus"></i>
                         </div>
                     </div>
@@ -474,37 +474,37 @@ async function service_page() {
                                 <div class="service--wrapper">
                                     <div class="service--des">
                                         <div class="service--title">
-                                            <a href="">
+                                            <a data-aos="fade-down" href="">
                                                 <button class="btn btn--secondary">Book Now</button>
                                             </a>
-                                            <a href="https://pawpartner.com/throw-me-a-bone---525-w-52nd-st">
+                                            <a data-aos="fade-down" href="https://pawpartner.com/throw-me-a-bone---525-w-52nd-st">
                                                 <button class="btn btn--primary">Book Boarding LIC</button>
                                             </a>
                                         </div>
-                                        <h5>
+                                        <h5 data-aos="fade-down">
                                             Monday - Sunday / 24 hours
                                         </h5>
-                                        <p>
+                                        <p data-aos="fade-down">
                                             Our overnight boarding service offers a convenient solution for our more active dogs. Each 24 hour stay includes daycare, relief walks, all feedings and daily photos. Live play cam is also available during daycare hours to check in when you'd like and
                                             see how your Pet is doing.
                                         </p>
                                         <div class="service--content">
                                             <div class="service--content__info">
-                                                <div class="service--content__price">
-                                                    <h6>Boarding *</h6>
+                                                <div class="service--content__price" data-aos="fade-down">
+                                                    <h6 data-aos="fade-down">Boarding *</h6>
                                                 </div>
                                                 <div class="service--content__detail">
                                                     <div class="service--content__detail--list">
-                                                        <h6>Bath & blow dry</h6>
-                                                        <h6>$100 / Night</h6>
+                                                        <h6 data-aos="fade-down">Bath & blow dry</h6>
+                                                        <h6 data-aos="fade-down">$100 / Night</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Ear cleaning</h6>
-                                                        <h6>$95 / Night</h6>
+                                                        <h6 data-aos="fade-down">Ear cleaning</h6>
+                                                        <h6 data-aos="fade-down">$95 / Night</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Nail trim</h6>
-                                                        <h6>$90 / Night</h6>
+                                                        <h6 data-aos="fade-down">Nail trim</h6>
+                                                        <h6 data-aos="fade-down">$90 / Night</h6>
                                                     </div>
 
                                                 </div>
@@ -519,11 +519,11 @@ async function service_page() {
                 </div>
                 <div class="service--section__page--list">
                     <div class="service--mb__title">
-                        <div class="service--mb__image">
+                        <div class="service--mb__image" data-aos="fade-down">
                             <img src="./src/image/service_4.webp" alt="">
-                            <h6>Pet Sitting</h6>
+                            <h6 data-aos="fade-down">Pet Sitting</h6>
                         </div>
-                        <div class="service--mb__icon">
+                        <div class="service--mb__icon" data-aos="fade-down">
                             <i class="fa-solid fa-plus"></i>
                         </div>
                     </div>
@@ -533,29 +533,29 @@ async function service_page() {
                                 <div class="service--wrapper">
                                     <div class="service--des">
                                         <div class="service--title">
-                                            <a href="">
+                                            <a data-aos="fade-down" href="">
                                                 <button class="btn btn--secondary">Book Now</button>
                                             </a>
                                         </div>
-                                        <h5>
+                                        <h5 data-aos="fade-down">
                                             Monday - Sunday / 8:00am - 6:00pm
                                         </h5>
-                                        <p>
+                                        <p data-aos="fade-down">
                                             For cats and puppies. Each 30-minute visit includes feeding/fresh water, litter/crate maintenance, and indoor playtime. Relief walks can be provided for puppies upon request.
                                         </p>
                                         <div class="service--content">
                                             <div class="service--content__info">
-                                                <div class="service--content__price">
-                                                    <h6>Pet Sitting</h6>
+                                                <div class="service--content__price" data-aos="fade-down">
+                                                    <h6 data-aos="fade-down">Pet Sitting</h6>
                                                 </div>
                                                 <div class="service--content__detail">
                                                     <div class="service--content__detail--list">
-                                                        <h6>Cat Visit</h6>
-                                                        <h6>$40</h6>
+                                                        <h6 data-aos="fade-down">Cat Visit</h6>
+                                                        <h6 data-aos="fade-down">$40</h6>
                                                     </div>
                                                     <div class="service--content__detail--list">
-                                                        <h6>Puppy Visit</h6>
-                                                        <h6>$50</h6>
+                                                        <h6 data-aos="fade-down">Puppy Visit</h6>
+                                                        <h6 data-aos="fade-down">$50</h6>
                                                     </div>
 
                                                 </div>

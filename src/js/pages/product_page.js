@@ -380,7 +380,7 @@ function render_cart(cart) {
                 </div>
                 <div class="product--item__delete">
                     <button>
-                        <i class='bx bx-trash-alt' ></i>
+                        <i class="fa-solid fa-trash"></i>
                     </button>
                 </div>
                 `;
