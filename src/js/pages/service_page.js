@@ -138,8 +138,8 @@ async function service_page() {
         <div class="line"></div>
             <!-- PC -->
             <div class="service--section__page--warpper_pc row">        
-                <div class="service--section__page--list l-2">
-                    <ul class="service--section__page--list">
+                <div class="service--section__page--list">
+                    <ul>
 
                     </ul>
                 </div>
@@ -578,14 +578,14 @@ async function service_page() {
         li.innerHTML = `
            ${service.name}
         `;
-        li.setAttribute('data-aos', 'fade-down')
+        li.setAttribute('data-aos', 'fade-down');
         li.setAttribute('id', service.id);
         service_section.appendChild(li);
     });
 
     // redenr service dog walking
     dog_walking['30 minus'].forEach(item => {
-        let service = main.querySelector('.cheap ul')
+        let service = main.querySelector('.cheap ul');
         let li = document.createElement('li');
         li.innerHTML = `
         <p>${item.name}</p>
@@ -596,58 +596,58 @@ async function service_page() {
     });
 
     dog_walking['60 minus'].forEach(item => {
-        let service = main.querySelector('.expensive ul')
+        let service = main.querySelector('.expensive ul');
         let li = document.createElement('li');
         li.innerHTML = `
         <p>${item.name}</p>
         <p>$${item.price}</p>
         `;
-        li.setAttribute('data-aos', 'fade-down')
+        li.setAttribute('data-aos', 'fade-down');
         service.appendChild(li)
     });
 
     // redenr service grooming
     grooming['Luxury Bath'].forEach(item => {
-        let service = main.querySelector('.luxury--bath ul')
+        let service = main.querySelector('.luxury--bath ul');
         let li = document.createElement('li');
         li.innerHTML = `
         <p>${item.name}</p>
         `;
-        li.setAttribute('data-aos', 'fade-down')
-        service.appendChild(li)
+        li.setAttribute('data-aos', 'fade-down');
+        service.appendChild(li);
     });
     grooming['Full Groom'].forEach(item => {
-        let service = main.querySelector('.full--groom ul')
+        let service = main.querySelector('.full--groom ul');
         let li = document.createElement('li');
         li.innerHTML = `
         <p>${item.name}</p>
         `;
-        li.setAttribute('data-aos', 'fade-down')
-        service.appendChild(li)
+        li.setAttribute('data-aos', 'fade-down');
+        service.appendChild(li);
     });
 
     // redenr service broading  
     boarding['30 minus'].forEach(item => {
-        let service = main.querySelector('.boarding ul')
+        let service = main.querySelector('.boarding ul');
         let li = document.createElement('li');
         li.innerHTML = `
             <p>${item.name}</p>
             <p>$${item.price} / ${item.time}</p>
         `;
-        li.setAttribute('data-aos', 'fade-down')
-        service.appendChild(li)
+        li.setAttribute('data-aos', 'fade-down');
+        service.appendChild(li);
     });
 
     // redenr service pet sitting  
     pet_sitting['30 minus'].forEach(item => {
-        let service = main.querySelector('.pet--sitting ul')
+        let service = main.querySelector('.pet--sitting ul');
         let li = document.createElement('li');
         li.innerHTML = `
             <p>${item.name}</p>
             <p>$${item.price}</p>
             `;
-        li.setAttribute('data-aos', 'fade-down')
-        service.appendChild(li)
+        li.setAttribute('data-aos', 'fade-down');
+        service.appendChild(li);
     });
 
     return main;

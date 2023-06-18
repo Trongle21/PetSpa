@@ -25,6 +25,7 @@ export default function page_header() {
     const header = document.createElement('header');
     header.classList.add('header')
     header.innerHTML = `
+    <div class = "loader"></div>
     <div class="page--header">
         <div class="header--bar">
             <i class="fa-sharp fa-solid fa-bars"></i>
@@ -42,7 +43,7 @@ export default function page_header() {
         <div class="header--sign-in">
             <button class="btn btn--primary">Sign in</button>
         </div>
-        <div class="main--account">
+    
         <div  class="main--account__icon">
             <i class="fa-solid fa-user"></i>
         </div>
@@ -55,41 +56,41 @@ export default function page_header() {
             </ul>
         </nav>
     </div>
-</div>
-<div class="main--account__signin">
-<div class="main--account_sigin--warapper l-4 m-6 c-8">
-    <div class="main--account__form-group">
-        <lable for="email" class="form-lable">Email</lable>
-        <input name="email" type="text" placeholder="Enter your email">
-        <span class="form-message"></span>
-    </div>
-    <div class="main--account__form-group">
-        <lable for="password" class="form-lable">Password</lable>
-        <input name="password" type="password" placeholder="Enter your password">
-        <span class="form-message"></span>
-    </div>
-    <div class="main--account__check">
-        <div class="main--account__check--input">
-            <input id="checkRemember" type="checkbox">
-            <label for="checkRemember">Remember me</label>
+    <div class="main--account">
+        <div class="main--account__signin">
+            <div class="main--account_sigin--warapper l-4 m-6 c-8">
+            <div class="main--account__form-group">
+                <lable for="email" class="form-lable">Email</lable>
+                <input name="email" type="text" placeholder="Enter your email">
+                <span class="form-message"></span>
+            </div>
+            <div class="main--account__form-group">
+                <lable for="password" class="form-lable">Password</lable>
+                <input name="password" type="password" placeholder="Enter your password">
+                <span class="form-message"></span>
+            </div>
+            <div class="main--account__check">
+                <div class="main--account__check--input">
+                    <input id="checkRemember" type="checkbox">
+                    <label for="checkRemember">Remember me</label>
+                </div>
+                <a href="">
+                Forgot password
+                </a>
+            </div>
+            <div class="main--account__submit">
+                <a href="">
+                    <button class="btn btn--signin">Sign In</button>
+                </a>
+            </div>
+            <div class="main--account_signup">
+                <h5>Don't have a account?</h5>
+                <a href="signup.html">
+                    Sign up
+                </a>
+            </div>
         </div>
-        <a href="">
-        Forgot password
-        </a>
     </div>
-    <div class="main--account__submit">
-        <a href="">
-            <button class="btn btn--signin">Sign In</button>
-        </a>
-    </div>
-    <div class="main--account_signup">
-        <h5>Don't have a account?</h5>
-        <a href="signup.html">
-            Sign up
-        </a>
-    </div>
-</div>
-</div>
     `;
     /** PC */
     headerList.map((list) => {
@@ -122,6 +123,13 @@ export default function page_header() {
             page_header.classList.remove('bg');
         }
     }
+
+    let loader = header.querySelector('.loader');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 1000)
+    });
 
     // Lắng nghe sự kiện scroll
     window.addEventListener('scroll', handleScroll);

@@ -288,7 +288,7 @@ async function home_page() {
                     <ul>
                     </ul>
                 </div>
-                <a href="" class="plane--price__btn">
+                <a href="service.html" class="plane--price__btn">
                     <button class="btn btn--primary">Buy Now</button>
                 </a>
             `;

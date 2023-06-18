@@ -16,28 +16,12 @@ if (root && location.pathname !== '/signup.html') {
 const footer = page_footer();
 
 if (root && location.pathname !== '/signup.html') {
-    root.insertAdjacentElement('afterend', footer);
+    setTimeout(() => {
+        root.insertAdjacentElement('afterend', footer);
+    }, 300)
 }
 
 /**** Show signin ****/
-
-if (document.querySelector('.header--sign-in button')) {
-
-    /** PC **/
-    document.querySelector('.header--sign-in button').addEventListener('click', () => {
-        document.querySelector('.main--account__signin').classList.add('show')
-        document.querySelector('.overlay').classList.add('show--overley');
-    })
-    document.querySelector('.overlay').addEventListener('click', (e) => {
-        document.querySelector('.main--account__signin').classList.remove('show')
-        document.querySelector('.overlay').classList.remove('show--overley');
-    });
-    /** Moblie & Tablet */
-    document.querySelector('.main--account__icon').addEventListener('click', () => {
-        document.querySelector('.main--account__signin').classList.add('show');
-        document.querySelector('.overlay').classList.add('show--overley');
-    })
-}
 
 /** Check active navbar */
 var currentURL = window.location.href;
@@ -70,7 +54,27 @@ if (document.querySelector('.header--bar')) {
     });
 }
 
-/** Pay check */
+/** Show sign in */
+
+if (document.querySelector('.header--sign-in button')) {
+
+    /** PC **/
+    document.querySelector('.header--sign-in button').addEventListener('click', () => {
+        document.querySelector('.main--account_sigin--warapper').classList.add('show')
+        document.querySelector('.overlay').classList.add('show--overley');
+    })
+    document.querySelector('.overlay').addEventListener('click', (e) => {
+        document.querySelector('.main--account_sigin--warapper').classList.remove('show')
+        document.querySelector('.overlay').classList.remove('show--overley');
+    });
+    /** Moblie & Tablet */
+    document.querySelector('.main--account__icon').addEventListener('click', () => {
+        document.querySelector('.main--account_sigin--warapper').classList.add('show');
+        document.querySelector('.overlay').classList.add('show--overley');
+    })
+}
+
+
 
 /** API */
 let app = {
@@ -92,7 +96,7 @@ let app = {
             });
         });
 
-
+        /** Loader */
     },
     /**********PRODUCT**************/
     product_page: async function() {
@@ -124,6 +128,14 @@ let app = {
     detail_product: async function() {
         let page = await
         import ("./pages/detail_product_page.js");
+        document.querySelector('.root').appendChild(await page.detail_product_page());
+        await page.fetch_data_detail();
+        await page.slide();
+    },
+    /**********DETAIL slide**************/
+    detail_slide: async function() {
+        let page = await
+        import ("./pages/detail_slide_page.js");
         document.querySelector('.root').appendChild(await page.detail_product_page());
         await page.fetch_data_detail();
         await page.slide();
@@ -242,7 +254,6 @@ let app = {
 }
 
 if (location.pathname == '/' || location.pathname == '/index.html') {
-    console.log(1)
     app.home_page();
 }
 
@@ -252,6 +263,9 @@ if (location.pathname === '/product.html') {
 
 if (location.pathname === '/detail_product.html') {
     app.detail_product();
+}
+if (location.pathname === '/detail_slide.html') {
+    app.detail_slide();
 }
 
 if (location.pathname === '/service.html') {

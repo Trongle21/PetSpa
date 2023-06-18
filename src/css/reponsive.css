@@ -373,6 +373,9 @@
 /* Mobile */
 
 @media (max-width:739px) {
+    .container {
+        padding: 0rem 2rem !important;
+    }
     /*Header*/
     .page--header {
         padding: 1rem 1.8rem;
@@ -443,9 +446,6 @@
     .plan--price {
         width: 80%;
         margin-right: 1rem;
-    }
-    .plan--price.scale {
-        display: none;
     }
     .service--list {
         overflow: hidden;
@@ -521,11 +521,62 @@
     }
     /* Cart */
     .product--cart {
-        width: 26rem;
+        width: 100%;
+        bottom: 0;
+        max-height: 40rem;
+        overflow: auto;
+    }
+    .product--cart__pay {
+        padding-bottom: 1rem;
+        display: flex;
+        gap: 4rem;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow: auto;
+    }
+    .product--cart__pay--wrapper {
+        padding-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 20rem;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .product--cart__btn {
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+    .product--cart__total {
+        margin-top: 0;
+        gap: 1rem;
+    }
+    .product--cart__info {
+        border: none;
+        position: relative;
+    }
+    .product--cart__info--close {
+        position: sticky;
+        top: -1rem;
+        left: -1rem;
+    }
+    .product--cart__info--user {
+        display: none;
+    }
+    .product--cart__btn a button {
+        padding: 1rem 2rem;
+        font-size: 1.4rem;
+    }
+    .product--item__delete {
+        position: absolute;
+        right: -1rem;
     }
     .product--cart__pay--image {
-        width: 30%;
-        padding-top: 30%;
+        width: 50%;
+        padding-top: 50%;
     }
     .product--cart__pay--info h3 {
         font-size: 1.6rem;
@@ -690,6 +741,9 @@
     .about--section__principles--info .about--title {
         padding-top: 4rem;
     }
+    .about--section__history {
+        flex-direction: column-reverse;
+    }
     /************CONTACT************/
     .contact--form__checkbox h3 {
         margin-left: 0rem;
@@ -702,8 +756,15 @@
         flex-direction: column-reverse;
     }
     .pay--image p {
-        top: 1rem;
-        right: 2rem;
+        top: -1rem;
+        right: 6rem;
+    }
+    .pay--des h4 {
+        font-size: 1.6rem;
+    }
+    .pay--price {
+        font-size: 1.6rem;
+        margin-right: -1rem;
     }
     .payment--methods h3 {
         padding-top: 4rem;
@@ -711,10 +772,38 @@
     .section--pay__bill--wrapper h3 {
         padding-top: 4rem;
     }
+    /************PAYMENT SUCCESS************/
+    .success {
+        flex-direction: column;
+    }
+    .section--pay__info {
+        margin-top: 3.2rem;
+    }
     /************DETAIL PRODUCT************/
     .detail--product__info {
         padding-left: 0rem;
         padding-top: 2rem;
+    }
+    .section--detail__padding .container {
+        padding: 0rem 2rem;
+    }
+    .detail--product__info h2 {
+        font-size: 2.2rem;
+    }
+    .continue--shopping__btn {
+        gap: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .continue--shopping__btn a button {
+        padding: 1rem 1rem;
+    }
+    /************CONTACT SUCCESS************/
+    .contact--success__noti {
+        padding: 1rem 2rem;
+    }
+    .contact--success__noti h3 {
+        font-size: 1.6rem;
     }
 }
 
@@ -761,10 +850,19 @@
     .service--padding {
         margin-bottom: 12rem;
     }
-    .plan--price.scale {
-        display: none;
-    }
+    /* .plan--price.scale {
+            display: none;
+        } */
     /************Product************/
+    .product--cart {
+        max-height: 50rem;
+        overflow: auto;
+        top: 10rem;
+    }
+    .product--cart__info--close {
+        top: 3rem;
+        right: 2rem;
+    }
     /************Sign up************/
     .signup--form__wrapper h2 {
         font-size: 2.8rem;
@@ -782,6 +880,17 @@
     .about--section__principles--info .about--title {
         padding-top: 4rem;
     }
+    /************PAYMENT************/
+    .pay--image p {
+        top: -1rem;
+        right: -1rem;
+    }
+    .pay--des h4 {
+        font-size: 1.6rem;
+    }
+    .pay--price {
+        font-size: 1.6rem;
+    }
 }
 
 
@@ -791,6 +900,19 @@
     /************SERVICE************/
     .service--padding {
         margin-bottom: 14rem;
+    }
+    .main--account {
+        display: block;
+    }
+    /************PRODUCT************/
+    .product--cart {
+        max-height: 50rem;
+        overflow: auto;
+        top: 10rem;
+    }
+    .product--cart__info--close {
+        top: 3rem;
+        right: 2rem;
     }
 }
 
@@ -820,5 +942,10 @@
     }
     .service--mb__image h6 {
         font-size: 2rem;
+    }
+    /************PAYMENT************/
+    .pay--image p {
+        top: -2rem;
+        right: 4rem;
     }
 }

@@ -4,18 +4,18 @@ let api_course = {
     products: "products",
 };
 
-const checkOutDetailProduct = localStorage.getItem("checkOutDetailProduct");
+const checkOutDetail = localStorage.getItem("checkOutDetail");
 
 export async function fetch_data_detail() {
-    if (checkOutDetailProduct) {
-        const parsedData = JSON.parse(checkOutDetailProduct);
+    if (checkOutDetail) {
+        const parsedData = JSON.parse(checkOutDetail);
         await render_detail_product(parsedData);
     }
 }
 
 let cart = {};
 
-let detail_silde = {}
+let product = {}
 
 import { fetch_data } from "../helper.js";
 
@@ -117,8 +117,8 @@ async function detail_product_page() {
 
             /** click slide */
             div.querySelectorAll(".product--item__image").forEach((slide) => {
-                slide.addEventListener("click", async(e) => {
-                    await render_detail_slide(v);
+                slide.addEventListener("click", (e) => {
+                    render_detail_slide(v)
                 });
             });
             div.querySelector('.product--item__btn').addEventListener('click', () => {
@@ -126,7 +126,6 @@ async function detail_product_page() {
             })
         }
     }
-
     async function render_detail_slide(params) {
         if (!params) return false;
 
@@ -143,9 +142,9 @@ async function detail_product_page() {
 
         let key = ` ${id} - ${name} - ${price}`;
 
-        detail_silde[key] = detail_product;
-        localStorage.setItem('checkOutDetail', JSON.stringify(detail_silde));
-        window.location.href = 'detail_slide.html';
+        product[key] = detail_product;
+        localStorage.setItem('checkOutDetailProduct', JSON.stringify(product));
+        window.location.href = 'detail_product.html';
     }
 
     main.querySelector(".cart--icon").addEventListener("click", (e) => {
@@ -174,6 +173,10 @@ async function render_detail_product(cart) {
 
     const detail_product = document.querySelector(".section--detail__product");
     detail_product.innerHTML = "";
+    if (Object.keys(cart).length > 1) {
+        let detail = document.querySelector(".section--detail__product--wapper");
+        console.log(detail);
+    }
     for (let [k, v] of Object.entries(cart)) {
         let { name, price, description, detail, image, image_2, quantity } = v;
         let div = document.createElement("div");

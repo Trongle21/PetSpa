@@ -84,9 +84,7 @@ async function handle_data() {
                     </div>
                 </div>
             </section>
-
         `;
-
     /** Pagination */
     let per_page = 8;
     let current_page = 1;

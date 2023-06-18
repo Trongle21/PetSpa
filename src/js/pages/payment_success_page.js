@@ -53,7 +53,7 @@ export async function payment_success_page() {
                 <h6>Payment Success</h6>
             </div>
             <div class="line"></div>
-            <div class="section--pay__wrapper row">
+            <div class="section--pay__wrapper success row">
                 <div class="section--pay__bill l-8 m-8 c-12">
                     <div class="notification">
                         <div class="noti--icon  ">
@@ -83,13 +83,14 @@ export async function payment_success_page() {
                     </div>
                 </div>
                 <div class="continue--shopping__btn l-12 m5 c-12" href="product.html">
-                    <a href="product.html"></a>
-                    <button class="btn btn--primary">
-                        Continue shopping
-                    </button>
+                    <a href="product.html">
+                        <button class="btn btn--primary">
+                            Continue shopping
+                        </button>
+                    </a>
                     <a href="index.html">
                         <button class="btn btn--secondary">
-                        Home Page
+                            Home Page
                         </button>
                     </a>
                 </div>

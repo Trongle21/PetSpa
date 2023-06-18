@@ -99,11 +99,11 @@ export async function payment_page() {
                         <h3>Paymet methods</h3>
                         <label for="bank" type="bank" class="payment">
                             <input type="checkbox" name="bank" id="bank">
-                            <label for="bank">Payment by bank transfer</label>
+                            <label for="bank">Bank transfer</label>
                         </label>
                         <label for="delivery" class="payment">
                             <input type="checkbox" name="delivery" id="delivery">
-                            <label for="delivery">Payment on delivery</label>
+                            <label for="delivery">Delivery</label>
                         </label>
                     </div>
                 </div>

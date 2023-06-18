@@ -3,6 +3,15 @@
 
 /* Header*/
 
+.loader {
+    background: #f4b558 url(/src/image/loader.gif) no-repeat center center;
+    background-size: 15%;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 111111;
+}
+
 .header {
     position: fixed;
     width: 100%;
@@ -49,7 +58,8 @@
 }
 
 .main--account {
-    display: none;
+    position: fixed;
+    z-index: 111;
 }
 
 
@@ -73,24 +83,22 @@
     color: var(--color-primary);
 }
 
-.main--account__signin {
-    display: none;
-}
-
-.main--account__signin.show {
-    display: block;
-}
-
 .main--account_sigin--warapper {
     position: fixed;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50%;
+    transform: translate(-50%, -200%);
     background-color: #fff;
     padding: 2rem;
     z-index: 111;
     color: #000;
     border-radius: 10px;
+    transition: all var(--animated-fast) ease-in-out;
+}
+
+.main--account_sigin--warapper.show {
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .main--account__form-group {
@@ -1064,8 +1072,6 @@ input[type="checkbox"]:checked {
 
 .product--cart {
     position: fixed;
-    top: 10rem;
-    bottom: 10rem;
     right: 0rem;
     padding: 2rem 2rem;
     width: 35rem;
@@ -1079,8 +1085,6 @@ input[type="checkbox"]:checked {
     transform: translateX(100%);
     opacity: 0;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-    max-height: 80rem;
-    overflow: auto;
 }
 
 .product--cart.show--cart {
@@ -1097,8 +1101,6 @@ input[type="checkbox"]:checked {
 
 .product--cart__info--close {
     position: absolute;
-    top: 3rem;
-    right: 2rem;
     color: var(--color-primary);
     font-size: 3.2rem;
     cursor: pointer;
@@ -1170,6 +1172,11 @@ input[type="checkbox"]:checked {
 
 .product--cart__pay--wrapper {
     position: relative;
+}
+
+.product--cart__pay .text-center {
+    display: block;
+    padding-top: 2rem;
 }
 
 .product--item__delete {}
@@ -1253,26 +1260,26 @@ input[type="checkbox"]:checked {
     max-width: 120rem;
     margin: 0 auto;
     padding: 0 4rem;
-    overflow: hidden;
 }
 
 
 /* PC */
 
-.service--section__page--wrapper_pc {
-    position: relative;
-}
-
 .service--section__page--list {
-    position: sticky;
-    top: 12rem;
-    z-index: 55;
+    position: relative;
 }
 
 .service--section__page--list ul {
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    position: sticky;
+    top: 12rem;
+    z-index: 55;
+}
+
+.service--section__page-info {
+    overflow: hidden;
 }
 
 .service--section__page--list ul li {
@@ -1291,6 +1298,7 @@ input[type="checkbox"]:checked {
 
 .service--image img {
     width: 16rem;
+    padding-left: 1rem;
 }
 
 .service--title {
@@ -1637,8 +1645,8 @@ input[type="checkbox"]:checked {
 .pay--image p {
     display: inline-block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -1rem;
+    right: -1rem;
     font-size: 2rem;
     border: 1px solid var(--color-primary);
     width: 3rem;
