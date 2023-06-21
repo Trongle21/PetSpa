@@ -485,6 +485,132 @@
     .path--link {
         gap: 2rem;
     }
+    /************SERVICE************/
+    .section--hero__wrapper {
+        left: 2rem !important;
+        width: auto !important;
+        overflow: hidden;
+    }
+    .content--hero__name {
+        font-size: 3.6rem;
+    }
+    .content--hero__des {
+        font-size: 2rem;
+        padding-right: 2rem;
+    }
+    .service--section__page--warpper_pc {
+        display: none;
+    }
+    .service--section__page--wrapper_mb {
+        display: block;
+    }
+    .service--section__page--list {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        position: static;
+    }
+    .service--mb__title {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .service--mb__image {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .service--mb__image img {
+        width: 6rem;
+    }
+    .service--mb__image h6 {
+        font-size: 2.2rem;
+    }
+    .service--mb__content {
+        margin-top: 2rem;
+    }
+    .service--title {
+        flex-direction: column;
+        align-items: start;
+    }
+    .service--content {
+        margin-left: -1rem;
+    }
+    .service--content__info {
+        margin-top: 2rem;
+    }
+    .service--mb__icon i {
+        display: inline-block;
+        font-size: 2.6rem;
+        transition: all var(--animated-slow);
+    }
+    .service--mb__icon i.rotate {
+        transform: rotate(45deg);
+    }
+    .service--content__detail--list {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .service--content__detail--list:not(:first-child) {
+        border-top: 1px solid #e3e3e3;
+    }
+    .service--mb__content {
+        overflow: hidden;
+        animation: slide-down var(--animated-slow) ease-out forwards;
+    }
+    .service--mb__content.show--service {
+        animation: slide-up var(--animated-slow) ease-in forwards;
+    }
+    .service--padding {
+        margin-bottom: 4rem;
+    }
+    @keyframes slide-up {
+        from {
+            max-height: 0;
+            opacity: 0;
+        }
+        to {
+            max-height: 200rem;
+            opacity: 1;
+        }
+    }
+    @keyframes slide-down {
+        from {
+            max-height: 50rem;
+            opacity: 1;
+        }
+        to {
+            max-height: 0;
+            opacity: 0;
+        }
+    }
+    /************SERVICE BOOK************/
+    .section--service__book {
+        padding-bottom: 20rem;
+    }
+    .service--book_btn .btn--secondary {
+        margin-bottom: 2rem;
+    }
+    /************SERVICE BOOK SUCCESS************/
+    .book--success__image .img {
+        width: 36%;
+        padding-top: 60%;
+    }
+    .book--success {
+        margin-top: 4rem;
+        text-align: center;
+    }
+    .book--success__icon i {
+        font-size: 6rem;
+    }
+    .book--success__info h2 {
+        font-size: 2.6rem;
+    }
+    .book--success a button {
+        margin-bottom: 4rem;
+    }
     /************PRODUCT************/
     /* Title */
     .product--info {
@@ -594,107 +720,6 @@
     }
     .product--item__delete button {
         font-size: 2rem;
-    }
-    /************SERVICE************/
-    .section--hero__wrapper {
-        left: 2rem !important;
-        width: auto !important;
-        overflow: hidden;
-    }
-    .content--hero__name {
-        font-size: 3.6rem;
-    }
-    .content--hero__des {
-        font-size: 2rem;
-        padding-right: 2rem;
-    }
-    .service--section__page--warpper_pc {
-        display: none;
-    }
-    .service--section__page--wrapper_mb {
-        display: block;
-    }
-    .service--section__page--list {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        position: static;
-    }
-    .service--mb__title {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .service--mb__image {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-    .service--mb__image img {
-        width: 6rem;
-    }
-    .service--mb__image h6 {
-        font-size: 2.2rem;
-    }
-    .service--mb__content {
-        margin-top: 2rem;
-    }
-    .service--title {
-        flex-direction: column;
-        align-items: start;
-    }
-    .service--content {
-        margin-left: -1rem;
-    }
-    .service--content__info {
-        margin-top: 2rem;
-    }
-    .service--mb__icon i {
-        display: inline-block;
-        font-size: 2.6rem;
-        transition: all var(--animated-slow);
-    }
-    .service--mb__icon i.rotate {
-        transform: rotate(45deg);
-    }
-    .service--content__detail--list {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
-    .service--content__detail--list:not(:first-child) {
-        border-top: 1px solid #e3e3e3;
-    }
-    .service--mb__content {
-        overflow: hidden;
-        animation: slide-down var(--animated-slow) ease-out forwards;
-    }
-    .service--mb__content.show--service {
-        animation: slide-up var(--animated-slow) ease-in forwards;
-    }
-    .service--padding {
-        margin-bottom: 4rem;
-    }
-    @keyframes slide-up {
-        from {
-            max-height: 0;
-            opacity: 0;
-        }
-        to {
-            max-height: 200rem;
-            opacity: 1;
-        }
-    }
-    @keyframes slide-down {
-        from {
-            max-height: 50rem;
-            opacity: 1;
-        }
-        to {
-            max-height: 0;
-            opacity: 0;
-        }
     }
     /************Sign up************/
     .main--account__form-group input {

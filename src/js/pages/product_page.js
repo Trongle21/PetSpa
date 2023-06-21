@@ -168,7 +168,7 @@ async function handle_data() {
 
             cart[key] = detail_product;
 
-            localStorage.setItem('checkOutDetailProduct', JSON.stringify(cart));
+            localStorage.setItem('data_home', JSON.stringify(cart));
             window.location.href = 'detail_product.html';
         }
 
@@ -292,30 +292,38 @@ async function handle_data() {
 
 
     /** Show cart */
-
-    main.querySelector('.cart--icon').addEventListener('click', (e) => {
-        const productCart = main.querySelector('.product--cart');
-        productCart.classList.add('show--cart');
-
-        main.querySelector('.cart--icon').classList.add('hidden');
-        const closeCart = main.querySelector('.product--cart__info--close');
-        if (closeCart) {
-            closeCart.addEventListener('click', (e) => {
-                productCart.classList.remove('show--cart');
-                main.querySelector('.cart--icon').classList.remove('hidden');
-            });
-        }
-
-        let product_cart = document.querySelector('.product--cart__pay');
-        if (!Object.keys(cart).length) {
-            product_cart.innerHTML = `<p class="text-center">Your cart is empty</p>`;
-            return;
-        }
-    });
     return main;
 }
 
-/** Detail Product */
+const data_home = localStorage.getItem('data_home');
+export async function fetch_data_home() {
+    if (data_home) {
+        cart = JSON.parse(data_home);
+        await icon_cart(cart);
+    }
+}
+
+
+export async function icon_cart(cart) {
+    const cartIcon = document.querySelector('.cart--icon');
+    const productCart = document.querySelector('.product--cart');
+
+    cartIcon.addEventListener('click', (e) => {
+        productCart.classList.add('show--cart');
+        document.querySelector('.cart--icon').classList.add('hidden');
+        render_cart(cart)
+    });
+
+    const closeCart = document.querySelector('.product--cart__info--close');
+    if (closeCart) {
+        closeCart.addEventListener('click', (e) => {
+            productCart.classList.remove('show--cart');
+            document.querySelector('.cart--icon').classList.remove('hidden');
+        });
+    }
+}
+
+
 
 function add_product(v) {
     let { id, name, image, price, description } = v;
@@ -334,9 +342,10 @@ function add_product(v) {
     } else {
         cart[key] = new_item;
     }
+
+    localStorage.setItem('data_home', JSON.stringify(cart));
     render_cart(cart);
 }
-
 
 function render_cart(cart) {
     /** Show cart */
@@ -352,7 +361,7 @@ function render_cart(cart) {
     }
     let total = 0;
     let product_cart = document.querySelector('.product--cart__pay');
-    if (!Object.keys(cart).length) {
+    if (!cart || !Object.entries(cart).length) {
         product_cart.innerHTML = `<p class="text-center">Your cart is empty</p>`;
         return;
     }
@@ -387,7 +396,7 @@ function render_cart(cart) {
 
             total += total_price;
             document.querySelector('.product--cart__total span').innerHTML = `
-                ${total.toLocaleString()} $
+               $ ${total.toLocaleString()}
             `;
 
             // Change quantity product
@@ -397,6 +406,8 @@ function render_cart(cart) {
             div.querySelector('.product--item__delete').addEventListener('click', () => {
                 delete_product(k);
             });
+
+            localStorage.setItem('data_home', JSON.stringify(cart));
 
             // pay 
             document.querySelector('.product--cart__btn').addEventListener('click', () => {
@@ -408,7 +419,6 @@ function render_cart(cart) {
 
 async function handle_product_data(cart) {
     localStorage.setItem('checkoutData', JSON.stringify(cart));
-    // console.log(cart)
     window.location.href = 'payment.html';
 }
 
@@ -416,10 +426,9 @@ function delete_product(k) {
     let agree_delete = confirm('You want to remove this product from your cart');
     if (agree_delete === true) {
         delete cart[k];
+        localStorage.setItem('data_home', JSON.stringify(cart));
         if (Object.keys(cart).length === 0) {
             document.querySelector('.product--cart__total span').innerHTML = '0 $';
-            // let cart_clear = document.querySelector('.cart--wrapper p');
-            // cart_clear.innerHTML = `Đơn hàng đang trống`;
         }
         render_cart(cart);
     }

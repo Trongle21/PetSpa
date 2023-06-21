@@ -25,26 +25,26 @@ let footerInfoAbout = [{
     },
     {
         name: 'Google',
-        url: 'google.com'
+        url: 'https://google.com.vn'
     },
     {
         name: 'Youtube',
-        url: 'youtube.com'
+        url: 'https://www.youtube.com'
     },
 ]
 
 
 let link_contact = [{
     name: 'Facebook',
-    url: '#',
+    url: 'https://www.facebook.com',
     icon: '<i class="fa-brands fa-square-facebook"></i>'
 }, {
     name: 'Instagram',
-    url: '#',
+    url: 'https://www.instagram.com',
     icon: '<i class="fa-brands fa-square-instagram"></i>'
 }, {
     name: 'Twitter',
-    url: '#',
+    url: 'https://twitter.com',
     icon: '<i class="fa-brands fa-square-twitter"></i>'
 }, ]
 

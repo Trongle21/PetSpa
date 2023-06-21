@@ -11,41 +11,47 @@ async function contact_page() {
     </section>
     <section class="section--contact__form">
         <div class="container">
-            <h2>How can we help?</h2>
+            <div>
+                <div class="path--link">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <h6>Contact</h6>
+            </div>
             <div class="line"></div>
+            <h2>How can we help?</h2>
             <form action="" class="contact--form__info">
                 <div class="contact--form row">
                     <div class="contact--form__list l-6 m-6 c-12">
                         <div class="contact--form__list--wrapper">
-                            <lable for="first-name" class="form-lable">First Name</lable>
+                            <label for="first-name" class="form-label">First Name</label>
                             <input name="first-name" type="text" placeholder="Enter your first name">
                             <span class="form-message"></span>
                         </div>
                     </div>
                     <div class="contact--form__list l-6 m-6 c-12">
                         <div class="contact--form__list--wrapper">
-                            <lable for="last-name" class="form-lable">Last Name</lable>
+                            <label for="last-name" class="form-label">Last Name</label>
                             <input name="last-name" type="text" placeholder="Enter your last name">
                             <span class="form-message"></span>
                         </div>
                     </div>
                     <div class="contact--form__list l-6 m-6 c-12">
                         <div class="contact--form__list--wrapper">
-                            <lable for="email" class="form-lable">Email</lable>
+                            <label for="email" class="form-label">Email</label>
                             <input name="email" type="text" placeholder="Enter your email">
                             <span class="form-message"></span>
                         </div>
                     </div>
                     <div class="contact--form__list l-6 m-6 c-12">
                         <div class="contact--form__list--wrapper">
-                            <lable for="phone_number" class="form-lable">Phone Number</lable>
-                            <input name="phone_number" type="text" placeholder="Enter your phone_number">
+                            <label for="phone_number" class="form-label">Phone Number</label>
+                            <input name="phone_number" type="text" placeholder="Enter your phone number">
                             <span class="form-message"></span>
                         </div>
                     </div>
                     <div class="contact--form__list l-6 m-6 c-12">
                         <div class="contact--form__list--wrapper">
-                            <lable for="locaction" class="form-lable">Locaction</lable>
+                            <label for="locaction" class="form-label">Locaction</label>
                             <select>
                                 <option value="HaNoi">Ha Noi</option>
                                 <option value="LaoCai">Lao Cai</option>
@@ -57,7 +63,7 @@ async function contact_page() {
                     </div>
                     <div class="contact--form__list l-6 m-6 c-12">
                         <div class="contact--form__list--wrapper">
-                            <lable for="subject" class="form-lable">Subject</lable>
+                            <label for="subject" class="form-label">Subject</label>
                             <input name="subject" type="text" placeholder="Enter your subject">
                             <span class="form-message"></span>
                         </div>
@@ -104,6 +110,35 @@ async function contact_page() {
             </div>
         </div>
     </section>
+    <div class="cart--icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="product--cart">
+        <div class="product--cart__info">
+            <div class="product--cart__info--user">
+                <div class="user--image" style="background-image: url('./src/image/Kaio_In_the_world_of_fantasy\(1\).png');">
+                </div>
+                <h6>Kaiosuke</h6>
+            </div>
+            <div class="product--cart__info--close">
+                <i> <i class="fa-solid fa-xmark"></i></i>
+            </div>
+        </div>
+        <div class="cart--wrapper">
+            <div class="product--cart__pay">
+
+            </div>
+        </div>
+        <div class="product--cart__btn">
+            <a href="#">
+                <button class="btn btn--secondary ">Palce An Order</button>
+            </a>
+            <div class="product--cart__total">
+                <h4>Total</h4>
+                <span>0 $</span>
+            </div>
+        </div>
+    </div>
     `;
 
     main.querySelector('.contact--form__btn').addEventListener('click', () => {
@@ -143,6 +178,81 @@ function handle_contact_option(main) {
     if (check_email.value !== '' && check_first_name.value !== '' && check_last_name.value !== '' && check_phone_number.value !== '' && check_subject.value !== '') {
         window.location.href = 'contact_success.html';
     }
+}
+
+
+const checkoutDataCart = localStorage.getItem('data_home');
+
+export async function fetch_data_cart() {
+    if (checkoutDataCart) {
+        const parseData = JSON.parse(checkoutDataCart);
+        await render_cart_home(parseData)
+    }
+}
+
+export async function icon_cart() {
+    document.querySelector('.cart--icon').addEventListener('click', (e) => {
+        const productCart = document.querySelector('.product--cart');
+        productCart.classList.add('show--cart');
+        document.querySelector('.cart--icon').classList.add('hidden');
+        const closeCart = document.querySelector('.product--cart__info--close');
+        if (closeCart) {
+            closeCart.addEventListener('click', (e) => {
+                productCart.classList.remove('show--cart');
+                document.querySelector('.cart--icon').classList.remove('hidden');
+            });
+        }
+    });
+}
+
+async function render_cart_home(cart) {
+    let product_cart = document.querySelector('.product--cart__pay');
+    if (!cart || !Object.entries(cart).length) {
+        product_cart.innerHTML = `<p class="text-center">Your cart is empty</p>`;
+        return;
+    }
+    if (cart !== undefined && cart !== null) {
+        for (let [k, v] of Object.entries(cart)) {
+            let { id, name, image, price, quantity, total_price, description } = v;
+            let div = document.createElement('div');
+            div.classList.add('product--cart__pay--wrapper');
+            div.innerHTML = '';
+            div.classList.add('product--cart__pay--wrapper');
+            div.innerHTML = `
+                    <div class="product--cart__pay--image" style="background-image: url(${image})">
+                    </div>
+                    <div class="product--cart__pay--info">
+                        <h3>${name}</h3>
+                        <h5><span>$</span> ${price.toLocaleString()}</h5>
+                        <div class="product--quantity">
+                            <p class="fw-700">${quantity}</p>
+                        </div>
+                    </div>
+                    <div class="product--item__delete">
+                    </div>
+                    `;
+
+            product_cart.appendChild(div);
+
+            let total = 0;
+            total += total_price;
+            document.querySelector('.product--cart__total span').innerHTML = `
+               $ ${total.toLocaleString()}
+            `;
+
+            localStorage.setItem('data_home', JSON.stringify(cart));
+
+            //  pay 
+            document.querySelector('.product--cart__btn').addEventListener('click', () => {
+                handle_product_data(cart)
+            })
+        }
+    }
+}
+
+async function handle_product_data(cart) {
+    localStorage.setItem('checkoutData', JSON.stringify(cart));
+    window.location.href = 'payment.html';
 }
 
 export { contact_page }

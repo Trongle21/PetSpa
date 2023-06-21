@@ -59,22 +59,22 @@ export async function payment_page() {
                     <div class="section--pay__bill--wrapper">
                         <h3>Infomation</h3>
                         <div class="main--account__form-group">
-                            <lable for="em  ail" class="form-lable">Email</lable>
+                            <label for="em  ail" class="form-label">Email</label>
                             <input name="email" type="text" placeholder="Enter your email">
                             <span class="form-message"></span>
                         </div>
                         <div class="main--account__form-group">
-                            <lable for="name" class="form-lable">Name</lable>
+                            <label for="name" class="form-label">Name</label>
                             <input name="name" type="text" placeholder="Enter your Name">
                             <span class="form-message"></span>
                         </div>
                         <div class="main--account__form-group">
-                            <lable for="phone_number" class="form-lable">Phone number</lable>
+                            <label for="phone_number" class="form-label">Phone number</label>
                             <input name="phone_number" type="phone_number" placeholder="Enter your phone number">
                             <span class="form-message"></span>
                         </div>
                         <div class="main--account__form-group">
-                            <lable for="country" class="form-lable">Country</lable>
+                            <label for="country" class="form-label">Country</label>
                             <select name="country" id="country">
                                 <option value="Viet Nam">Viet Nam</option>
                                 <option value="Japan">Japan</option>
@@ -85,7 +85,7 @@ export async function payment_page() {
                             <span class="form-message"></span>
                         </div>
                         <div class="main--account__form-group">
-                            <lable for="address" class="form-lable">Adress</lable>
+                            <label for="address" class="form-label">Adress</label>
                             <input name="address" type="address" placeholder="Enter your Adress">
                             <span class="form-message"></span>
                         </div>

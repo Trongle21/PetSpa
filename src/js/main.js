@@ -1,5 +1,6 @@
 import page_header from "./components/page_header.js"
 import page_footer from "./components/page_footer.js"
+import { fetch_data_cart } from "./pages/home_page.js";
 
 /** Render header, footer */
 
@@ -10,12 +11,12 @@ const headerContainer = document.createElement('div');
 
 headerContainer.appendChild(page_header());
 
-if (root && location.pathname !== '/signup.html') {
+if (root && location.pathname !== '/signup.html' && location.pathname !== '/service_book_success.html') {
     root.parentNode.insertBefore(headerContainer, root);
 }
 const footer = page_footer();
 
-if (root && location.pathname !== '/signup.html') {
+if (root && location.pathname !== '/signup.html' && location.pathname !== '/service_book_success.html') {
     setTimeout(() => {
         root.insertAdjacentElement('afterend', footer);
     }, 300)
@@ -83,6 +84,8 @@ let app = {
         let page = await
         import ("./pages/home_page.js");
         document.querySelector('.root').appendChild(await page.home_page());
+        await page.icon_cart();
+        await page.fetch_data_cart();
 
         /** Service scale */
         let plan_price = document.querySelectorAll('.plan--price')
@@ -96,13 +99,15 @@ let app = {
             });
         });
 
-        /** Loader */
+        /** cart */
     },
     /**********PRODUCT**************/
     product_page: async function() {
         let page = await
         import ("./pages/product_page.js");
         document.querySelector('.root').appendChild(await page.handle_data());
+        await page.icon_cart();
+        await page.fetch_data_home();
 
         /** Search */
         let product_search = document.querySelector('.product--search');
@@ -130,14 +135,18 @@ let app = {
         import ("./pages/detail_product_page.js");
         document.querySelector('.root').appendChild(await page.detail_product_page());
         await page.fetch_data_detail();
+        await page.icon_cart();
+        await page.fetch_data_home();
         await page.slide();
     },
-    /**********DETAIL slide**************/
+    /**********DETAIL SLIDE**************/
     detail_slide: async function() {
         let page = await
         import ("./pages/detail_slide_page.js");
         document.querySelector('.root').appendChild(await page.detail_product_page());
         await page.fetch_data_detail();
+        await page.icon_cart();
+        await page.fetch_data_home();
         await page.slide();
     },
 
@@ -146,6 +155,8 @@ let app = {
         let page = await
         import ("./pages/service_page.js");
         document.querySelector('.root').appendChild(await page.service_page());
+        await page.icon_cart();
+        await page.fetch_data_cart();
 
         /** Service */
 
@@ -188,12 +199,22 @@ let app = {
         });
     },
 
+    /**********SERVICE BOOK**************/
+
+    service_book_page: async function() {
+        let page = await
+        import ("./pages/service__book_page.js");
+        document.querySelector('.root').appendChild(await page.service_book_page());
+    },
+
     /**********ABOUT**************/
 
     about_page: async function() {
         let page = await
         import ("./pages/about_page.js");
         document.querySelector('.root').appendChild(await page.about_page());
+        await page.icon_cart();
+        await page.fetch_data_cart();
     },
 
     /**********CONTACT**************/
@@ -202,6 +223,8 @@ let app = {
         let page = await
         import ("./pages/contact_page.js");
         document.querySelector('.root').appendChild(await page.contact_page());
+        await page.icon_cart();
+        await page.fetch_data_cart();
     },
 
     /**********CONTACT SUCCESS**************/
@@ -264,12 +287,17 @@ if (location.pathname === '/product.html') {
 if (location.pathname === '/detail_product.html') {
     app.detail_product();
 }
+
 if (location.pathname === '/detail_slide.html') {
     app.detail_slide();
 }
 
 if (location.pathname === '/service.html') {
     app.serice_page();
+}
+
+if (location.pathname === '/service_book.html') {
+    app.service_book_page();
 }
 
 if (location.pathname === '/about.html') {
@@ -279,7 +307,6 @@ if (location.pathname === '/about.html') {
 if (location.pathname === '/contact.html') {
     app.contact_page();
 }
-
 
 if (location.pathname === '/contact_success.html') {
     app.contact_success_page();

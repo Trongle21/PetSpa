@@ -15,17 +15,17 @@ async function signup_page() {
                         <h3>Create your account now</h3>
 
                         <div class="sign--up__form">
-                            <lable for="email" class="form-lable">Email</lable>
+                            <label for="email" class="form-label">Email</label>
                             <input name="email" type="text" placeholder="Enter your email">
                             <span class="form-message"></span>
                         </div>
                         <div class="sign--up__form">
-                            <lable for="password" class="form-lable">Password</lable>
+                            <label for="password" class="form-label">Password</label>
                             <input name="password" type="password" placeholder="Enter your password">
                             <span class="form-message"></span>
                         </div>
                         <div class="sign--up__form">
-                            <lable for="password" class="form-lable">Confirm Password</lable>
+                            <label for="password" class="form-label">Confirm Password</label>
                             <input name="password" type="password" placeholder="Enter your password">
                             <span class="form-message"></span>
                         </div>
@@ -49,12 +49,12 @@ async function signup_page() {
         <div class="main--account__signin">
             <div class="main--account_sigin--warapper l-4 m-6 c-8">
                 <div class="main--account__form-group">
-                    <lable for="email" class="form-lable">Email</lable>
+                    <label for="email" class="form-label">Email</label>
                     <input name="email" type="text" placeholder="Enter your email">
                     <span class="form-message"></span>
                 </div>
                 <div class="main--account__form-group">
-                    <lable for="password" class="form-lable">Password</lable>
+                    <label for="password" class="form-label">Password</label>
                     <input name="password" type="password" placeholder="Enter your password">
                     <span class="form-message"></span>
                 </div>

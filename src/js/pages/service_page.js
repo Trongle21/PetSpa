@@ -100,20 +100,13 @@ let boarding = {
 
 let pet_sitting = {
     '30 minus': [{
-            name: 'Bath & blow dry',
-            price: 100,
-            time: 'Night',
+            name: 'Cat Visit',
+            price: 40,
         },
         {
-            name: 'Ear cleaning',
-            price: 95,
-            time: 'Night',
+            name: 'Puppy Visit',
+            price: 40,
         },
-        {
-            name: 'Nail trim',
-            price: 90,
-            time: 'Night',
-        }
     ]
 }
 
@@ -152,7 +145,7 @@ async function service_page() {
                             <div class="service--des l-10 m-10">
                                 <div class="service--title">
                                     <h6 data-aos="fade-right">Pet Walking</h6>
-                                    <a data-aos="fade-left" href="">
+                                    <a data-aos="fade-left" href="service_book.html">
                                         <button class="btn btn--secondary">Book Now</button>
                                     </a>
                                 </div>
@@ -193,7 +186,7 @@ async function service_page() {
                             <div class="service--des l-10 m-10">
                                 <div class="service--title">
                                     <h6 data-aos="fade-right">Grooming</h6>
-                                    <a data-aos="fade-left" href="">
+                                    <a data-aos="fade-left" href="service_book.html">
                                         <button class="btn btn--secondary">Book Now</button>
                                     </a>
                                 </div>
@@ -235,7 +228,7 @@ async function service_page() {
                             <div class="service--des l-10 m-10">
                                 <div class="service--title">
                                     <h6 data-aos="fade-right">Boarding</h6>
-                                    <a data-aos="fade-right" href="">
+                                    <a data-aos="fade-right" href="service_book.html">
                                         <button class="btn btn--secondary">Book Now</button>
                                     </a>
                                     <a data-aos="fade-left" href="https://pawpartner.com/throw-me-a-bone---525-w-52nd-st">
@@ -270,7 +263,7 @@ async function service_page() {
                             <div class="service--des l-10 m-10">
                                 <div class="service--title">
                                     <h6 data-aos="fade-right">Pet Sitting</h6>
-                                    <a data-aos="fade-left" href="">
+                                    <a data-aos="fade-left" href="service_book.html">
                                         <button class="btn btn--secondary">Book Now</button>
                                     </a>
                                 </div>
@@ -314,7 +307,7 @@ async function service_page() {
                                 <div class="service--wrapper">
                                     <div class="service--des">
                                         <div class="service--title">
-                                            <a data-aos="fade-down" href="">
+                                            <a data-aos="fade-down" href="service_book.html">
                                                 <button class="btn btn--secondary">Book Now</button>
                                             </a>
                                         </div>
@@ -389,7 +382,7 @@ async function service_page() {
                                 <div class="service--wrapper">
                                     <div class="service--des">
                                         <div class="service--title">
-                                            <a data-aos="fade-down" href="">
+                                            <a data-aos="fade-down" href="service_book.html">
                                                 <button class="btn btn--secondary">Book Now</button>
                                             </a>
                                         </div>
@@ -474,7 +467,7 @@ async function service_page() {
                                 <div class="service--wrapper">
                                     <div class="service--des">
                                         <div class="service--title">
-                                            <a data-aos="fade-down" href="">
+                                            <a data-aos="fade-down" href="service_book.html">
                                                 <button class="btn btn--secondary">Book Now</button>
                                             </a>
                                             <a data-aos="fade-down" href="https://pawpartner.com/throw-me-a-bone---525-w-52nd-st">
@@ -533,7 +526,7 @@ async function service_page() {
                                 <div class="service--wrapper">
                                     <div class="service--des">
                                         <div class="service--title">
-                                            <a data-aos="fade-down" href="">
+                                            <a data-aos="fade-down" href="service_book.html">
                                                 <button class="btn btn--secondary">Book Now</button>
                                             </a>
                                         </div>
@@ -570,6 +563,35 @@ async function service_page() {
             </div>
         </div>
     </section>
+    <div class="cart--icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="product--cart">
+        <div class="product--cart__info">
+            <div class="product--cart__info--user">
+                <div class="user--image" style="background-image: url('./src/image/Kaio_In_the_world_of_fantasy\(1\).png');">
+                </div>
+                <h6>Kaiosuke</h6>
+            </div>
+            <div class="product--cart__info--close">
+                <i> <i class="fa-solid fa-xmark"></i></i>
+            </div>
+        </div>
+        <div class="cart--wrapper">
+            <div class="product--cart__pay">
+
+            </div>
+        </div>
+        <div class="product--cart__btn">
+            <a href="#">
+                <button class="btn btn--secondary ">Palce An Order</button>
+            </a>
+            <div class="product--cart__total">
+                <h4>Total</h4>
+                <span>0 $</span>
+            </div>
+        </div>
+    </div>
     `;
 
     data_service.forEach((service) => {
@@ -650,7 +672,83 @@ async function service_page() {
         service.appendChild(li);
     });
 
+
     return main;
 }
+
+const checkoutDataCart = localStorage.getItem('data_home');
+
+export async function fetch_data_cart() {
+    if (checkoutDataCart) {
+        const parseData = JSON.parse(checkoutDataCart);
+        await render_cart_home(parseData)
+    }
+}
+
+export async function icon_cart() {
+    document.querySelector('.cart--icon').addEventListener('click', (e) => {
+        const productCart = document.querySelector('.product--cart');
+        productCart.classList.add('show--cart');
+        document.querySelector('.cart--icon').classList.add('hidden');
+        const closeCart = document.querySelector('.product--cart__info--close');
+        if (closeCart) {
+            closeCart.addEventListener('click', (e) => {
+                productCart.classList.remove('show--cart');
+                document.querySelector('.cart--icon').classList.remove('hidden');
+            });
+        }
+    });
+}
+
+async function render_cart_home(cart) {
+    let product_cart = document.querySelector('.product--cart__pay');
+    if (!cart || !Object.entries(cart).length) {
+        product_cart.innerHTML = `<p class="text-center">Your cart is empty</p>`;
+        return;
+    }
+    if (cart !== undefined && cart !== null) {
+        for (let [k, v] of Object.entries(cart)) {
+            let { id, name, image, price, quantity, total_price, description } = v;
+            let div = document.createElement('div');
+            div.classList.add('product--cart__pay--wrapper');
+            div.innerHTML = '';
+            div.classList.add('product--cart__pay--wrapper');
+            div.innerHTML = `
+                    <div class="product--cart__pay--image" style="background-image: url(${image})">
+                    </div>
+                    <div class="product--cart__pay--info">
+                        <h3>${name}</h3>
+                        <h5><span>$</span> ${price.toLocaleString()}</h5>
+                        <div class="product--quantity">
+                            <p class="fw-700">${quantity}</p>
+                        </div>
+                    </div>
+                    <div class="product--item__delete">
+                    </div>
+                    `;
+
+            product_cart.appendChild(div);
+
+            let total = 0;
+            total += total_price;
+            document.querySelector('.product--cart__total span').innerHTML = `
+               $ ${total.toLocaleString()}
+            `;
+
+            localStorage.setItem('data_home', JSON.stringify(cart));
+
+            //  pay 
+            document.querySelector('.product--cart__btn').addEventListener('click', () => {
+                handle_product_data(cart)
+            })
+        }
+    }
+}
+
+async function handle_product_data(cart) {
+    localStorage.setItem('checkoutData', JSON.stringify(cart));
+    window.location.href = 'payment.html';
+}
+
 
 export { service_page }

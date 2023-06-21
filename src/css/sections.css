@@ -94,11 +94,13 @@
     color: #000;
     border-radius: 10px;
     transition: all var(--animated-fast) ease-in-out;
+    opacity: 0;
 }
 
 .main--account_sigin--warapper.show {
     top: 50%;
     transform: translate(-50%, -50%);
+    opacity: 1;
 }
 
 .main--account__form-group {
@@ -453,8 +455,6 @@ input[type="checkbox"]:checked {
     z-index: 1;
 }
 
-.service--section__list {}
-
 .service--list {
     background-color: #fff;
     z-index: 11;
@@ -777,11 +777,276 @@ input[type="checkbox"]:checked {
 }
 
 
-/**********PRODUCT**************/
+/**********SERVICE**************/
 
-.product--section__hero {
-    /* overflow: hidden; */
+.section--hero {
+    height: 72rem;
+    position: relative;
 }
+
+.section--hero__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.section--hero__image .section--hero__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 10rem;
+    transform: translatey(-50%);
+    width: 48rem;
+    padding: 0;
+}
+
+.content--hero__name {
+    color: transparent;
+    font-size: 5.2rem;
+    font-weight: 700;
+    animation: back 20s linear infinite;
+    -webkit-text-stroke: 1px #fff;
+    -webkit-background-clip: text;
+    background-image: url('../image/back.png');
+    background-position: 0 0;
+}
+
+.content--hero__des {
+    font-size: 2.4rem;
+    margin-top: 2rem;
+    color: #fff;
+}
+
+.container--service {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+
+/* PC */
+
+.service--section__page--list {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.service--section__page--list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    position: sticky;
+    top: 12rem;
+    z-index: 55;
+}
+
+.service--section__page-info {
+    overflow: hidden;
+}
+
+.service--section__page--list ul li {
+    font-size: 2rem;
+    transition: all var(--animated-fast);
+    cursor: pointer;
+}
+
+.service--section__page--list ul li:hover {
+    color: var(--color-primary);
+}
+
+.service--section__page--wrapper_pc {
+    justify-content: end !important;
+}
+
+.service--image img {
+    width: 16rem;
+    padding-left: 1rem;
+}
+
+.service--title {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.service--title h6 {
+    font-size: 2.8rem;
+    margin-right: 2rem;
+}
+
+.service--des {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.service--des h5 {
+    color: #cacaca;
+    font-size: 1.6rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.service--des p {
+    padding-bottom: 2rem;
+}
+
+.service--content__price {
+    border-bottom: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+.service--content__info {
+    margin-left: 1rem;
+}
+
+.service--content__info ul li {
+    display: flex;
+    padding-top: 2rem;
+    justify-content: space-between;
+}
+
+.service--content__info ul li:not(:last-child) {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.service--content__info.space ul li {
+    width: 60rem;
+}
+
+.service--content__price.space {
+    width: 60rem;
+}
+
+
+/* Moblie */
+
+.service--section__page--wrapper_mb {
+    display: none;
+}
+
+
+/**********SERVICE BOOK**************/
+
+.section--service__book {
+    margin-bottom: 40rem;
+    overflow: hidden;
+}
+
+.section--service__book .container h2 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.section--service__book .container h6 {
+    padding-bottom: 4rem;
+    text-align: center;
+    color: #8e8e8e;
+}
+
+.service--book_btn {
+    padding-top: 4rem;
+    text-align: center;
+}
+
+.service--book_btn h5 {
+    font-size: 1.6rem;
+}
+
+.service--book_btn h5::after {
+    content: '';
+    display: inline-block;
+    width: 1;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #fff;
+    margin-left: 1rem;
+}
+
+.service--book_btn h4::before {
+    content: '';
+    display: inline-block;
+    width: 1;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    margin-right: 1rem;
+    transform: rotate(180deg);
+}
+
+.service--book_wrapper {
+    position: relative;
+}
+
+.service--book {
+    opacity: 1;
+    transition: all 0.6s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.service--book.slide--top {
+    transform: translate(-50%, -200%);
+    opacity: 0;
+}
+
+.service--book.slide--bottom {
+    transform: translate(-50%, 200%);
+    opacity: 0;
+}
+
+
+/**********SERVICE SUCCESS**************/
+
+.section--book__success--wrapper {
+    margin-top: 6rem;
+}
+
+.section--book__success--wrapper {
+    align-items: center;
+}
+
+.book--success__image .img {
+    width: 120%;
+    padding-top: 200%;
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.book--success__icon i {
+    font-size: 10rem;
+    color: var(--color-primary);
+}
+
+.book--success__info h2 {
+    padding-top: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.book--success__info h6 {
+    padding-top: 2rem;
+    color: #8e8e8e;
+}
+
+.book--success a button {
+    margin-top: 2rem;
+}
+
+.book--success__info
+/**********PRODUCT**************/
 
 .product--slide__image {
     height: 100%;
@@ -1130,11 +1395,6 @@ input[type="checkbox"]:checked {
     justify-content: space-between;
 }
 
-
-/* .product--cart__pay--info {
-    margin-left: 1rem;
-} */
-
 .product--cart__pay--info h3 {
     font-size: 1.8rem;
 }
@@ -1179,8 +1439,6 @@ input[type="checkbox"]:checked {
     padding-top: 2rem;
 }
 
-.product--item__delete {}
-
 .product--item__delete button {
     background-color: transparent;
     color: var(--color-primary);
@@ -1210,159 +1468,6 @@ input[type="checkbox"]:checked {
 .product--cart__total h4 {
     color: var(--color-primary);
     font-size: 2rem;
-}
-
-
-/**********SERVICE**************/
-
-.section--hero {
-    height: 72rem;
-    position: relative;
-}
-
-.section--hero__image {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.section--hero__image .section--hero__wrapper {
-    position: absolute;
-    top: 50%;
-    left: 10rem;
-    transform: translatey(-50%);
-    width: 48rem;
-    padding: 0;
-}
-
-.content--hero__name {
-    color: transparent;
-    font-size: 5.2rem;
-    font-weight: 700;
-    animation: back 20s linear infinite;
-    -webkit-text-stroke: 1px #fff;
-    -webkit-background-clip: text;
-    background-image: url('../image/back.png');
-    background-position: 0 0;
-}
-
-.content--hero__des {
-    font-size: 2.4rem;
-    margin-top: 2rem;
-    color: #fff;
-}
-
-.container--service {
-    max-width: 120rem;
-    margin: 0 auto;
-    padding: 0 4rem;
-}
-
-
-/* PC */
-
-.service--section__page--list {
-    position: relative;
-}
-
-.service--section__page--list ul {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    position: sticky;
-    top: 12rem;
-    z-index: 55;
-}
-
-.service--section__page-info {
-    overflow: hidden;
-}
-
-.service--section__page--list ul li {
-    font-size: 2rem;
-    transition: all var(--animated-fast);
-    cursor: pointer;
-}
-
-.service--section__page--list ul li:hover {
-    color: var(--color-primary);
-}
-
-.service--section__page--wrapper_pc {
-    justify-content: end !important;
-}
-
-.service--image img {
-    width: 16rem;
-    padding-left: 1rem;
-}
-
-.service--title {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.service--title h6 {
-    font-size: 2.8rem;
-    margin-right: 2rem;
-}
-
-.service--des {
-    padding-left: 4rem;
-    padding-right: 2rem;
-}
-
-.service--des h5 {
-    color: #cacaca;
-    font-size: 1.6rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-.service--des p {
-    padding-bottom: 2rem;
-}
-
-.service--content__price {
-    border-bottom: 1px solid var(--color-primary);
-    color: var(--color-primary);
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 2rem;
-}
-
-.service--content__info {
-    margin-left: 1rem;
-}
-
-.service--content__info ul li {
-    display: flex;
-    padding-top: 2rem;
-    justify-content: space-between;
-}
-
-.service--content__info ul li:not(:last-child) {
-    border-bottom: 1px solid #e6e6e6;
-}
-
-.service--content__info.space ul li {
-    width: 60rem;
-}
-
-.service--content__price.space {
-    width: 60rem;
-}
-
-
-/* Moblie */
-
-.service--section__page--wrapper_mb {
-    display: none;
 }
 
 
@@ -1407,7 +1512,7 @@ input[type="checkbox"]:checked {
     color: #e3e3e3;
 }
 
-.form-lable {
+.form-label {
     font-weight: 700;
 }
 
@@ -1506,8 +1611,8 @@ input[type="checkbox"]:checked {
 }
 
 .about--section__misstion {
-    padding-top: 26rem;
-    padding-bottom: 26rem;
+    padding-top: 16rem;
+    padding-bottom: 20rem;
 }
 
 .about--section__principles--info {
@@ -1597,11 +1702,11 @@ input[type="checkbox"]:checked {
     align-items: center;
 }
 
-.payment--methods__wrapper label:hover {
+.payment--methods__wrapper :hover {
     background-color: #fff;
 }
 
-.payment--methods__wrapper label input:hover {
+.payment--methods__wrapper input:hover {
     background-color: var(--color-primary);
 }
 
@@ -1629,7 +1734,7 @@ input[type="checkbox"]:checked {
     width: 100%;
 }
 
-.payment label {
+.payment {
     cursor: pointer;
 }
 
@@ -1760,8 +1865,6 @@ input[type="checkbox"]:checked {
     align-items: center;
     gap: 4rem;
 }
-
-.detail--product__link {}
 
 .path--link a {
     cursor: pointer;
@@ -1903,7 +2006,7 @@ input[type="checkbox"]:checked {
 
 .section--contact__form .container h2 {
     text-align: center;
-    padding-top: 4rem;
+    padding-bottom: 4rem;
     font-size: 4.6rem;
     color: var(--color-primary);
 }
@@ -1918,7 +2021,7 @@ input[type="checkbox"]:checked {
     flex-direction: column;
 }
 
-.contact--form__list--wrapper lable {
+.contact--form__list--wrapper label {
     padding-bottom: 0.4rem;
 }
 
@@ -1996,7 +2099,7 @@ input[type="checkbox"]:checked {
 /**********CONTACT SUCCESS**************/
 
 .section--contact__success {
-    padding-top: 20rem;
+    padding-top: 5rem;
 }
 
 .section--contact__success .container h2 {
