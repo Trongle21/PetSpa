@@ -946,6 +946,14 @@
 
 @media (max-width: 390px) {
     /************PRODUCT************/
+    /* Contact us */
+    .gift--section__wrapper--info h1 {
+        font-size: 2rem;
+    }
+    .gift--section__wrapper--info a button {
+        margin-top: 2rem;
+    }
+    /************PRODUCT************/
     .product--item__info p {
         font-size: 1.4rem;
     }
