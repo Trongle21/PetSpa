@@ -8,6 +8,7 @@ const checkOutDetailProduct = localStorage.getItem("checkOutDetailProduct");
 
 export async function fetch_data_detail() {
     if (checkOutDetailProduct) {
+        console.log(checkOutDetailProduct)
         const parsedData = JSON.parse(checkOutDetailProduct);
         await render_detail_product(parsedData);
     }
@@ -150,12 +151,11 @@ async function detail_product_page() {
     return main;
 }
 
-async function render_detail_product(cart) {
-    if (!cart) return false;
-
+async function render_detail_product(params) {
+    if (!params) return false;
     const detail_product = document.querySelector(".section--detail__product");
     detail_product.innerHTML = "";
-    for (let [k, v] of Object.entries(cart)) {
+    for (let [k, v] of Object.entries(params)) {
         let { name, price, description, detail, image, image_2, quantity } = v;
         let div = document.createElement("div");
         div.classList.add("section--detail__product--wapper", "row");
@@ -333,7 +333,6 @@ async function handle_product_data(cart) {
 
 async function change_product(div, k) {
     div.querySelectorAll(".quantity").forEach((input) => {
-        console.log(cart[k]["quantity"])
         input.addEventListener("click", (e) => {
             if (e.target.classList.contains("decrease")) {
                 cart[k]["quantity"] -= 1;

@@ -112,7 +112,6 @@ async function handle_data() {
     fetch_data(get_data);
 
     async function render_product(params) {
-        let total_page = Math.ceil(params.length / per_page);
         let product_list = main.querySelector('.product--list');
         product_list.innerHTML = '';
 
@@ -137,7 +136,6 @@ async function handle_data() {
                 </div>
                 `;
 
-                // Thêm thuộc tính data-aos chỉ khi cuộn xuống
                 div.setAttribute('data-aos', 'fade-down');
                 product_list.appendChild(div);
 
@@ -166,9 +164,10 @@ async function handle_data() {
 
             let key = ` ${id} - ${name} - ${price}`;
 
-            cart[key] = detail_product;
+            let cart_detail = {};
+            cart_detail[key] = detail_product;
 
-            localStorage.setItem('data_home', JSON.stringify(cart));
+            localStorage.setItem('checkOutDetailProduct', JSON.stringify(cart_detail));
             window.location.href = 'detail_product.html';
         }
 
