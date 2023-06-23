@@ -92,6 +92,7 @@ export default function page_header() {
         </div>
     </div>
     `;
+
     /** PC */
     headerList.map((list) => {
         let li = document.createElement('li');
@@ -124,14 +125,13 @@ export default function page_header() {
         }
     }
 
-    // let loader = header.querySelector('.loader');
-    // window.addEventListener('load', () => {
-    //     setTimeout(() => {
-    //         loader.style.display = "none";
-    //     }, 1000)
-    // });
+    let loader = header.querySelector('.loader');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 1000)
+    });
 
-    // Lắng nghe sự kiện scroll
     window.addEventListener('scroll', handleScroll);
 
     return header;
