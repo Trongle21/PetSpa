@@ -1037,7 +1037,7 @@
 /* mini moblie */
 
 @media (max-width: 390px) {
-    /************PRODUCT************/
+    /************HOME************/
     .plane--price__image-info {
         width: max-content;
     }
@@ -1049,6 +1049,10 @@
     }
     .plane--price__btn button {
         height: 3.6rem;
+    }
+    /************SERVICE************/
+    .service--book_btn.second .btn--secondary {
+        padding: 1rem;
     }
     /************PRODUCT************/
     /* Contact us */

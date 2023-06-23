@@ -2040,7 +2040,7 @@ input[type="checkbox"]:checked {
 }
 
 .contact--form__list--wrapper input {
-    padding: 1rem;
+    padding: 1rem 0rem 1rem 1rem;
     border: 1px solid #e3e3e3;
 }
 
@@ -2050,11 +2050,16 @@ input[type="checkbox"]:checked {
 }
 
 .schedule {
-    background: url('../image/caret_down.svg');
+    -webkit-appearance: none;
+    appearance: none;
     background-color: #fff;
-    background-repeat: no-repeat;
+}
+
+.schedule::-webkit-calendar-picker-indicator {
+    background-image: url('../image/caret_down.png');
     background-position: right;
-    background-size: 2rem;
+    background-size: 1.4rem;
+    cursor: pointer;
 }
 
 .contact--form__checkbox {
