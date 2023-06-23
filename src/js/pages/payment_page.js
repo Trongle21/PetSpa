@@ -109,11 +109,9 @@ export async function payment_page() {
                 </div>
                 <div class="line"></div>
                 <div class="section--pay__info l-4 m-4 c-12">
-                    <div class="section--pay__info__wrapper">
                         <div class="section--pay__list">
      
                         </div>
-                        <div class="line"></div>
                         <div class="section--pay__info--toal">
                             <h5>Total</h5>
                             <h4>
@@ -121,7 +119,6 @@ export async function payment_page() {
                                 <p></p>
                             </h4>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

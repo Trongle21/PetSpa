@@ -266,18 +266,18 @@ async function home_page(parseData) {
         })
 
         setTimeout(() => {
-            main.querySelector('#prev').addEventListener('click', () => {
-                let lists = main.querySelectorAll('.hero--content__img');
-                main.querySelector('.hero--content').prepend(lists[lists.length - 1]);
-            })
+                main.querySelector('#prev').addEventListener('click', () => {
+                    let lists = main.querySelectorAll('.hero--content__img');
+                    main.querySelector('.hero--content').prepend(lists[lists.length - 1]);
+                });
 
-            main.querySelector('#next').addEventListener('click', () => {
-                let lists = main.querySelectorAll('.hero--content__img');
-                main.querySelector('.hero--content').appendChild(lists[0]);
-            })
-        }, 300)
+                main.querySelector('#next').addEventListener('click', () => {
+                    let lists = main.querySelectorAll('.hero--content__img');
+                    main.querySelector('.hero--content').appendChild(lists[0]);
+                });
 
-        /** Service */
+            }, 300)
+            /** Service */
         home_service.forEach((e) => {
             let { name, description, image, href } = e;
             let div = document.createElement('div');
@@ -300,7 +300,7 @@ async function home_page(parseData) {
         for (let [k, v] of Object.entries(home_package)) {
             let { name, price, image, packages } = v;
             let div = document.createElement('div');
-            div.classList.add('plan--price', 'l-4', 'm-6', 'c-12');
+            div.classList.add('plan--price', 'l-4', 'm-12', 'c-12');
             if (k == 1) {
                 div.classList.add('scale')
             }
@@ -437,7 +437,7 @@ async function render_cart(cart) {
             localStorage.setItem('data_home', JSON.stringify(cart));
 
             //  pay 
-            document.querySelector('.product--cart__btn').addEventListener('click', () => {
+            document.querySelector('.product--cart__btn .btn--secondary').addEventListener('click', () => {
                 handle_product_data(cart)
             })
         }

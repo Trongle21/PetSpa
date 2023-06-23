@@ -39,7 +39,7 @@ async function handle_data() {
                         <div class="product--section__search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <select name="" id="" class="product--info__select">
-                            <option value="cat and dog">Cat and Dog</option>
+                                <option value="cat and dog">Cat and Dog</option>
                                 <option value="cat">Cat</option>
                                 <option value="dog">Dog</option>
                             </select>
@@ -283,6 +283,7 @@ async function handle_data() {
             get_data.callback = async(params) => {
                 let filtered_products = params.filter(product => product.name.toLowerCase().includes(key));
                 await render_product(filtered_products);
+                await render_pagination(filtered_products)
             };
 
             await fetch_data(get_data);
@@ -409,7 +410,7 @@ function render_cart(cart) {
             localStorage.setItem('data_home', JSON.stringify(cart));
 
             // pay 
-            document.querySelector('.product--cart__btn').addEventListener('click', () => {
+            document.querySelector('.product--cart__btn .btn--secondary').addEventListener('click', () => {
                 handle_product_data(cart)
             })
         }

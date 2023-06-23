@@ -22,8 +22,6 @@ if (root && location.pathname !== '/signup.html' && location.pathname !== '/serv
     }, 300)
 }
 
-/**** Show signin ****/
-
 /** Check active navbar */
 var currentURL = window.location.href;
 
@@ -40,18 +38,22 @@ if (document.querySelector('.header--bar')) {
     document.querySelector('.header--bar').addEventListener('click', (e) => {
         document.querySelector('.header--nav-mb').classList.add('show--nav__bar');
         document.querySelector('.overlay').classList.add('show--overley');
-        document.querySelector('.header--bar').classList.add('opacity')
+        document.querySelector('.header--bar').classList.add('opacity');
+        document.querySelector('body').style.overflow = 'hidden';
     });
 
     document.querySelector('.nav--mb_close').addEventListener('click', (e) => {
         document.querySelector('.header--nav-mb').classList.remove('show--nav__bar');
         document.querySelector('.overlay').classList.remove('show--overley');
-        document.querySelector('.header--bar').classList.remove('opacity')
+        document.querySelector('.header--bar').classList.remove('opacity');
+        document.querySelector('body').style.overflow = 'auto';
     });
+
     document.querySelector('.overlay').addEventListener('click', (e) => {
         document.querySelector('.header--nav-mb').classList.remove('show--nav__bar');
         document.querySelector('.overlay').classList.remove('show--overley');
-        document.querySelector('.header--bar').classList.remove('opacity')
+        document.querySelector('.header--bar').classList.remove('opacity');
+        document.querySelector('body').style.overflow = 'auto';
     });
 }
 
@@ -88,18 +90,25 @@ let app = {
         await page.fetch_data_cart();
 
         /** Service scale */
-        let plan_price = document.querySelectorAll('.plan--price')
+        let plan_price = document.querySelectorAll('.plan--price');
         plan_price.forEach((plan, index) => {
             plan.addEventListener('mouseenter', () => {
                 plan_price.forEach((p, i) => {
                     if (i !== index) {
-                        p.classList.remove('scale')
+                        p.classList.remove('scale');
                     }
                 });
             });
         });
 
-        /** cart */
+        /** Package */
+        let plan_pirce = document.querySelectorAll('.plan--price__image');
+        plan_pirce.forEach((e) => {
+            e.addEventListener('click', (() => {
+                const content = e.nextElementSibling;
+                content.classList.toggle('show')
+            }));
+        });
     },
     /**********PRODUCT**************/
     product_page: async function() {
@@ -112,20 +121,17 @@ let app = {
         /** Search */
         let product_search = document.querySelector('.product--search');
         let search_icon = document.querySelector('.product--section__search i');
-
-        search_icon.addEventListener('click', (event) => {
-            // event.stopPropagation(); //
+        let product_search_icon = document.querySelector('.product--section__search .fa-solid')
+        search_icon.addEventListener('click', () => {
             product_search.classList.add('show');
-            let cart_clear = document.querySelector('.cart--wrapper p');
-            console.log(Object.keys(cart).length)
-            if (Object.keys(cart).length === 0) {
-                cart_clear.innerHTML = `Đơn hàng đang trống`
-            }
+            product_search_icon.classList.add('show');
         });
 
         document.addEventListener('click', (event) => {
             if (!product_search.contains(event.target) && !search_icon.contains(event.target)) {
                 product_search.classList.remove('show');
+                product_search_icon.classList.remove('show');
+
             }
         });
     },

@@ -377,6 +377,9 @@
         padding: 0rem 2rem !important;
     }
     /*Header*/
+    .loader {
+        background-size: 40%;
+    }
     .page--header {
         padding: 1rem 1.8rem;
     }
@@ -403,11 +406,14 @@
     .service--des {
         padding: 0;
     }
+    .header--nav-mb {
+        width: 100%;
+    }
     /* Hero content*/
     .hero--content__detail {
         top: 66%;
         width: auto;
-        left: 4rem;
+        left: 2rem;
     }
     .content--info {
         font-size: 3.6rem;
@@ -426,7 +432,6 @@
         overflow: hidden;
     }
     .service--section__list {
-        white-space: nowrap;
         flex-wrap: nowrap;
         overflow-x: auto;
     }
@@ -438,14 +443,41 @@
     .service-prices--section {
         overflow: hidden;
     }
-    .pricing--plan_list {
-        white-space: nowrap;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
     .plan--price {
-        width: 80%;
-        margin-right: 1rem;
+        width: 100%;
+    }
+    .plan--price__image {
+        padding-top: 40%;
+    }
+    .plane--price__info {
+        animation: slide-package-down var(--animated-slow) ease-out forwards;
+    }
+    .plane--price__info.show {
+        animation: slide-package-up var(--animated-slow) ease-out forwards;
+    }
+    @keyframes slide-package-up {
+        from {
+            max-height: 0;
+            opacity: 0;
+        }
+        to {
+            max-height: 50rem;
+            opacity: 1;
+        }
+    }
+    @keyframes slide-package-down {
+        from {
+            max-height: 50rem;
+            opacity: 1;
+        }
+        to {
+            max-height: 0;
+            opacity: 0;
+        }
+    }
+    .plane--price__btn button {
+        width: 100%;
+        height: 4.6rem;
     }
     .service--list {
         overflow: hidden;
@@ -455,7 +487,6 @@
         overflow: hidden;
     }
     .team-member--list {
-        white-space: nowrap;
         flex-wrap: nowrap;
         overflow-x: auto;
     }
@@ -632,7 +663,16 @@
         position: static;
     }
     .search--product {
-        transform: translatey(6rem);
+        transform: translatey(1.4rem);
+    }
+    .product--section__search .fa-solid.show {
+        transform: translateX(0rem);
+    }
+    .product--search.show {
+        visibility: visible;
+        opacity: 1;
+        transform: translatex(4rem);
+        z-index: 11;
     }
     /* List Product */
     .product--list {
@@ -651,6 +691,7 @@
         bottom: 0;
         max-height: 40rem;
         overflow: auto;
+        padding: 1rem 2rem 0rem 2rem;
     }
     .product--cart__pay {
         padding-bottom: 1rem;
@@ -665,9 +706,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 20rem;
-        flex: 0 0 25%;
-        max-width: 25%;
+        flex: 0 0 33%;
+        max-width: 33%;
     }
     .product--cart__btn {
         display: flex;
@@ -716,7 +756,8 @@
         margin-top: 1rem
     }
     .cart--icon {
-        bottom: 8%;
+        right: 2rem;
+        bottom: 4rem;
     }
     .product--item__delete button {
         font-size: 2rem;
@@ -835,7 +876,7 @@
 
 /* Tablet */
 
-@media (min-width: 740px) and (max-width: 1023px) {
+@media (min-width: 739px) and (max-width: 1023px) {
     /*Nav Bar*/
     .header--bar {
         display: block;
@@ -856,11 +897,52 @@
         display: block;
     }
     /* Hero content*/
+    .hero--content__detail {
+        left: 2rem;
+    }
     .content--info {
         font-size: 4.6rem;
     }
     .content--info__des {
         font-size: 1.8rem;
+    }
+    /* Package */
+    .plan--price__image {
+        width: 100%;
+        padding-top: 34%;
+    }
+    .plane--price__btn ul {
+        z-index: 1111;
+    }
+    .plane--price__btn button {
+        width: 100%;
+        height: 4.6rem;
+    }
+    .plane--price__info {
+        animation: slide-package-down var(--animated-slow) ease-out forwards;
+    }
+    .plane--price__info.show {
+        animation: slide-package-up var(--animated-slow) ease-out forwards;
+    }
+    @keyframes slide-package-up {
+        from {
+            max-height: 0;
+            opacity: 0;
+        }
+        to {
+            max-height: 50rem;
+            opacity: 1;
+        }
+    }
+    @keyframes slide-package-down {
+        from {
+            max-height: 50rem;
+            opacity: 1;
+        }
+        to {
+            max-height: 0;
+            opacity: 0;
+        }
     }
     /************Service************/
     .content--hero__name {
@@ -875,9 +957,6 @@
     .service--padding {
         margin-bottom: 12rem;
     }
-    /* .plan--price.scale {
-            display: none;
-        } */
     /************Product************/
     .product--cart {
         max-height: 50rem;
@@ -887,6 +966,10 @@
     .product--cart__info--close {
         top: 3rem;
         right: 2rem;
+    }
+    .cart--icon {
+        right: 3.6rem;
+        bottom: 4rem;
     }
     /************Sign up************/
     .signup--form__wrapper h2 {
@@ -922,6 +1005,15 @@
 /* PC */
 
 @media (min-width: 1024px) {
+    /************Home************/
+    .plan--price.scale {
+        transform: scale(1.1);
+    }
+    /* Package */
+    .plan--price:hover {
+        transform: scale(1.1);
+        z-index: 1;
+    }
     /************SERVICE************/
     .service--padding {
         margin-bottom: 14rem;
@@ -946,12 +1038,29 @@
 
 @media (max-width: 390px) {
     /************PRODUCT************/
+    .plane--price__image-info {
+        width: max-content;
+    }
+    .plane--price__image-info p {
+        font-size: 2.4rem;
+    }
+    .plane--price__image-info h3 {
+        font-size: 1.2rem;
+    }
+    .plane--price__btn button {
+        height: 3.6rem;
+    }
+    /************PRODUCT************/
     /* Contact us */
     .gift--section__wrapper--info h1 {
         font-size: 2rem;
     }
     .gift--section__wrapper--info a button {
         margin-top: 2rem;
+    }
+    .product--cart__btn a button {
+        padding: 1rem 1rem;
+        font-size: 1.4rem;
     }
     /************PRODUCT************/
     .product--item__info p {

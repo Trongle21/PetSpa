@@ -63,7 +63,7 @@ export async function service_book_page() {
                     <div class="contact--form__list l-6 m-6 c-12">
                         <div class="contact--form__list--wrapper">
                             <label for="schedule-date" class="form-label">Schedule Date</label>
-                            <input name="schedule-date" type="date">
+                            <input name="schedule-date" type="text" class="schedule">
                             <span class="form-message"></span>
                         </div>
                     </div>
@@ -105,8 +105,8 @@ export async function service_book_page() {
                     </div>
                     <div class="contact--form__list l-6 m-6 c-12">
                         <div class="contact--form__list--wrapper">
-                            <label for="birthday" class="form-label">Pet's Birthday</label>
-                            <input name="birthday" type="date">
+                            <label for="birhday" class="form-label">Schedule Date</label>
+                            <input name="birhday" type="text" class="schedule">
                             <span class="form-message"></span>
                         </div>
                     </div>
@@ -119,6 +119,18 @@ export async function service_book_page() {
         </div>
     </section>
     `;
+
+    const scheduleDateInput = main.querySelectorAll('.schedule');
+
+    flatpickr(scheduleDateInput, {
+        dateFormat: "Y-m-d",
+    });
+
+    // flatpickr(birthday, {
+    //     dateFormat: "Y-m-d",
+    // });
+
+
     main.querySelector('.service--book_btn.first .btn--primary').addEventListener('click', () => {
         handle_service_first_option(main);
     });

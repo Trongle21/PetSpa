@@ -174,7 +174,7 @@ async function render_cart_home(cart) {
             localStorage.setItem('data_home', JSON.stringify(cart));
 
             //  pay 
-            document.querySelector('.product--cart__btn').addEventListener('click', () => {
+            document.querySelector('.product--cart__btn .btn--secondary').addEventListener('click', () => {
                 handle_product_data(cart)
             })
         }

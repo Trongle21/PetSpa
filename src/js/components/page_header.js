@@ -25,7 +25,7 @@ export default function page_header() {
     const header = document.createElement('header');
     header.classList.add('header')
     header.innerHTML = `
-    <div class = "loader"></div>
+    
     <div class="page--header">
         <div class="header--bar">
             <i class="fa-sharp fa-solid fa-bars"></i>
@@ -124,12 +124,12 @@ export default function page_header() {
         }
     }
 
-    let loader = header.querySelector('.loader');
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 1000)
-    });
+    // let loader = header.querySelector('.loader');
+    // window.addEventListener('load', () => {
+    //     setTimeout(() => {
+    //         loader.style.display = "none";
+    //     }, 1000)
+    // });
 
     // Lắng nghe sự kiện scroll
     window.addEventListener('scroll', handleScroll);
