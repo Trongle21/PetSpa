@@ -15,9 +15,9 @@ document.body.appendChild(loader_div);
 
 function remove_loader() {
     let loader = document.querySelector('.loader');
-    window.addEventListener('load', () => {
-        loader.style.display = "none";
-    });
+    setTimeout(() => {
+        loader.remove();
+    }, 500)
 }
 
 headerContainer.appendChild(page_header());
