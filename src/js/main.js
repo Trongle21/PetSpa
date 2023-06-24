@@ -9,6 +9,17 @@ const root = document.querySelector('.root')
 const headerContainer = document.createElement('div');
 // const main = document.querySelector('main');
 
+let loader_div = document.createElement('div');
+loader_div.classList.add('loader');
+document.body.appendChild(loader_div);
+
+function remove_loader() {
+    let loader = document.querySelector('.loader');
+    window.addEventListener('load', () => {
+        loader.style.display = "none";
+    });
+}
+
 headerContainer.appendChild(page_header());
 
 if (root && location.pathname !== '/signup.html' && location.pathname !== '/service_book_success.html') {
@@ -65,6 +76,7 @@ if (document.querySelector('.header--sign-in button')) {
     document.querySelector('.header--sign-in button').addEventListener('click', () => {
         document.querySelector('.main--account_sigin--warapper').classList.add('show')
         document.querySelector('.overlay').classList.add('show--overley');
+        remove_loader();
     })
     document.querySelector('.overlay').addEventListener('click', (e) => {
         document.querySelector('.main--account_sigin--warapper').classList.remove('show')

@@ -365,6 +365,7 @@ function render_cart(cart) {
         product_cart.innerHTML = `<p class="text-center">Your cart is empty</p>`;
         return;
     }
+    console.log(Object.keys(cart).length)
     product_cart.innerHTML = '';
     if (cart !== undefined && cart !== null) {
         for (let [k, v] of Object.entries(cart)) {
