@@ -57,6 +57,11 @@ async function detail_product_page() {
         <div class="container">
             <div class="cart--icon">
                 <i class="fa-solid fa-cart-shopping"></i>
+                <div class="quantity--product">
+                    <div class="number">
+                        
+                    </div>
+                </div>
             </div>  
                 <div class="path--link">
                     <a href="index.html">Home</a>
@@ -233,9 +238,21 @@ const data_home = localStorage.getItem('data_home');
 export async function fetch_data_home() {
     if (data_home) {
         cart = JSON.parse(data_home)
-        await icon_cart(cart)
+        await icon_cart(cart);
+        await render_quantity_product(cart);
     }
 }
+
+async function render_quantity_product(cart) {
+    let number = Object.keys(cart).length;
+    let div = document.createElement('div');
+    div.classList.add('number');
+    div.innerHTML = `
+   ${number}
+    `;
+    document.querySelector('.quantity--product').appendChild(div);
+}
+
 
 export async function icon_cart(cart) {
     const cartIcon = document.querySelector('.cart--icon');
@@ -274,6 +291,7 @@ async function add_detail_cart(v) {
         cart[key] = new_item;
     }
     localStorage.setItem('data_home', JSON.stringify(cart));
+    render_quantity_product(cart);
     render_cart(cart);
 }
 
@@ -384,6 +402,7 @@ function delete_product(k) {
             document.querySelector('.product--cart__total span').innerHTML = '0 $';
         }
         render_cart(cart);
+        render_quantity_product(cart);
     }
 }
 

@@ -30,6 +30,11 @@ async function handle_data() {
                 <div class="product--section__wrapper"> 
                     <div class="cart--icon">
                         <i class="fa-solid fa-cart-shopping"></i>
+                        <div class="quantity--product">
+                            <div class="number">
+                                
+                            </div>
+                        </div>
                     </div>
                     <div class="product--info">
                         <h4>Cat and Dog</h4>
@@ -300,9 +305,19 @@ export async function fetch_data_home() {
     if (data_home) {
         cart = JSON.parse(data_home);
         await icon_cart(cart);
+        await render_quantity_product(cart);
     }
 }
 
+async function render_quantity_product(cart) {
+    let number = Object.keys(cart).length;
+    let div = document.createElement('div');
+    div.classList.add('number');
+    div.innerHTML = `
+   ${number}
+    `;
+    document.querySelector('.quantity--product').appendChild(div);
+}
 
 export async function icon_cart(cart) {
     const cartIcon = document.querySelector('.cart--icon');
@@ -344,6 +359,7 @@ function add_product(v) {
     }
 
     localStorage.setItem('data_home', JSON.stringify(cart));
+    render_quantity_product(cart);
     render_cart(cart);
 }
 
@@ -365,7 +381,7 @@ function render_cart(cart) {
         product_cart.innerHTML = `<p class="text-center">Your cart is empty</p>`;
         return;
     }
-    console.log(Object.keys(cart).length)
+
     product_cart.innerHTML = '';
     if (cart !== undefined && cart !== null) {
         for (let [k, v] of Object.entries(cart)) {
@@ -432,6 +448,7 @@ function delete_product(k) {
             document.querySelector('.product--cart__total span').innerHTML = '0 $';
         }
         render_cart(cart);
+        render_quantity_product(cart);
     }
 }
 

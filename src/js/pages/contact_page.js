@@ -112,6 +112,11 @@ async function contact_page() {
     </section>
     <div class="cart--icon">
         <i class="fa-solid fa-cart-shopping"></i>
+        <div class="quantity--product">
+            <div class="number">
+                
+            </div>
+        </div>
     </div>
     <div class="product--cart">
         <div class="product--cart__info">
@@ -186,9 +191,21 @@ const checkoutDataCart = localStorage.getItem('data_home');
 export async function fetch_data_cart() {
     if (checkoutDataCart) {
         const parseData = JSON.parse(checkoutDataCart);
-        await render_cart_home(parseData)
+        await render_cart_home(parseData);
+        await render_quantity_product(parseData);
     }
 }
+
+async function render_quantity_product(cart) {
+    let number = Object.keys(cart).length;
+    let div = document.createElement('div');
+    div.classList.add('number');
+    div.innerHTML = `
+   ${number}
+    `;
+    document.querySelector('.quantity--product').appendChild(div);
+}
+
 
 export async function icon_cart() {
     document.querySelector('.cart--icon').addEventListener('click', (e) => {
