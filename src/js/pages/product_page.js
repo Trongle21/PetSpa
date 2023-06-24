@@ -310,9 +310,11 @@ export async function fetch_data_home() {
 }
 
 async function render_quantity_product(cart) {
+    console.log(cart)
     let number = Object.keys(cart).length;
     let quantity_product = document.querySelector('.quantity--product');
     if (number > 0) {
+        quantity_product.style.display = 'block';
         let div = document.createElement('div');
         div.classList.add('number');
         div.innerHTML = `
@@ -331,7 +333,7 @@ export async function icon_cart(cart) {
     cartIcon.addEventListener('click', (e) => {
         productCart.classList.add('show--cart');
         document.querySelector('.cart--icon').classList.add('hidden');
-        render_cart(cart)
+        render_cart(cart);
     });
 
     const closeCart = document.querySelector('.product--cart__info--close');
@@ -364,8 +366,8 @@ function add_product(v) {
     }
 
     localStorage.setItem('data_home', JSON.stringify(cart));
-    render_quantity_product(cart);
     render_cart(cart);
+    render_quantity_product(cart);
 }
 
 function render_cart(cart) {
