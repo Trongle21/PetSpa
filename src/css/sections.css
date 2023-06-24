@@ -1354,7 +1354,7 @@ input[type="checkbox"]:checked {
 .product--cart {
     position: fixed;
     right: 0rem;
-    padding: 2rem 2rem 0rem 2rem;
+    padding: 0rem 2rem 0rem 2rem;
     width: 35rem;
     text-align: center;
     display: flex;
@@ -1375,9 +1375,14 @@ input[type="checkbox"]:checked {
 
 .product--cart__info {
     display: flex;
+    padding-top: 2rem;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #e3e3e3;
+    position: sticky;
+    background-color: #fff;
+    z-index: 111;
+    top: 0;
 }
 
 .product--cart__info--close {
