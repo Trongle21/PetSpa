@@ -642,6 +642,7 @@ input[type="checkbox"]:checked {
 .gift--section__wrapper {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     overflow: hidden;
+    margin-bottom: 8.6rem;
 }
 
 .gift--section__wrapper {
@@ -685,7 +686,7 @@ input[type="checkbox"]:checked {
 /* Footer */
 
 .page-footer--section {
-    margin-top: 8.6rem;
+    margin-top: auto;
     background-color: #fff;
 }
 
@@ -827,6 +828,10 @@ input[type="checkbox"]:checked {
 
 
 /* PC */
+
+.service--section__page {
+    margin-bottom: 8.6rem;
+}
 
 .service--section__page--list {
     position: relative;
@@ -1292,6 +1297,7 @@ input[type="checkbox"]:checked {
     padding-top: 4rem;
     padding-bottom: 4rem;
     gap: 1rem;
+    margin-bottom: 8.6rem;
 }
 
 .pagination--item {
@@ -1647,6 +1653,10 @@ input[type="checkbox"]:checked {
 .about--section__misstion {
     padding-top: 16rem;
     padding-bottom: 20rem;
+}
+
+.about--section__principles {
+    margin-bottom: 8.6rem;
 }
 
 .about--section__principles--info {
@@ -2027,6 +2037,10 @@ input[type="checkbox"]:checked {
     background-size: cover;
 }
 
+.section--contact__form {
+    margin-bottom: 8.6rem;
+}
+
 .section--contact__form .container h2 {
     text-align: center;
     padding-bottom: 4rem;
@@ -2131,28 +2145,4 @@ input[type="checkbox"]:checked {
 .contact--form__btn {
     text-align: center;
     margin-top: 6rem;
-}
-
-
-/**********CONTACT SUCCESS**************/
-
-.section--contact__success {
-    padding-top: 5rem;
-}
-
-.section--contact__success .container h2 {
-    text-align: center;
-    font-size: 4.6rem;
-    color: var(--color-primary);
-}
-
-.contact--success__noti {
-    width: 100%;
-    background-color: var(--color-primary);
-    padding: 1.6rem 0;
-}
-
-.contact--success__noti h3 {
-    text-align: center;
-    color: #fff;
 }

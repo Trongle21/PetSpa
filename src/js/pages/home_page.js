@@ -221,7 +221,7 @@ async function home_page(parseData) {
                 <div class="number">
                     
                 </div>
-        </div>
+            </div>
         </div>
         <div class="product--cart">
             <div class="product--cart__info">
@@ -393,12 +393,17 @@ export async function fetch_data_cart() {
 
 async function render_quantity_product(cart) {
     let number = Object.keys(cart).length;
-    let div = document.createElement('div');
-    div.classList.add('number');
-    div.innerHTML = `
-   ${number}
-    `;
-    document.querySelector('.quantity--product').appendChild(div);
+    let quantity_product = document.querySelector('.quantity--product');
+    if (number > 0) {
+        let div = document.createElement('div');
+        div.classList.add('number');
+        div.innerHTML = `
+       ${number}
+        `;
+        quantity_product.appendChild(div);
+    } else {
+        quantity_product.style.display = 'none';
+    }
 }
 
 export async function icon_cart() {

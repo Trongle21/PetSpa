@@ -944,6 +944,9 @@
             opacity: 0;
         }
     }
+    .gift--section__wrapper--info a button {
+        margin-top: 2rem;
+    }
     /************Service************/
     .content--hero__name {
         font-size: 4.6rem;
