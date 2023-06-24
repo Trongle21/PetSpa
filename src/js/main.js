@@ -76,7 +76,6 @@ if (document.querySelector('.header--sign-in button')) {
     document.querySelector('.header--sign-in button').addEventListener('click', () => {
         document.querySelector('.main--account_sigin--warapper').classList.add('show')
         document.querySelector('.overlay').classList.add('show--overley');
-        remove_loader();
     })
     document.querySelector('.overlay').addEventListener('click', (e) => {
         document.querySelector('.main--account_sigin--warapper').classList.remove('show')
@@ -130,6 +129,7 @@ let app = {
         await page.icon_cart();
         await page.fetch_data_home();
 
+
         /** Search */
         let product_search = document.querySelector('.product--search');
         let search_icon = document.querySelector('.product--section__search i');
@@ -156,6 +156,7 @@ let app = {
         await page.icon_cart();
         await page.fetch_data_home();
         await page.slide();
+
     },
     /**********DETAIL SLIDE**************/
     detail_slide: async function() {
@@ -166,6 +167,7 @@ let app = {
         await page.icon_cart();
         await page.fetch_data_home();
         await page.slide();
+
     },
 
     /**********SERVICE**************/
@@ -175,6 +177,7 @@ let app = {
         document.querySelector('.root').appendChild(await page.service_page());
         await page.icon_cart();
         await page.fetch_data_cart();
+
 
         /** Service */
 
@@ -223,6 +226,7 @@ let app = {
         let page = await
         import ("./pages/service__book_page.js");
         document.querySelector('.root').appendChild(await page.service_book_page());
+
     },
 
     /**********ABOUT**************/
@@ -233,6 +237,7 @@ let app = {
         document.querySelector('.root').appendChild(await page.about_page());
         await page.icon_cart();
         await page.fetch_data_cart();
+
     },
 
     /**********CONTACT**************/
@@ -243,6 +248,7 @@ let app = {
         document.querySelector('.root').appendChild(await page.contact_page());
         await page.icon_cart();
         await page.fetch_data_cart();
+
     },
 
     /**********CONTACT SUCCESS**************/
@@ -262,6 +268,7 @@ let app = {
         import ("./pages/payment_page.js")
         document.querySelector('.root').appendChild(await page.payment_page());
         page.fetch_product();
+
     },
 
     /**********Payment success**************/
@@ -271,6 +278,7 @@ let app = {
         import ("./pages//payment_success_page.js")
         document.querySelector('.root').appendChild(await page.payment_success_page());
         page.fetch_product();
+
     },
 
     /**********SIGN UP**************/
@@ -296,49 +304,61 @@ let app = {
 
 if (location.pathname == '/' || location.pathname == '/index.html') {
     app.home_page();
+    await remove_loader();
 }
 
 if (location.pathname === '/product.html') {
     app.product_page();
+    await remove_loader();
 }
 
 if (location.pathname === '/detail_product.html') {
     app.detail_product();
+    await remove_loader();
 }
 
 if (location.pathname === '/detail_slide.html') {
     app.detail_slide();
+    await remove_loader();
 }
 
 if (location.pathname === '/service.html') {
     app.serice_page();
+    await remove_loader();
 }
 
 if (location.pathname === '/service_book.html') {
     app.service_book_page();
+    await remove_loader();
 }
 
 if (location.pathname === '/about.html') {
     app.about_page();
+    await remove_loader();
 }
 
 if (location.pathname === '/contact.html') {
     app.contact_page();
+    await remove_loader();
 }
 
 if (location.pathname === '/contact_success.html') {
     app.contact_success_page();
+    await remove_loader();
 }
 
 
 if (location.pathname === '/payment.html') {
     app.payment_page();
+    await remove_loader();
 }
 
 if (location.pathname === '/payment_success.html') {
     app.payment_success_page();
+    await remove_loader();
 }
 
 if (location.pathname === '/signup.html') {
     app.signup_page();
+    await remove_loader();
 }

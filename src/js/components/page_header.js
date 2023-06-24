@@ -25,7 +25,6 @@ export default function page_header() {
     const header = document.createElement('header');
     header.classList.add('header')
     header.innerHTML = `
-    
     <div class="page--header">
         <div class="header--bar">
             <i class="fa-sharp fa-solid fa-bars"></i>
