@@ -332,6 +332,10 @@ if (location.pathname === '/service_book.html') {
     await remove_loader();
 }
 
+if (location.pathname === '/service_book_success.html') {
+    await remove_loader();
+}
+
 if (location.pathname === '/about.html') {
     app.about_page();
     await remove_loader();

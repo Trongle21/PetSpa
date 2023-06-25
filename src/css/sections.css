@@ -2088,10 +2088,8 @@ input[type="checkbox"]:checked {
     appearance: none;
     background-color: #fff;
     height: 3.8rem;
-}
-
-.schedule::-webkit-calendar-picker-indicator {
-    background-image: url('../image/caret_down.png');
+    /* background-image: url('../image/caret_down.png'); */
+    background-repeat: no-repeat;
     background-position: right;
     background-size: 1.4rem;
     cursor: pointer;

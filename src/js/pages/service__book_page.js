@@ -105,8 +105,8 @@ export async function service_book_page() {
                     </div>
                     <div class="contact--form__list l-6 m-6 c-12">
                         <div class="contact--form__list--wrapper">
-                            <label for="birhday" class="form-label">Pet's Birthday</label>
-                            <input name="birhday" type="date" class="schedule">
+                            <label for="birthday" class="form-label">Pet's Birthday</label>
+                            <input name="birthday" type="date" class="schedule">
                             <span class="form-message"></span>
                         </div>
                     </div>
@@ -175,6 +175,7 @@ async function handle_service_first_option(main) {
 async function handle_service_second_option(main) {
     let pet_name = main.querySelector('input[name="pet-name"]');
     let birthday = main.querySelector('input[name="birthday"]');
+    console.log(birthday);
     if (pet_name.value === '') {
         alert('Please enter your pet name');
         return false;

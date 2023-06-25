@@ -71,8 +71,8 @@ async function handle_data() {
                             </div>
                         </div>
                         <div class="product--cart__btn">
-                            <a href="#">
-                                <button class="btn btn--secondary ">Palce An Order</button>
+                            <a>
+                                <button class="btn btn--secondary ">Place An Order</button>
                             </a>
                             <div class="product--cart__total">
                                 <h4>Total</h4>
@@ -220,7 +220,7 @@ async function handle_data() {
         main.querySelector('.pagination--product ul').innerHTML = html;
     }
 
-    filter_product()
+    await filter_product()
 
     async function filter_product() {
         /** Filter Product */
@@ -294,7 +294,9 @@ async function handle_data() {
             await fetch_data(get_data);
         }, 500);
     });
-
+    main.querySelector('.product--cart__btn .btn--secondary').addEventListener('click', () => {
+        handle_product_data(cart);
+    })
 
     /** Show cart */
     return main;
@@ -310,7 +312,6 @@ export async function fetch_data_home() {
 }
 
 async function render_quantity_product(cart) {
-    console.log(cart)
     let number = Object.keys(cart).length;
     let quantity_product = document.querySelector('.quantity--product');
     if (number > 0) {
@@ -435,14 +436,22 @@ function render_cart(cart) {
 
             // pay 
             document.querySelector('.product--cart__btn .btn--secondary').addEventListener('click', () => {
-                handle_product_data(cart)
+                if (cart) {
+                    handle_product_data(cart);
+                }
             })
         }
     }
 }
 
-async function handle_product_data(cart) {
-    localStorage.setItem('checkoutData', JSON.stringify(cart));
+
+
+async function handle_product_data(params) {
+    if (!Object.keys(params).length) {
+        alert('Your cart is empty');
+        return false;
+    }
+    localStorage.setItem('checkoutData', JSON.stringify(params));
     window.location.href = 'payment.html';
 }
 
