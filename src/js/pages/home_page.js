@@ -200,11 +200,11 @@ async function home_page(parseData) {
         <section class="gift--section container-padding">
             <div class="gift--section__img" style="background-image: url('')"></div>
             <div class="container padding-bottom">
-                <h4 data-aos="fade-down" class="heading-lg text-center fw-800">Spencial Gift</h4>
+                <h4 data-aos="fade-down" class="heading-lg text-center fw-800">Special Gift</h4>
                 <h2 data-aos="fade-down" class="heading-sm text-center margin-bottom">Our store's hard-working employees</h2>
                 <div class="gift--section__wrapper row" data-aos="zoom-in">
                     <div class="gift--section__wrapper--info l-6 m-6">
-                        <h1>Get Spencial Gift!</h1>
+                        <h1>Get Special Gift!</h1>
                         <p>Contact our customer services and get your spencial gift for the first package purchase</p>
                         <a href="">
                             <button class="btn btn--primary">Contact Us</button>
