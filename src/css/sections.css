@@ -797,7 +797,7 @@ input[type="checkbox"]:checked {
     top: 50%;
     left: 10rem;
     transform: translatey(-50%);
-    width: 48rem;
+    width: 50rem;
     padding: 0;
 }
 

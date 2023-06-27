@@ -262,7 +262,7 @@ async function home_page(parseData) {
                 <div class="hero--content__detail">
                     <div class="content--info">${name}</div>
                     <div class="content--info__des">${description}</div>
-                    <a><button class="${button}">Book a Schedule</button></a>
+                    <a href="service.html"><button class="${button}">Book a Schedule</button></a>
                 </div>
             `;
             main.querySelector('.hero--content').appendChild(div);
