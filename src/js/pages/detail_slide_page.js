@@ -58,9 +58,7 @@ async function detail_product_page() {
             <div class="cart--icon">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <div class="quantity--product">
-                    <div class="number">
-                        
-                    </div>
+
                 </div>
             </div>  
                 <div class="path--link">

@@ -31,9 +31,7 @@ async function handle_data() {
                     <div class="cart--icon">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <div class="quantity--product">
-                            <div class="number">
-                                
-                            </div>
+
                         </div>
                     </div>
                     <div class="product--info">

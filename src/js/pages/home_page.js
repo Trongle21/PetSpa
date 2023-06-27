@@ -218,9 +218,7 @@ async function home_page(parseData) {
         <div class="cart--icon">
             <i class="fa-solid fa-cart-shopping"></i>
             <div class="quantity--product">
-                <div class="number">
-                    
-                </div>
+
             </div>
         </div>
         <div class="product--cart">
