@@ -135,7 +135,7 @@ let home_member = [{
     image: './src/image/staff_4.webp',
     info: [{
         name: 'G-Dragon',
-        job: 'Pet Trainingr',
+        job: 'Pet Training',
         social: [
             '<i class="fa-brands fa-square-facebook"></i>',
             '<i class="fa-brands fa-square-youtube"></i>',
@@ -179,8 +179,8 @@ async function home_page(parseData) {
         <section class="service-prices--section container-padding">
             <div class="service-prices--section__img" style="background-image: url('./src/image/dog-bg_2.png')"></div>
             <div class="container">
-                <h4 data-aos="fade-down" class="heading-lg text-center fw-800">Spencial Package</h4>
-                <h2 data-aos="fade-down" class="heading-sm text-center margin-bottom">We offer spencial package just for you and your little family</h2>
+                <h4 data-aos="fade-down" class="heading-lg text-center fw-800">Special Package</h4>
+                <h2 data-aos="fade-down" class="heading-sm text-center margin-bottom">We offer special package just for you and your little family</h2>
                 <div class="pricing--plan_list padding-bottom row" data-aos="zoom-in-up">
 
                 </div>
@@ -200,12 +200,12 @@ async function home_page(parseData) {
         <section class="gift--section container-padding">
             <div class="gift--section__img" style="background-image: url('')"></div>
             <div class="container padding-bottom">
-                <h4 data-aos="fade-down" class="heading-lg text-center fw-800">Special Gift</h4>
+                <h4 data-aos="fade-down" class="heading-lg text-center fw-800">Contact Us</h4>
                 <h2 data-aos="fade-down" class="heading-sm text-center margin-bottom">Our store's hard-working employees</h2>
                 <div class="gift--section__wrapper row" data-aos="zoom-in">
                     <div class="gift--section__wrapper--info l-6 m-6">
-                        <h1>Get Special Gift!</h1>
-                        <p>Contact our customer services and get your spencial gift for the first package purchase</p>
+                        <h1>Get Contact Us!</h1>
+                        <p>Contact our customer services and get your special gift for the first package purchase</p>
                         <a href="">
                             <button class="btn btn--primary">Contact Us</button>
                         </a>
