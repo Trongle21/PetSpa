@@ -88,8 +88,6 @@ if (document.querySelector('.header--sign-in button')) {
     })
 }
 
-
-
 /** API */
 let app = {
     /**********HOME**************/
@@ -289,15 +287,13 @@ let app = {
 
         /** Sign up */
         document.querySelector('.sign--up__form--login p').addEventListener('click', (e) => {
-            document.querySelector('.main--account__signin').classList.add('show');
+            document.querySelector('.main--account_sigin--warapper').classList.add('show')
             document.querySelector('.overlay').classList.add('show--overley');
-            document.querySelector('.section--signup__wrapper').classList.add('blur')
         })
 
         document.querySelector('.overlay').addEventListener('click', (e) => {
-            document.querySelector('.main--account__signin').classList.remove('show')
+            document.querySelector('.main--account_sigin--warapper').classList.remove('show')
             document.querySelector('.overlay').classList.remove('show--overley');
-            document.querySelector('.section--signup__wrapper').classList.remove('blur')
         });
     },
 }

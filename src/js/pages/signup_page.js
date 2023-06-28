@@ -16,12 +16,12 @@ async function signup_page() {
 
                         <div class="sign--up__form">
                             <label for="email" class="form-label">Email</label>
-                            <input name="email" type="text" placeholder="Enter your email">
+                            <input name="email" id="email" type="text" placeholder="Enter your email">
                             <span class="form-message"></span>
                         </div>
                         <div class="sign--up__form">
                             <label for="password" class="form-label">Password</label>
-                            <input name="password" type="password" placeholder="Enter your password">
+                            <input name="password" id="password" type="password" placeholder="Enter your password">
                             <span class="form-message"></span>
                         </div>
                         <div class="sign--up__form">
@@ -30,7 +30,7 @@ async function signup_page() {
                             <span class="form-message"></span>
                         </div>
                         <div class="sign--up__form--button">
-                            <button class="btn btn--signup">SignUp</button>
+                            <button type="submit" id="signUp" name="sign_up" value="sign up" class="btn btn--signup">SignUp</button>
                         </div>
                         <div class="sign--up__form--login">
                             <h5>Have an account</h5>
@@ -68,9 +68,7 @@ async function signup_page() {
                     </a>
                 </div>
                 <div class="main--account__submit">
-                    <a href="">
-                        <button class="btn btn--signin">Sign In</button>
-                    </a>
+                    <button type="submit" id="signin" name="sign_up" value="sign up" class="btn btn--signin">Sign In</button>
                 </div>
                 <div class="main--account_signup">
                     <h5>Don't have a account?</h5>
@@ -84,6 +82,6 @@ async function signup_page() {
     <div class="overlay"></div>
     `;
     return main;
-}
 
+}
 export { signup_page }

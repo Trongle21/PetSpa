@@ -20,7 +20,6 @@ let headerList = [{
     },
 ];
 
-
 export default function page_header() {
     const header = document.createElement('header');
     header.classList.add('header')
@@ -79,7 +78,7 @@ export default function page_header() {
             </div>
             <div class="main--account__submit">
                 <a href="">
-                    <button class="btn btn--signin">Sign In</button>
+                    <div type="submit" id="saveData" name="sign_up" value="sign up" class="btn btn--signin">Sign In</div>
                 </a>
             </div>
             <div class="main--account_signup">
@@ -125,6 +124,7 @@ export default function page_header() {
     }
 
     window.addEventListener('scroll', handleScroll);
+
 
     return header;
 }
