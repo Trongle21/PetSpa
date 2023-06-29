@@ -78,7 +78,7 @@ export default function page_header() {
             </div>
             <div class="main--account__submit">
                 <a href="">
-                    <div type="submit" id="saveData" name="sign_up" value="sign up" class="btn btn--signin">Sign In</div>
+                    <button type="submit" id="saveData" name="sign_up" value="sign up" class="btn btn--signin">Sign In</button>
                 </a>
             </div>
             <div class="main--account_signup">
