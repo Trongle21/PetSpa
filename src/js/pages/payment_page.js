@@ -29,7 +29,7 @@ async function render_pay_product(params) {
         document.querySelector('.section--pay__list').appendChild(div)
 
         total += total_price;
-        document.querySelector('.section--pay__info--toal p').innerHTML = `
+        document.querySelector('.section--pay__info--total p').innerHTML = `
             ${total} 
         `;
     }

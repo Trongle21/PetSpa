@@ -46,8 +46,8 @@ async function about_page() {
                         </div>
                     </div>
                 </div>
-                <div class="about--section__misstion">
-                    <div class="about--section__misstion--info text-center">
+                <div class="about--section__mission">
+                    <div class="about--section__mission--info text-center">
                         <h3 class="about--title" data-aos="fade-down">Our Mission</h3>
                         <h6 data-aos="fade-down">To enrich the lives of each and every pet in our care while delivering value,</br> convenience, and peace of mind to their owners.</h6>
                     </div>

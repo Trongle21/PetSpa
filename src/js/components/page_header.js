@@ -1,29 +1,30 @@
-let headerList = [{
-        name: 'Home',
-        url: 'index.html'
-    },
-    {
-        name: 'Service',
-        url: 'service.html'
-    },
-    {
-        name: 'Product',
-        url: 'product.html'
-    },
-    {
-        name: 'About',
-        url: 'about.html'
-    },
-    {
-        name: 'Contact',
-        url: 'contact.html'
-    },
+let headerList = [
+  {
+    name: "Home",
+    url: "index.html",
+  },
+  {
+    name: "Service",
+    url: "service.html",
+  },
+  {
+    name: "Product",
+    url: "product.html",
+  },
+  {
+    name: "About",
+    url: "about.html",
+  },
+  {
+    name: "Contact",
+    url: "contact.html",
+  },
 ];
 
 export default function page_header() {
-    const header = document.createElement('header');
-    header.classList.add('header')
-    header.innerHTML = `
+  const header = document.createElement("header");
+  header.classList.add("header");
+  header.innerHTML = `
     <div class="page--header">
         <div class="header--bar">
             <i class="fa-sharp fa-solid fa-bars"></i>
@@ -91,40 +92,39 @@ export default function page_header() {
     </div>
     `;
 
-    /** PC */
-    headerList.map((list) => {
-        let li = document.createElement('li');
-        li.classList.add('header--nav__link--item')
-        li.innerHTML = `
+  /** PC */
+  headerList.map((list) => {
+    let li = document.createElement("li");
+    li.classList.add("header--nav__link--item");
+    li.innerHTML = `
             <a href='${list.url}'>${list.name}</a>
         `;
-        header.querySelector('.pc').appendChild(li)
-    })
+    header.querySelector(".pc").appendChild(li);
+  });
 
-    /** Moblie */
-    headerList.map((list) => {
-        let li = document.createElement('li');
-        li.classList.add('header--nav-mb__link--item')
-        li.innerHTML = `
+  /** Moblie */
+  headerList.map((list) => {
+    let li = document.createElement("li");
+    li.classList.add("header--nav-mb__link--item");
+    li.innerHTML = `
             <a href='${list.url}'>${list.name}</a>
         `;
-        header.querySelector('.moblie').appendChild(li)
-    })
+    header.querySelector(".moblie").appendChild(li);
+  });
 
-    // Lấy phần tử header
-    const page_header = header.querySelector('.page--header')
+  // Lấy phần tử header
+  const page_header = header.querySelector(".page--header");
 
-    function handleScroll() {
-        const scrollPosition = window.scrollY;
-        if (scrollPosition > 200) {
-            page_header.classList.add('bg');
-        } else {
-            page_header.classList.remove('bg');
-        }
+  function handleScroll() {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 200) {
+      page_header.classList.add("bg");
+    } else {
+      page_header.classList.remove("bg");
     }
+  }
 
-    window.addEventListener('scroll', handleScroll);
+  window.addEventListener("scroll", handleScroll);
 
-
-    return header;
+  return header;
 }

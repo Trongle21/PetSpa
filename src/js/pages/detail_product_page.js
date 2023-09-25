@@ -161,7 +161,7 @@ async function render_detail_product(params) {
     for (let [k, v] of Object.entries(params)) {
         let { name, price, description, detail, image, image_2, quantity } = v;
         let div = document.createElement("div");
-        div.classList.add("section--detail__product--wapper", "row");
+        div.classList.add("section--detail__product--warper", "row");
         div.innerHTML = `
             <div class="detail--product__image l-5 m-5 c-12">
                 <div class="detail--product__image--large zoom" data-aos="fade-down">
@@ -400,32 +400,32 @@ function zoom_piture(div) {
     }, 300);
 
     setTimeout(() => {
-        let zoom = div.querySelector(".zoom");
-        let imgZoom = div.querySelector("#imgZoom");
-        if ((zoom, imgZoom)) {
-            zoom.addEventListener("mousemove", (event) => {
-                imgZoom.style.opacity = 1;
-                let positionPx = event.x - zoom.getBoundingClientRect().left;
-                let positionX = (positionPx / zoom.offsetWidth) * 100;
+            let zoom = div.querySelector(".zoom");
+            let imgZoom = div.querySelector("#imgZoom");
+            if ((zoom, imgZoom)) {
+                zoom.addEventListener("mousemove", (event) => {
+                    imgZoom.style.opacity = 1;
+                    let positionPx = event.x - zoom.getBoundingClientRect().left;
+                    let positionX = (positionPx / zoom.offsetWidth) * 100;
 
-                let positionPy = event.y - zoom.getBoundingClientRect().top;
-                let positionY = (positionPy / zoom.offsetHeight) * 100;
+                    let positionPy = event.y - zoom.getBoundingClientRect().top;
+                    let positionY = (positionPy / zoom.offsetHeight) * 100;
 
-                let transformX = -(positionX - 50) / 3.5;
-                let transformY = -(positionY - 50) / 3.5;
+                    let transformX = -(positionX - 50) / 3.5;
+                    let transformY = -(positionY - 50) / 3.5;
 
-                imgZoom.style.setProperty("--zoom-x", positionX + "%");
-                imgZoom.style.setProperty("--zoom-y", positionY + "%");
-                imgZoom.style.transform = `
-                    scale(1.5)
-                    translateX(${transformX}%) translateY(${transformY}%)
-                `;
-            });
+                    imgZoom.style.setProperty("--zoom-x", positionX + "%");
+                    imgZoom.style.setProperty("--zoom-y", positionY + "%");
+                    imgZoom.style.transform = `
+                        scale(1.5)
+                        translateX(${transformX}%) translateY(${transformY}%)
+                    `;
+                });
 
-            zoom.addEventListener("mouseout", () => {
-                imgZoom.style.opacity = 0;
-            });
-        }
+                zoom.addEventListener("mouseout", () => {
+                    imgZoom.style.opacity = 0;
+                });
+            }
     }, 400);
 }
 
